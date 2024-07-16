@@ -12,13 +12,13 @@ const Header = () => {
               <li className={styles.gradientText}>Company</li>
               <div className={styles.dropdownContent}>
                 <li>
-                  <Link href="Company/AboutUs">About Us</Link>
+                  <Link href="/Company/AboutUs">About Us</Link>
                 </li>
                 <li>
-                  <Link href="Company/Team">Team</Link>
+                  <Link href="/Company/Team">Team</Link>
                 </li>
                 <li>
-                  <Link href="Company/Portal">LMS Portal</Link>
+                  <Link href="/Company/Portal">LMS Portal</Link>
                 </li>
               </div>
             </div>
@@ -26,16 +26,16 @@ const Header = () => {
               <li className={styles.gradientText}>Courses</li>
               <div className={styles.dropdownContent}>
                 <li>
-                  <Link href="Courses/AllCourses">All Courses</Link>
+                  <Link href="/Courses/AllCourses">All Courses</Link>
                 </li>
                 <li>
-                  <Link href="Courses/AllBootcamps">All Bootcamps</Link>
+                  <Link href="/Courses/AllBootcamps">All Bootcamps</Link>
                 </li>
                 <li>
-                  <Link href="Courses/CompanySpecific">Company Specific</Link>
+                  <Link href="/Courses/CompanySpecific">Company Specific</Link>
                 </li>
                 <li>
-                  <Link href="Courses/AptitudeCourses">Aptitude Courses</Link>
+                  <Link href="/Courses/AptitudeCourses">Aptitude Courses</Link>
                 </li>
               </div>
             </div>

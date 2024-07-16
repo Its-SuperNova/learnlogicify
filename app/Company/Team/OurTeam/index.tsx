@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Styles.module.css";
-const LearnMore = () => {
+const OurTeam = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Learn More </h1>
+      <h1 className={styles.title}>Our Team</h1>
     </div>
   );
 };
 
-export default LearnMore;
+export default OurTeam;

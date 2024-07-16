@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HeroPage.module.css";
+import styles from "./Styles.module.css";
 const HeroPage = () => {
   return (
     <div className={styles.container}>
