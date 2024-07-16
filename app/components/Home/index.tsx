@@ -8,7 +8,7 @@ import Probanner from "../common/ProBanner";
 const Home = () => {
   return (
     <>
-      <main style={{margin:"20px"}}>
+      <main>
         <HeroPage />
         <VideoSection />
         <ServicesSection />

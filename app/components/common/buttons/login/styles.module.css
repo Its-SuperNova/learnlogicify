@@ -1,0 +1,32 @@
+.buttons {
+  text-align: center;
+  margin-left:50px;
+}
+
+.btnHover {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 45px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 150px;
+  transition: all .4s ease-in-out;
+}
+
+.btnHover:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+}
+
+.btnHover:focus {
+  outline: none;
+}
+
+.color7 {
+  background-image: linear-gradient(to right, #A431FF, #FF039A, #FF039A, #A431FF);
+}
