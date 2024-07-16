@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
+    "bootstrap": "^5.3.3",
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
     "next": "14.2.5",
