@@ -5,19 +5,21 @@ import VideoSection from "./Videosection";
 import ServiceGallery from "../common/ServiceGallery";
 import FeedBack from "./FeedBack";
 import Probanner from "../common/ProBanner";
-const Home = () => {
+import styles from "./styles.module.css";
+
+const HomePage: React.FC = () => {
   return (
-    <>
-      <main>
+    <main className={styles.main}>
+      <div className="hero-section">
         <HeroPage />
-        <VideoSection />
-        <ServicesSection />
-        <ServiceGallery />
-        <FeedBack />
-        <Probanner />
-      </main>
-    </>
+      </div>
+      <VideoSection />
+      <ServicesSection />
+      <ServiceGallery />
+      <FeedBack />
+      <Probanner />
+    </main>
   );
 };
 
-export default Home;
+export default HomePage;

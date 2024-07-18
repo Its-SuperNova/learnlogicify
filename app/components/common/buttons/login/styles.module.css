@@ -1,6 +1,6 @@
 .buttons {
   text-align: center;
-  margin-left:50px;
+  display: block;
 }
 
 .btnHover {

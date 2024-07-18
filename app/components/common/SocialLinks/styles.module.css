@@ -1,0 +1,24 @@
+/* components/SocialLink/style.module.css */
+.link {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(65, 65, 65);
+    color: #dcdcdc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover .icon {
+    background-color: #6e00ff;
+    color: white;
+}
