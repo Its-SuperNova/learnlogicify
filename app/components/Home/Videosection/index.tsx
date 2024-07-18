@@ -1,7 +1,6 @@
 
 import React from "react";
 import styles from "./styles.module.css";
-import "next-cloudinary/dist/cld-video-player.css";
 
 const VideoSection: React.FC = () => {
   return (
