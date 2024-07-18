@@ -5,12 +5,13 @@
     right: 0;
     top: 0;
     color: white;
+    width: 60vh;
 
     .body {
         box-sizing: border-box;
         height: 100%;
         padding-left: 80px;
-        padding-right: 100px;
+        padding-right: 80px;
         padding-top: 0px;
         padding-bottom: 80px;
         display: flex;
@@ -46,6 +47,7 @@
                     justify-content: space-between;
                     width: 100%;
                     font-weight: 400;
+                    transition: 1s ease;
                 }
             }
 
@@ -69,14 +71,15 @@
                 flex-direction: column;
                 gap: 8px;
                 font-size: 24px;
-                
 
                 a {
                     color: rgb(200, 200, 200);
                 }
-                a:hover{
+
+                a:hover {
                     color: white;
                     font-weight: 500;
+                    transition: 1s ease;
                 }
             }
         }
