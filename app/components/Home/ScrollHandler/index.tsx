@@ -25,13 +25,15 @@ const ScrollHandler: React.FC = () => {
   }, []);
 
   return (
-    <div
-      className={`${styles.hamburgerMenu} ${
-        showHamburger ? styles.hamburgerMenuVisible : ""
-      }`}
-    >
-      <HamburgerMenu />
-    </div>
+    <>
+      <div
+        className={`${styles.hamburgerMenu} ${
+          showHamburger ? styles.hamburgerMenuVisible : ""
+        }`}
+      >
+        <HamburgerMenu />
+      </div>
+    </>
   );
 };
 

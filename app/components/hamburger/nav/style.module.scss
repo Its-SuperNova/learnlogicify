@@ -5,15 +5,14 @@
     right: 0;
     top: 0;
     color: white;
-    width: 60vh;
-
+    width: 420px;
     .body {
         box-sizing: border-box;
         height: 100%;
         padding-left: 80px;
-        padding-right: 80px;
+        padding-right: 50px;
         padding-top: 0px;
-        padding-bottom: 80px;
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -74,12 +73,12 @@
 
                 a {
                     color: rgb(200, 200, 200);
+                    transition: 0.5s ease-in-out;
                 }
 
                 a:hover {
                     color: white;
                     font-weight: 500;
-                    transition: 1s ease;
                 }
             }
         }
@@ -89,3 +88,4 @@
         transform: rotate(180deg);
     }
 }
+

@@ -57,11 +57,11 @@
   }
   .right{
     justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 70px;
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 720px) {
     .container{
       padding-left: 30px;
       padding-right: 30px;

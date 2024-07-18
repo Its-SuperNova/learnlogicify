@@ -1,12 +1,13 @@
 /* components/SocialLink/style.module.css */
 .link {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 13px;
     border-radius: 50%;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .icon {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
