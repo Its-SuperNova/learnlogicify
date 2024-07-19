@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/YourComponent.module.css */
+.myText {
+  font-family: 'Wix Madefor Text';
+}
+
+
 
 
 body {
