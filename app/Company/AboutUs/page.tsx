@@ -6,19 +6,27 @@ import Header from '@/app/components/common/Header';
 import Footer from '@/app/components/common/Footer';
 import LearnMore from './LearnMore';
 import Probanner from '@/app/components/common/ProBanner';
+import dynamic from "next/dynamic";
+import styles from "./styles.module.css"
+const ScrollHandler = dynamic(() => import("@/app/components/Home/ScrollHandler"), {
+  ssr: false,
+});
 
-const AboutUs = () => {
+const AboutUs: React.FC = () => {
   return (
     <>
-        <main>
-          <Header />
+      <ScrollHandler />
+      <main className={styles.main}>
+        <Header />
+        <div className="hero-section">
           <HeroPage />
-          <ServicesSection />
-          <ServiceGallery />
-          <LearnMore />
-          <Probanner />
-          <Footer />
-        </main>
+        </div>
+        <ServicesSection />
+        <ServiceGallery />
+        <LearnMore />
+        <Probanner />
+        <Footer />
+      </main>
     </>
   );
 };
