@@ -49,7 +49,7 @@ const SpotlightButton = () => {
       ref={btnRef}
       className={styles.button}
     >
-      <span className={styles.span1}>Get Access</span>
+      <span className={styles.span1}><p className={styles.p}>Get Access</p></span>
       <span ref={spanRef} className={styles.span2} />
     </motion.button>
   );
