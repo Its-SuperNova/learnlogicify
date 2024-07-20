@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./Styles.module.css";
@@ -45,7 +45,7 @@ const HeroPage = () => {
         </motion.div>
         <motion.div className={styles.title} variants={itemVariants}>
           <p>
-            We build tomorrow's{" "}
+            We build tomorrow&apos;s{" "}
             <span className={styles.animatedGradient}>Leaders</span> with
             quality <br />
             education and hands-on learning.
@@ -76,11 +76,11 @@ const HeroPage = () => {
             </div>
             <div>
               <p>
-                You can also find our {" "}
+                You can also find our &nbsp;
                 <span className={styles.bold}>
                   <Link href={"/Services"}>Services</Link>
                 </span>
-                {" "} to contact for the consulting.
+                &nbsp; to contact for the consulting.
               </p>
             </div>
           </div>
