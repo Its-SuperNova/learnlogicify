@@ -76,11 +76,11 @@ const HeroPage = () => {
             </div>
             <div>
               <p>
-                You can also find our &nbsp;
+                You can also find our {" "}
                 <span className={styles.bold}>
                   <Link href={"/Services"}>Services</Link>
                 </span>
-                &nbsp; to contact for the consulting.
+                {" "} to contact for the consulting.
               </p>
             </div>
           </div>
