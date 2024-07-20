@@ -6,10 +6,11 @@ import ServiceGallery from "../common/ServiceGallery";
 import FeedBack from "./FeedBack";
 import Probanner from "../common/ProBanner";
 import styles from "./styles.module.css";
-
+import Header from "../common/Header";
 const HomePage: React.FC = () => {
   return (
     <main className={styles.main}>
+      <Header />
       <div className="hero-section">
         <HeroPage />
       </div>

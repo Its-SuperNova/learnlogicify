@@ -1,3 +1,14 @@
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .container {
   height: 100px;
   background-color: transparent;
@@ -6,7 +17,7 @@
   padding-right: 70px; 
   padding-bottom: 3px;
   width: 100%;
-  z-index: 99;
+  animation: slideInFromTop 2s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .bg {
   width: 100%;
