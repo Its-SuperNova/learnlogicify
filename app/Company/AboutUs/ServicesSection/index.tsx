@@ -15,43 +15,46 @@ const ServicesSection = () => {
   const [refImg, inViewImg] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   useEffect(() => {
-    if (inViewContent) {
-      controlsContent.start({
-        opacity: 1,
-        x: 0,
-        transition: { ease: "easeInOut", duration: 1.5 },
-      });
-    } else {
-      controlsContent.start({
-        opacity: 0,
-        x: 50,
-        transition: { ease: "easeInOut", duration: 1.5 },
-      });
-    }
-  }, [controlsContent, inViewContent]);
+    const handleResize = () => {
+      if (inViewContent) {
+        controlsContent.start({
+          opacity: 1,
+          transition: { ease: "easeInOut", duration: 1.5, delay: 0.5 },
+        });
+      } else {
+        controlsContent.start({
+          opacity: 0,
+          transition: { ease: "easeInOut", duration: 1.5, delay: 0.5 },
+        });
+      }
 
-  useEffect(() => {
-    if (inViewImg) {
-      controlsImg.start({
-        opacity: 1,
-        x: 0,
-        transition: { ease: "easeInOut", duration: 1.5 },
-      });
-    } else {
-      controlsImg.start({
-        opacity: 0,
-        x: -50,
-        transition: { ease: "easeInOut", duration: 1.5 },
-      });
-    }
-  }, [controlsImg, inViewImg]);
+      if (inViewImg) {
+        controlsImg.start({
+          opacity: 1,
+          transition: { ease: "easeInOut", duration: 1.5, delay: 0.3 },
+        });
+      } else {
+        controlsImg.start({
+          opacity: 0,
+          transition: { ease: "easeInOut", duration: 1.5, delay: 0.3 },
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call once to set initial state
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [controlsContent, controlsImg, inViewContent, inViewImg]);
 
   return (
     <div className={styles.main}>
       <div className={styles.container}>
         <motion.div
           ref={refImg}
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0 }}
           animate={controlsImg}
           className={styles.img}
         >
@@ -59,7 +62,7 @@ const ServicesSection = () => {
         </motion.div>
         <motion.div
           ref={refContent}
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0 }}
           animate={controlsContent}
           className={styles.content}
         >

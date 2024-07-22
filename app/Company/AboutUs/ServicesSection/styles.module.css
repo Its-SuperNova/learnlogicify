@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     background-color: #eaeaea;
+    /* background-attachment: scroll;  Ensure the background does not have a fixed attachment */
 }
 
 .container {
@@ -11,6 +12,7 @@
     flex-direction: row;
     padding: 100px;
     gap: 50px;
+    padding: 30px;
 }
 
 .content {
@@ -62,7 +64,7 @@
     }
 }
 
-.caption{
+.caption {
     height: 100px;
     width: 300px;
     background-color: white;
@@ -70,4 +72,73 @@
     bottom: -150px;
     right: -150px;
     z-index: 100;
+}
+
+@media (max-width: 1490px) {
+    .main {
+        height: 100%;
+        padding: 50px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        justify-content: center;
+    }
+
+    .title {
+        text-align: start;
+    }
+
+    .desc {
+        text-align: start;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .title {
+        text-align: start;
+        font-size: 32px;
+    }
+
+    .desc {
+        text-align: start;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 900px) {
+    .desc {
+        text-align: start;
+        max-width: 500px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 660px) {
+    .container {
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .desc {
+        max-width: 400px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 530px) {
+    .desc {
+        max-width: 300px;
+    }
+}
+@media (max-width: 430px) {
+    .desc {
+        max-width: 240px;
+    }
 }

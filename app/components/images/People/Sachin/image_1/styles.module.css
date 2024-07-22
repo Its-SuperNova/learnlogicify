@@ -3,7 +3,6 @@
     position: relative;
     width: 650px;
     height: 440px;
-   
 }
 
 .img {
@@ -61,3 +60,49 @@
     cursor: pointer;
 }
 
+@media (max-width: 1490px) {
+    .imageWrapper {
+        width: 900px;
+        height: 500px;
+    }
+}
+@media (max-width: 1120px) {
+    .img {
+        border-radius: 35px;
+    }
+    .imageWrapper {
+        width: 690px;
+        height: 420px;
+    }
+}
+@media (max-width: 900px) {
+    .img {
+        border-radius: 30px;
+    }
+
+    .imageWrapper {
+        width: 500px;
+        height: 320px;
+    }
+}
+@media (max-width: 660px) {
+    .img {
+        border-radius: 20px;
+    }
+    .imageWrapper {
+        width: 400px;
+        height: 280px;
+    }
+}
+@media (max-width: 530px) {
+    .imageWrapper {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width: 430px) {
+    .imageWrapper {
+        width: 240px;
+        height: 270px;
+    }
+}
