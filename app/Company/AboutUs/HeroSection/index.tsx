@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./Styles.module.css";
 import Link from "next/link";
@@ -32,6 +32,21 @@ const HeroPage = () => {
     },
   };
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 440);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <motion.div
       className={styles.main}
@@ -53,7 +68,7 @@ const HeroPage = () => {
         </motion.div>
         <motion.div
           className={styles.desc}
-          style={{ y: yDesc }}
+          style={{ y: isSmallScreen ? "none" : yDesc }}
           variants={itemVariants}
         >
           <p>
@@ -67,7 +82,7 @@ const HeroPage = () => {
         </motion.div>
         <motion.div
           className={styles.ServiceNav}
-          style={{ y: yServiceNav }}
+          style={{ y: isSmallScreen ? "none" : yServiceNav }}
           variants={itemVariants}
         >
           <div className={styles.nav}>

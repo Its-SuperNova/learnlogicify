@@ -1,9 +1,9 @@
 // offcanvas/index.tsx
 import React from "react";
 import styles from "./styles.module.css";
-import NavMenu from "../Header/OffCanvasNavMenu"
+import NavMenu from "../Header/OffCanvasNavMenu";
 import { AnimatePresence, motion } from "framer-motion";
-import LightLogo from "../../images/lightLogo";
+import LightLogo from "../../images/logo/lightLogo";
 interface OffcanvasProps {
   isOpen: boolean;
   onClose: () => void;
