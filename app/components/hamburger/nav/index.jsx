@@ -6,7 +6,7 @@ import { menuSlide, slide, scale } from '../anim';
 import Link from 'next/link';
 import Curve from './Curve';
 import Footer from './Footer';
-import LightLogo from '../../images/darkLogo';
+import LightLogo from '../../images/logo/darkLogo';
 import { Icon } from '@iconify/react';
 
 export default function Index() {
