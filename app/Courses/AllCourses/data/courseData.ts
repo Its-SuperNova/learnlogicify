@@ -1,9 +1,27 @@
-// data/courseData.js
-import { FaPython, FaJs, FaJava, FaCode, FaDatabase } from "react-icons/fa";
+// allcourses/data/courseData.ts
+import { IconType } from "react-icons";
+import { FaPython, FaJs, FaJava, FaCode, FaDatabase, FaHtml5 } from "react-icons/fa";
 
-const coursesData = [
+export interface Course {
+  Level: string;
+  languageId: string;
+  topicId: string;
+  icon: IconType;
+  title: string;
+  topics: number;
+  videos: number;
+  desc: string;
+  offer: string;
+  price: string;
+  originalPrice: string;
+  bannerColor: string;
+}
+
+const coursesData: Course[] = [
   {
     Level: "Beginner",
+    languageId: "python",
+    topicId: "problem-solving",
     icon: FaPython,
     title: "Basic Python",
     topics: 10,
@@ -16,6 +34,8 @@ const coursesData = [
   },
   {
     Level: "Beginner",
+    languageId: "c",
+    topicId: "problem-solving",
     icon: FaCode,
     title: "Basic C",
     topics: 15,
@@ -28,6 +48,8 @@ const coursesData = [
   },
   {
     Level: "Beginner",
+    languageId: "cpp",
+    topicId: "problem-solving",
     icon: FaCode,
     title: "Basic C++",
     topics: 10,
@@ -40,6 +62,8 @@ const coursesData = [
   },
   {
     Level: "Beginner",
+    languageId: "java",
+    topicId: "problem-solving",
     icon: FaJava,
     title: "Basic Java",
     topics: 15,
@@ -52,6 +76,8 @@ const coursesData = [
   },
   {
     Level: "Intermediate",
+    languageId: "python",
+    topicId: "data-structure",
     icon: FaPython,
     title: "Data Structures using Python",
     topics: 12,
@@ -64,6 +90,8 @@ const coursesData = [
   },
   {
     Level: "Intermediate",
+    languageId: "c",
+    topicId: "data-structure",
     icon: FaCode,
     title: "Data Structures using C",
     topics: 12,
@@ -76,6 +104,8 @@ const coursesData = [
   },
   {
     Level: "Intermediate",
+    languageId: "cpp",
+    topicId: "data-structure",
     icon: FaCode,
     title: "Data Structures using C++",
     topics: 12,
@@ -88,6 +118,8 @@ const coursesData = [
   },
   {
     Level: "Intermediate",
+    languageId: "java",
+    topicId: "data-structure",
     icon: FaJava,
     title: "Data Structures using Java",
     topics: 12,
@@ -97,6 +129,174 @@ const coursesData = [
     price: "₹1499",
     originalPrice: "₹1899",
     bannerColor: "#FFC6F2",
+  },
+  {
+    Level: "Beginner",
+    languageId: "html-css",
+    topicId: "problem-solving",
+    icon: FaHtml5,
+    title: "Basic HTML/CSS",
+    topics: 10,
+    videos: 15,
+    desc: "Learn the basics of web development with HTML and CSS.",
+    offer: "30% OFF",
+    price: "₹899",
+    originalPrice: "₹1299",
+    bannerColor: "#F5E6CC",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "js",
+    topicId: "problem-solving",
+    icon: FaJs,
+    title: "JavaScript Essentials",
+    topics: 12,
+    videos: 20,
+    desc: "Master the fundamentals of JavaScript with hands-on projects.",
+    offer: "35% OFF",
+    price: "₹1099",
+    originalPrice: "₹1699",
+    bannerColor: "#FFF3CC",
+  },
+  {
+    Level: "Advanced",
+    languageId: "java",
+    topicId: "algorithms",
+    icon: FaJava,
+    title: "Algorithms using Java",
+    topics: 18,
+    videos: 35,
+    desc: "Learn and implement advanced algorithms using Java.",
+    offer: "30% OFF",
+    price: "₹1799",
+    originalPrice: "₹2599",
+    bannerColor: "#FFCCCB",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "python",
+    topicId: "algorithms",
+    icon: FaPython,
+    title: "Algorithms using Python",
+    topics: 18,
+    videos: 35,
+    desc: "Learn and implement advanced algorithms using Python.",
+    offer: "30% OFF",
+    price: "₹1799",
+    originalPrice: "₹2599",
+    bannerColor: "#FFCCCB",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "c",
+    topicId: "algorithms",
+    icon: FaCode,
+    title: "Algorithms using C",
+    topics: 18,
+    videos: 35,
+    desc: "Learn and implement advanced algorithms using C.",
+    offer: "30% OFF",
+    price: "₹1799",
+    originalPrice: "₹2599",
+    bannerColor: "#FFCCCB",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "cpp",
+    topicId: "algorithms",
+    icon: FaCode,
+    title: "Algorithms using C++",
+    topics: 18,
+    videos: 35,
+    desc: "Learn and implement advanced algorithms using C++.",
+    offer: "30% OFF",
+    price: "₹1799",
+    originalPrice: "₹2599",
+    bannerColor: "#FFCCCB",
+  },
+  {
+    Level: "Advanced",
+    languageId: "java",
+    topicId: "graph-theory",
+    icon: FaJava,
+    title: "Advanced Tree Algorithms",
+    topics: 20,
+    videos: 40,
+    desc: "Learn and implement advanced tree algorithms.",
+    offer: "40% OFF",
+    price: "₹1999",
+    originalPrice: "₹2999",
+    bannerColor: "#E6E6FA",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "cpp",
+    topicId: "graph-theory",
+    icon: FaCode,
+    title: "Graph Theory",
+    topics: 20,
+    videos: 40,
+    desc: "Learn and implement graph algorithms using C++.",
+    offer: "40% OFF",
+    price: "₹1999",
+    originalPrice: "₹2999",
+    bannerColor: "#E6E6FA",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "java",
+    topicId: "data-structure",
+    icon: FaJava,
+    title: "Graph and Tree Data Structures",
+    topics: 20,
+    videos: 40,
+    desc: "Learn and implement graph and tree data structures.",
+    offer: "40% OFF",
+    price: "₹1999",
+    originalPrice: "₹2999",
+    bannerColor: "#E6E6FA",
+  },
+  {
+    Level: "Advanced",
+    languageId: "database",
+    topicId: "dbms",
+    icon: FaDatabase,
+    title: "Advanced DBMS",
+    topics: 20,
+    videos: 40,
+    desc: "Learn and implement advanced DBMS techniques.",
+    offer: "40% OFF",
+    price: "₹1999",
+    originalPrice: "₹2999",
+    bannerColor: "#E6E6FA",
+  },
+  {
+    Level: "Beginner",
+    languageId: "database",
+    topicId: "dbms",
+    icon: FaDatabase,
+    title: "Basic DBMS",
+    topics: 15,
+    videos: 25,
+    desc: "Learn the fundamentals of DBMS in this beginner course.",
+    offer: "20% OFF",
+    price: "₹1199",
+    originalPrice: "₹1499",
+    bannerColor: "#FCE2D8",
+  },
+  {
+    Level: "Intermediate",
+    languageId: "database",
+    topicId: "dbms",
+    icon: FaDatabase,
+    title: "Intermediate DBMS",
+    topics: 18,
+    videos: 35,
+    desc: "Learn intermediate DBMS concepts.",
+    offer: "30% OFF",
+    price: "₹1799",
+    originalPrice: "₹2599",
+    bannerColor: "#FFCCCB",
   },
 ];
 

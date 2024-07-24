@@ -1,8 +1,18 @@
-/* styles.module.css */
-.main {
-    padding: 50px;
+.container {
+    display: flex;
 }
 
+.mainContent {
+    transition: margin-left 0.5s;
+    padding: 50px;
+    flex: 1;
+    margin-left: 250px;
+}
+.card:hover{
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -43,4 +53,14 @@
     padding: 5px 5px 5px 40px;
     /* Adjust padding to make space for the icon */
     background-color: #D9E6FF;
+}
+
+@media screen and (max-width: 700px) {
+    .mainContent {
+        margin-left: 0;
+    }
+
+    .shifted {
+        margin-left: 250px;
+    }
 }

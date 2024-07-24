@@ -1,0 +1,137 @@
+/* sidebar/styles.module.css */
+
+.sidebarToggle {
+    display: none;
+    /* Hide by default */
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.sidebarContent {
+    color: white;
+}
+
+.sidebarContent h2 {
+    margin-left: 20px;
+}
+
+.filterCategory {
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.filterCategory h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.filterCategory ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filterCategory li {
+    color: #818181;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.filterCategory li:hover {
+    color: #f1f1f1;
+}
+
+.open {
+    left: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebarToggle {
+        display: flex;
+        position: fixed;
+        top: 25px;
+        left: 25px;
+        z-index: 1000;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .sidebarToggle span {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        position: absolute;
+    }
+
+    .sidebarToggle.open span {
+        background-color: white;
+    }
+
+    .sidebarToggle span:nth-child(1) {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    .sidebarToggle span:nth-child(2) {
+        top: 12px;
+        transform: rotate(0);
+    }
+
+    .sidebarToggle span:nth-child(3) {
+        top: 24px;
+        transform: rotate(0);
+    }
+
+    .sidebarToggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 12px;
+    }
+
+    .sidebarToggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .sidebarToggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+
+    .sidebar {
+        left: -250px;
+        /* Hide sidebar by default on small screens */
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .mainContent {
+        margin-left: 250px;
+    }
+
+    .sidebar {
+        left: 0;
+        /* Always show sidebar on larger screens */
+    }
+}

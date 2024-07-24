@@ -1,4 +1,4 @@
-.card{
+.card {
     height: 100%;
     width: 270px;
     min-height: 270px;
@@ -9,8 +9,20 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 0px;
+    transition: box-shadow 0.3s ease;
+    /* Smooth transition for the shadow */
 }
-.banner{
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    /* Move the card up slightly */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Ensure the transition is applied to both properties */
+}
+
+.banner {
     height: 100%;
     width: 100%;
     background-color: #E2D8FC;
@@ -20,40 +32,45 @@
     flex-direction: column;
     justify-content: left;
 }
-.Header{
-    display:flex;
+
+.Header {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.level{
+
+.level {
     background-color: white;
     display: inline-block;
     padding: 2px;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 12px;
-    border-radius: 20px; 
-    font-weight: 500;   
+    border-radius: 20px;
+    font-weight: 500;
 }
-.icon{
+
+.icon {
     width: 40px;
     height: 40px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
 }
-.Title{
+
+.Title {
     font-size: 26px;
     font-weight: 700;
     margin-top: 10px;
     padding-left: 5px;
     line-height: 30px;
 }
-.Stats{
+
+.Stats {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,7 +78,8 @@
     padding-left: 5px;
     padding-top: 5px;
 }
-.topics{
+
+.topics {
     font-size: 11px;
     color: gray;
     display: flex;
@@ -70,18 +88,21 @@
     justify-content: center;
     gap: 3px;
 }
-.line{
-    color:gray;
+
+.line {
+    color: gray;
     font-size: 10px;
     font-weight: 400;
 }
-.Desc{
+
+.Desc {
     margin-top: 15px;
     font-size: 13px;
     padding-left: 5px;
     font-weight: 400;
 }
-.content{
+
+.content {
     height: 110px;
     width: 100%;
     display: flex;
@@ -91,7 +112,8 @@
     padding-left: 10px;
     padding-right: 3px;
 }
-.btn{
+
+.btn {
     width: 78px;
     height: 35px;
     background-color: black;
@@ -104,7 +126,8 @@
     justify-content: center;
     font-weight: 500;
 }
-.offer{
+
+.offer {
     width: 52px;
     height: 15px;
     font-size: 10px;
@@ -113,21 +136,24 @@
     align-items: center;
     justify-content: center;
     color: white;
-    background-color:#A259FF ;
+    background-color: #A259FF;
     border-radius: 4px;
 }
-.price{
+
+.price {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:5px;
+    gap: 5px;
 }
-.offprice{
+
+.offprice {
     font-weight: 700;
     font-size: 20px;
 }
-.originalPrice{
+
+.originalPrice {
     margin-top: 2px;
     color: rgb(157, 157, 157);
     font-size: 12px;
