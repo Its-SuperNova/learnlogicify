@@ -1,0 +1,46 @@
+/* styles.module.css */
+.main {
+    padding: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    color: #6c757d;
+}
+
+.searchBox {
+    border: none;
+    outline: none;
+    /* Remove border on focus/typing */
+    box-shadow: none;
+    /* Remove any default box-shadow */
+    height: 38px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 5px 5px 5px 40px;
+    /* Adjust padding to make space for the icon */
+    background-color: #D9E6FF;
+}
