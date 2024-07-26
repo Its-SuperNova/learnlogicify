@@ -1,0 +1,62 @@
+/* companyCard/styles.module.css */
+
+.card {
+    width: 500px;
+    height: 305px;
+    background-color: #F8FBD7;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+/* Media query to adjust card size above 700px */
+@media (max-width: 1200px) {
+    .card {
+        width: calc(50vw - 50px);
+        /* Shrink card to fit with sidebar */
+        height: auto;
+        /* Maintain aspect ratio */
+        max-width: 500px;
+        /* Maximum width of 500px */
+        aspect-ratio: 500 / 305;
+        /* Maintain aspect ratio */
+    }
+}
+
+/* Media query to reset card size below 700px */
+@media (max-width: 700px) {
+    .card {
+        width: 500px;
+        /* Reset width to 500px */
+        height: 305px;
+        /* Reset height to 305px */
+        padding: 30px;
+    }
+}
+
+/* Media query to adjust card size below 600px */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        /* Full width */
+        height: auto;
+        /* Maintain aspect ratio */
+        max-width: 500px;
+        /* Maximum width of 500px */
+        aspect-ratio: 500 / 305;
+        /* Maintain aspect ratio */
+        padding: 30px;
+        /* Adjust padding */
+    }
+}
+.left{
+    width: 60%;
+    background-color: lightblue;
+}
+.right{
+    width: 40%;
+    background-color: lightpink;
+}

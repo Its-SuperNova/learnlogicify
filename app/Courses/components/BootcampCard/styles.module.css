@@ -1,0 +1,143 @@
+.card{
+    max-width: 475px;
+    height: 100%;
+    min-height: 300px;
+    width: 100%;
+    min-width: 370px;
+    background-color: #FBDDCE;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    padding-left: 35px;
+    padding-bottom: 15px;
+}
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    transition:  transform 0.3s ease-in-out;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.p{
+    padding-top: 1px;
+}
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 10px;
+    line-height: 30px;
+    display: inline-block;
+    width:270px;
+}
+.desc{
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+}
+.stats{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+.Problems{
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 25px;
+    border: 1px solid rgb(86, 86, 86);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.Courses {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 25px;
+    border: 1px solid rgb(86, 86, 86);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.content {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 3px;
+}
+
+.btn {
+    width: 78px;
+    height: 35px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.offer {
+    width: 52px;
+    height: 15px;
+    font-size: 10px;
+    display: flex;
+    padding-top: 1px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #A259FF;
+    border-radius: 4px;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.offprice {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.originalPrice {
+    margin-top: 2px;
+    color: rgb(157, 157, 157);
+    font-size: 12px;
+}

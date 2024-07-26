@@ -29,10 +29,13 @@ const SideBar: React.FC<SideBarProps> = ({ onFilterChange }) => {
       </div>
       <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
         <div className={styles.sidebarContent}>
-          <h2>Catalog</h2>
+          <h2 className={styles.title}>Catalog</h2>
+          <div className={styles.sepcon}>
+            <div className={styles.separator}></div>
+          </div>
           <div className={styles.filterCategory}>
-            <h3>Languages</h3>
-            <ul>
+            <h3 className={styles.h3}>Languages</h3>
+            <ul className={styles.ul}>
               <li onClick={() => handleFilterClick("languageId", "python")}>
                 Python
               </li>
@@ -55,8 +58,8 @@ const SideBar: React.FC<SideBarProps> = ({ onFilterChange }) => {
             </ul>
           </div>
           <div className={styles.filterCategory}>
-            <h3>Topics</h3>
-            <ul>
+            <h3 className={styles.h3}>Topics</h3>
+            <ul className={styles.ul}>
               <li
                 onClick={() => handleFilterClick("topicId", "problem-solving")}
               >
@@ -77,8 +80,8 @@ const SideBar: React.FC<SideBarProps> = ({ onFilterChange }) => {
             </ul>
           </div>
           <div className={styles.filterCategory}>
-            <h3>Level</h3>
-            <ul>
+            <h3 className={styles.h3}>Level</h3>
+            <ul className={styles.ul}>
               <li onClick={() => handleFilterClick("Level", "Beginner")}>
                 Beginner
               </li>

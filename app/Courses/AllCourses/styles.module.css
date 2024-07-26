@@ -1,5 +1,8 @@
+/* allcourses/styles.module.css */
+
 .container {
     display: flex;
+    padding-left: 20px;
 }
 
 .mainContent {
@@ -8,14 +11,16 @@
     flex: 1;
     margin-left: 250px;
 }
-.card:hover{
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.bootcampGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 20px;
 }
 
@@ -32,7 +37,7 @@
     align-items: center;
     width: 100%;
     max-width: 400px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .searchIcon {
@@ -44,23 +49,56 @@
 .searchBox {
     border: none;
     outline: none;
-    /* Remove border on focus/typing */
-    box-shadow: none;
-    /* Remove any default box-shadow */
     height: 38px;
     width: 100%;
     border-radius: 20px;
     padding: 5px 5px 5px 40px;
-    /* Adjust padding to make space for the icon */
-    background-color: #D9E6FF;
+    background-color: #d9e6ff;
+}
+
+.tabContainer {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    text-align: left;
+    border: 1px solid lightgray;
+    outline: none;
+    background-color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.activeTab {
+    background-color: blue;
+    color: white;
+}
+
+.bootcampContent,
+.companyContent {
+    background-color: #f9f9f9;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 700px) {
+    .container {
+        padding-left: 0px;
+    }
+
     .mainContent {
         margin-left: 0;
     }
 
-    .shifted {
-        margin-left: 250px;
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.open {
+        left: 0;
     }
 }
