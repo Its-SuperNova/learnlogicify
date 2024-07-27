@@ -141,3 +141,24 @@
     color: rgb(157, 157, 157);
     font-size: 12px;
 }
+@media screen and (max-width: 450px) {
+    .card {
+        min-width: 100%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .header{
+        flex-direction: column-reverse;
+        align-items: left;
+        gap: 5px;
+    }
+    .stats{
+        flex-direction: column;
+    }
+    .Problems{
+        width: 160px;
+    }
+    .Courses{
+        width: 125px;
+    }
+}

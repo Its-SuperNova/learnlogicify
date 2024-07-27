@@ -158,3 +158,13 @@
     color: rgb(157, 157, 157);
     font-size: 12px;
 }
+@media screen and (max-width: 450px) {
+    .card {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        padding: 10px;
+        border-radius: 17px;
+        min-width: 230px;
+    }
+}

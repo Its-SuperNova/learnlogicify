@@ -1,10 +1,9 @@
 /* allcourses/styles.module.css */
 
 .container {
-    display: flex;
-    padding-left: 20px;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+    padding: 30px;
 }
 
 .mainContent {
@@ -61,15 +60,20 @@
 .tabContainer {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Added to handle wrapping */
 }
 
 .tabButton {
-    text-align: left;
+    text-align: center;
+    /* Changed from left to center */
     border: 1px solid lightgray;
     outline: none;
     background-color: white;
     padding: 10px 20px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    /* Added margin-bottom for spacing */
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
@@ -87,13 +91,13 @@
     border-radius: 10px;
 }
 
+/* Adjustments for screens smaller than 700px */
 @media screen and (max-width: 700px) {
-    .container {
-        padding-left: 0px;
-    }
 
     .mainContent {
         margin-left: 0;
+        padding: 20px;
+        /* Adjust padding */
     }
 
     .sidebar {
@@ -102,5 +106,44 @@
 
     .sidebar.open {
         left: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+
+    .bootcampGrid {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+}
+
+/* Adjustments for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+
+    .searchContainer {
+        width: 90%;
+        /* Adjust width */
+        max-width: none;
+        /* Remove max-width constraint */
+    }
+
+    .searchBox {
+        padding: 5px 5px 5px 30px;
+        /* Adjust padding */
+    }
+
+    .tabButton {
+        padding: 8px 15px;
+        /* Adjust padding */
+        font-size: 14px;
+        /* Adjust font size */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 20px;
     }
 }
