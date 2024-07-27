@@ -4,7 +4,7 @@
     display: flex;
     padding-left: 20px;
     overflow: hidden;
-    position: relative;
+    position: absolute;
 }
 
 .mainContent {
