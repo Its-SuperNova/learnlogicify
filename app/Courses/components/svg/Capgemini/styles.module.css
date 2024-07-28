@@ -1,0 +1,108 @@
+/* components/images/People/Sachin/styles.module.css */
+.imageWrapper {
+    position: relative;
+    width: 650px;
+    height: 440px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    object-fit: cover;
+
+}
+
+.caption {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    width: 300px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.imageWrapper:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.captionText {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.designation {
+    color: gray;
+    font-size: 14px;
+}
+.FlexKnowMore{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.knowMore {
+    font-size: 14px;
+    color: blue;
+    cursor: pointer;
+}
+
+@media (max-width: 1490px) {
+    .imageWrapper {
+        width: 900px;
+        height: 500px;
+    }
+}
+@media (max-width: 1120px) {
+    .img {
+        border-radius: 35px;
+    }
+    .imageWrapper {
+        width: 690px;
+        height: 420px;
+    }
+}
+@media (max-width: 900px) {
+    .img {
+        border-radius: 30px;
+    }
+
+    .imageWrapper {
+        width: 500px;
+        height: 320px;
+    }
+}
+@media (max-width: 660px) {
+    .img {
+        border-radius: 20px;
+    }
+    .imageWrapper {
+        width: 400px;
+        height: 280px;
+    }
+}
+@media (max-width: 530px) {
+    .imageWrapper {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width: 430px) {
+    .imageWrapper {
+        width: 240px;
+        height: 270px;
+    }
+}
