@@ -176,9 +176,4 @@
         line-height: 16px;
     }
 }
-@media (max-width: 468px) {
-    .card {
-        padding: 20px;
-        aspect-ratio: 500 / 240;
-    }
-}
+
