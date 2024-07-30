@@ -1,8 +1,16 @@
-import React from 'react'
-import styles from "./styles.module.css"
-import Link from 'next/link';
-import Accenture from '../svg/Accenture';
-const card = () => {
+import React from "react";
+import styles from "./styles.module.css";
+import Link from "next/link";
+import Accenture from "../svg/Accenture";
+import AccentureMobile from "../svg/AccentureMobile";
+import { useMediaQuery } from "react-responsive";
+
+const Card = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 512px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 700px) and (max-width: 830px)",
+  });
+
   return (
     <div className={styles.card}>
       <div className={styles.left}>
@@ -33,10 +41,10 @@ const card = () => {
         </div>
       </div>
       <div className={styles.right}>
-        <Accenture />
+        {isMobile || isTablet ? <AccentureMobile /> : <Accenture />}
       </div>
     </div>
   );
-}
+};
 
-export default card
+export default Card;

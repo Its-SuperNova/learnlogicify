@@ -3,12 +3,13 @@
 .container {
     overflow: hidden;
     position: relative;
-    padding: 30px;
+    padding: 25px;
+    padding-right: 10px;
 }
 
 .mainContent {
     transition: margin-left 0.5s;
-    padding: 50px;
+    padding: 45px;
     flex: 1;
     margin-left: 250px;
 }
@@ -93,7 +94,9 @@
 
 /* Adjustments for screens smaller than 700px */
 @media screen and (max-width: 700px) {
-
+    .container{
+        padding-right: 25px;
+    }
     .mainContent {
         margin-left: 0;
         padding: 20px;

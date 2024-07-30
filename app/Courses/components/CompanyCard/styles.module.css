@@ -1,8 +1,10 @@
 /* companyCard/styles.module.css */
 
 .card {
-    width: 500px;
-    height: 305px;
+    max-width: 500px;
+    min-width: 240px;
+    width: 100%;
+    height: auto;
     background-color: #F8FBD7;
     border-radius: 20px;
     padding: 30px;
@@ -12,67 +14,31 @@
     /* Include padding and border in the element's total width and height */
 }
 
-/* Media query to adjust card size above 700px */
-@media (max-width: 1200px) {
-    .card {
-        width: calc(50vw - 50px);
-        /* Shrink card to fit with sidebar */
-        height: auto;
-        /* Maintain aspect ratio */
-        max-width: 500px;
-        /* Maximum width of 500px */
-        aspect-ratio: 500 / 305;
-        /* Maintain aspect ratio */
-    }
-}
-
-/* Media query to reset card size below 700px */
-@media (max-width: 700px) {
-    .card {
-        width: 500px;
-        /* Reset width to 500px */
-        height: 305px;
-        /* Reset height to 305px */
-        padding: 30px;
-    }
-}
-
-/* Media query to adjust card size below 600px */
-@media (max-width: 600px) {
-    .card {
-        width: 100%;
-        /* Full width */
-        height: auto;
-        /* Maintain aspect ratio */
-        max-width: 500px;
-        /* Maximum width of 500px */
-        aspect-ratio: 500 / 305;
-        /* Maintain aspect ratio */
-        padding: 30px;
-        /* Adjust padding */
-    }
-}
-.left{
+.left {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 16px;
 }
-.right{
+
+.right {
     width: 40%;
 }
-.header{
+
+.header {
     font-size: 32px;
     font-weight: 600;
     line-height: 38px;
 }
+
 .content {
     height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:left;
+    justify-content: left;
     gap: 15px;
 }
 
@@ -89,11 +55,13 @@
     justify-content: center;
     font-weight: 500;
 }
-.desc{
+
+.desc {
     font-size: 16px;
     line-height: 20px;
     font-weight: 300;
 }
+
 .offer {
     width: 52px;
     height: 15px;
@@ -125,29 +93,34 @@
     color: rgb(157, 157, 157);
     font-size: 12px;
 }
-@media (max-width: 600px) {
-    .header {
-        font-size: 29px;
-        line-height: 32px;
-    }
 
-}
-@media (max-width: 550px) {
-    .card{
-        padding: 25px;
-    }
+@media screen and (max-width: 575px) {
     .header {
         font-size: 28px;
-        line-height: 32px;
     }
-    .desc{
+
+    .desc {
         font-size: 14px;
-        line-height: 18px;
     }
-    .btn {
-        width: 70px;
-        height: 32px;
+}
+
+@media screen and (max-width: 540px) {
+    .card {
+        padding: 25px;
+    }
+
+    .header {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .desc {
         font-size: 14px;
+        line-height: 20px;
+    }
+
+    .offer {
+        font-size: 9px;
     }
 
     .offprice {
@@ -160,19 +133,36 @@
         color: rgb(157, 157, 157);
         font-size: 11px;
     }
+
+    .btn {
+        width: 70px;
+        height: 30px;
+        font-size: 15px;
+    }
 }
-@media (max-width: 522px) {
+
+@media screen and (max-width: 513px) {
     .card {
+        flex-direction: column-reverse;
         padding: 25px;
     }
 
-    .header {
-        font-size: 24px;
-        line-height: 26px;
+    .left {
+        width: 100%;
     }
 
-    .desc {
-        font-size: 12px;
-        line-height: 16px;
+    .right {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 830px) and (min-width:700px) {
+    .card{
+        flex-direction: column-reverse;
+    }
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 100%;
     }
 }
