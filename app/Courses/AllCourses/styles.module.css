@@ -26,6 +26,12 @@
     gap: 20px;
 }
 
+.companyGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjusted to initially display 2 columns */
+    gap: 20px;
+}
 .title {
     font-size: 36px;
     font-weight: bold;
@@ -62,19 +68,16 @@
     display: flex;
     margin-bottom: 20px;
     flex-wrap: wrap;
-    /* Added to handle wrapping */
 }
 
 .tabButton {
     text-align: center;
-    /* Changed from left to center */
     border: 1px solid lightgray;
     outline: none;
     background-color: white;
     padding: 10px 20px;
     margin-right: 10px;
     margin-bottom: 10px;
-    /* Added margin-bottom for spacing */
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
@@ -92,15 +95,14 @@
     border-radius: 10px;
 }
 
-/* Adjustments for screens smaller than 700px */
 @media screen and (max-width: 700px) {
-    .container{
+    .container {
         padding-right: 25px;
     }
+
     .mainContent {
         margin-left: 0;
         padding: 20px;
-        /* Adjust padding */
     }
 
     .sidebar {
@@ -111,37 +113,27 @@
         left: 0;
     }
 
-    .grid {
+    .grid,
+    .bootcampGrid,
+    .companyGrid {
         grid-template-columns: 1fr;
-        /* Single column layout */
-    }
-
-    .bootcampGrid {
-        grid-template-columns: 1fr;
-        /* Single column layout */
     }
 }
 
-/* Adjustments for screens smaller than 600px */
 @media screen and (max-width: 600px) {
 
     .searchContainer {
         width: 90%;
-        /* Adjust width */
         max-width: none;
-        /* Remove max-width constraint */
     }
 
     .searchBox {
         padding: 5px 5px 5px 30px;
-        /* Adjust padding */
     }
 
     .tabButton {
         padding: 8px 15px;
-        /* Adjust padding */
         font-size: 14px;
-        /* Adjust font size */
     }
 }
 

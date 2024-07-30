@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import img from "@/public/SVG/company illustration/Capgemini.svg";
+import img from "@/public/SVG/company illustration/cocubes.svg";
 import styles from "./styles.module.css";
 
 const Accenture = () => {

@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import Card from "../components/CourseCard";
 import coursesData, { Course } from "./data/courseData";
 import BootcampData, { Bootcamp } from "./data/bootcampData";
+import CompanyData, { Company } from "./data/CompanyData";
 import SideBar from "../components/SideBar";
 import BootcampCard from "../components/BootcampCard";
 import CompanyCard from "../components/CompanyCard";
@@ -60,6 +61,15 @@ const AllCourse: React.FC = () => {
       .includes(searchTerm.toLowerCase());
 
     // You can add similar filtering for bootcamps if needed
+    return matchesSearch;
+  });
+
+  const filteredCompanies = CompanyData.filter((company: Company) => {
+    const matchesSearch = company.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    // You can add similar filtering for companies if needed
     return matchesSearch;
   });
 
@@ -162,8 +172,20 @@ const AllCourse: React.FC = () => {
           </div>
         )}
         {selectedTab === "CompanySpecific" && (
-          <div>
-            <CompanyCard/>
+          <div className={styles.companyGrid}>
+            {filteredCompanies.map((company, index) => (
+              <CompanyCard
+                key={index}
+                title={company.title}
+                desc={company.desc}
+                offer={company.offer}
+                price={company.price}
+                originalPrice={company.originalPrice}
+                bannerColor={company.bannerColor}
+                desktopImage={company.desktopImage}
+                mobileImage={company.mobileImage}
+              />
+            ))}
           </div>
         )}
       </div>

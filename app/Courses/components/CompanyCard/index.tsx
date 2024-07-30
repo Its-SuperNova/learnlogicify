@@ -1,27 +1,42 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
-import Accenture from "../svg/Accenture";
-import AccentureMobile from "../svg/AccentureMobile";
 import { useMediaQuery } from "react-responsive";
 
-const Card = () => {
+interface Props {
+  title: string;
+  desc: string;
+  offer: string;
+  price: string;
+  originalPrice: string;
+  bannerColor: string;
+  desktopImage: JSX.Element;
+  mobileImage: JSX.Element;
+}
+
+const CompanyCard: React.FC<Props> = ({
+  title,
+  desc,
+  offer,
+  price,
+  originalPrice,
+  bannerColor,
+  desktopImage,
+  mobileImage,
+}) => {
   const isMobile = useMediaQuery({ query: "(max-width: 512px)" });
   const isTablet = useMediaQuery({
     query: "(min-width: 700px) and (max-width: 830px)",
   });
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ backgroundColor: bannerColor }}>
       <div className={styles.left}>
         <div className={styles.header}>
-          <p>Accenture Mock Test Series</p>
+          <p>{title}</p>
         </div>
         <div className={styles.desc}>
-          <p>
-            Prepare for Accenture placements with our mock test series to
-            enhance your skills to secure your dream job at Accenture.
-          </p>
+          <p>{desc}</p>
         </div>
         <div className={styles.content}>
           <div>
@@ -30,21 +45,21 @@ const Card = () => {
             </Link>
           </div>
           <div>
-            <div className={styles.offer}>42% OFF</div>
+            <div className={styles.offer}>{offer}</div>
             <div className={styles.price}>
-              <div className={styles.offprice}>999</div>
+              <div className={styles.offprice}>{price}</div>
               <div className={styles.originalPrice}>
-                <s>1499</s>
+                <s>{originalPrice}</s>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className={styles.right}>
-        {isMobile || isTablet ? <AccentureMobile /> : <Accenture />}
+        {isMobile || isTablet ? mobileImage : desktopImage}
       </div>
     </div>
   );
 };
 
-export default Card;
+export default CompanyCard;
