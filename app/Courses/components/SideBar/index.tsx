@@ -49,7 +49,7 @@ const SideBar: React.FC<SideBarProps> = ({ onFilterChange, selectedTab }) => {
               id="html-css"
               onClick={() => handleFilterClick("languageId", "html-css")}
             >
-              HTML/CSS
+              Web Development
             </li>
             <li id="js" onClick={() => handleFilterClick("languageId", "js")}>
               JavaScript

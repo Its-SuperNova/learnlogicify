@@ -35,35 +35,39 @@ const CompanyCard: React.FC<Props> = ({
     query: "(max-width: 1951px) and (min-width:1525px)",
   });
   return (
-    <div className={styles.card} style={{ backgroundColor: bannerColor }}>
-      <div className={styles.left}>
-        <div className={styles.header}>
-          <p>{title}</p>
-        </div>
-        <div className={styles.desc}>
-          <p>{desc}</p>
-        </div>
-        <div className={styles.content}>
-          <div>
-            <Link href="/">
-              <div className={styles.btn}>Buy</div>
-            </Link>
+    <Link href={`/Company/${title}`}>
+      <div className={styles.card} style={{ backgroundColor: bannerColor }}>
+        <div className={styles.left}>
+          <div className={styles.header}>
+            <p>{title}</p>
           </div>
-          <div>
-            <div className={styles.offer}>{offer}</div>
-            <div className={styles.price}>
-              <div className={styles.offprice}>{price}</div>
-              <div className={styles.originalPrice}>
-                <s>{originalPrice}</s>
+          <div className={styles.desc}>
+            <p>{desc}</p>
+          </div>
+          <div className={styles.content}>
+            <div>
+              <Link href="/">
+                <div className={styles.btn}>Buy</div>
+              </Link>
+            </div>
+            <div>
+              <div className={styles.offer}>{offer}</div>
+              <div className={styles.price}>
+                <div className={styles.offprice}>{price}</div>
+                <div className={styles.originalPrice}>
+                  <s>{originalPrice}</s>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div className={styles.right}>
+          {isMobile || isTablet || isTab || isBigScreen
+            ? mobileImage
+            : desktopImage}
+        </div>
       </div>
-      <div className={styles.right}>
-        {isMobile || isTablet || isTab || isBigScreen? mobileImage : desktopImage}
-      </div>
-    </div>
+    </Link>
   );
 };
 

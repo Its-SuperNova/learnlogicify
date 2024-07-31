@@ -1,12 +1,12 @@
-import Accenture from "../../components/svg/Accenture";
-import AccentureMobile from "../../components/svg/AccentureMobile";
-import Capgemini from "../../components/svg/Capgemini";
-import TCSNinja from "../../components/svg/TcsNinja";
-import Amcat from "../../components/svg/Amcat";
-import Cocubes from "../../components/svg/Cocubes";
-import InfyTQ from "../../components/svg/InfyTQ";
-import TCSCodevita from "../../components/svg/TcsCodevita";
-import CTSGenc from "../../components/svg/CTSGenc";
+import Accenture from "../components/svg/Accenture";
+import AccentureMobile from "../components/svg/AccentureMobile";
+import Capgemini from "../components/svg/Capgemini";
+import TCSNinja from "../components/svg/TcsNinja";
+import Amcat from "../components/svg/Amcat";
+import Cocubes from "../components/svg/Cocubes";
+import InfyTQ from "../components/svg/InfyTQ";
+import TCSCodevita from "../components/svg/TcsCodevita";
+import CTSGenc from "../components/svg/CTSGenc";
 
 export interface Company {
   title: string;

@@ -15,6 +15,15 @@
     /* Include padding and border in the element's total width and height */
 }
 
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    /* Move the card up slightly */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Ensure the transition is applied to both properties */
+}
+
 .left {
     width: 60%;
     display: flex;
@@ -237,7 +246,7 @@
         }
 }
 
-@media screen and (max-width: 1951px) and (min-width:1525px) {
+@media screen and (max-width: 1951px) and (min-width:1540px) {
             .card {
                     flex-direction: column-reverse;
                     justify-content: space-around;

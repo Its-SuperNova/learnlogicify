@@ -3,6 +3,7 @@ import { IconType } from "react-icons";
 import { FaPython, FaJs, FaJava, FaCode, FaDatabase, FaHtml5 } from "react-icons/fa";
 
 export interface Course {
+  url: string;
   Level: string;
   languageId: string;
   topicId: string;
@@ -19,6 +20,7 @@ export interface Course {
 
 const coursesData: Course[] = [
   {
+    url: "basic-python",
     Level: "Beginner",
     languageId: "python",
     topicId: "problem-solving",
@@ -33,6 +35,7 @@ const coursesData: Course[] = [
     bannerColor: "#E2D8FC",
   },
   {
+    url: "basic-c",
     Level: "Beginner",
     languageId: "c",
     topicId: "problem-solving",
@@ -47,6 +50,7 @@ const coursesData: Course[] = [
     bannerColor: "#FCE2D8",
   },
   {
+    url: "basic-cpp",
     Level: "Beginner",
     languageId: "cpp",
     topicId: "problem-solving",
@@ -61,6 +65,7 @@ const coursesData: Course[] = [
     bannerColor: "#D7FBED",
   },
   {
+    url: "basic-java",
     Level: "Beginner",
     languageId: "java",
     topicId: "problem-solving",
@@ -75,6 +80,7 @@ const coursesData: Course[] = [
     bannerColor: "#EBEBEB",
   },
   {
+    url: "data-structures-python",
     Level: "Intermediate",
     languageId: "python",
     topicId: "data-structure",
@@ -89,6 +95,7 @@ const coursesData: Course[] = [
     bannerColor: "#E1F4FE",
   },
   {
+    url: "data-structures-c",
     Level: "Intermediate",
     languageId: "c",
     topicId: "data-structure",
@@ -103,6 +110,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFC6C6",
   },
   {
+    url: "data-structures-cpp",
     Level: "Intermediate",
     languageId: "cpp",
     topicId: "data-structure",
@@ -117,6 +125,7 @@ const coursesData: Course[] = [
     bannerColor: "#FEFFC6",
   },
   {
+    url: "data-structures-java",
     Level: "Intermediate",
     languageId: "java",
     topicId: "data-structure",
@@ -131,6 +140,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFC6F2",
   },
   {
+    url: "basic-html-css",
     Level: "Beginner",
     languageId: "html-css",
     topicId: "problem-solving",
@@ -145,6 +155,7 @@ const coursesData: Course[] = [
     bannerColor: "#F5E6CC",
   },
   {
+    url: "javascript-essentials",
     Level: "Intermediate",
     languageId: "js",
     topicId: "problem-solving",
@@ -159,6 +170,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFF3CC",
   },
   {
+    url: "algorithms-java",
     Level: "Advanced",
     languageId: "java",
     topicId: "algorithms",
@@ -173,6 +185,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFCCCB",
   },
   {
+    url: "algorithms-python",
     Level: "Intermediate",
     languageId: "python",
     topicId: "algorithms",
@@ -187,6 +200,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFCCCB",
   },
   {
+    url: "algorithms-c",
     Level: "Intermediate",
     languageId: "c",
     topicId: "algorithms",
@@ -201,6 +215,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFCCCB",
   },
   {
+    url: "algorithms-cpp",
     Level: "Intermediate",
     languageId: "cpp",
     topicId: "algorithms",
@@ -215,6 +230,7 @@ const coursesData: Course[] = [
     bannerColor: "#FFCCCB",
   },
   {
+    url: "advanced-tree-algorithms-java",
     Level: "Advanced",
     languageId: "java",
     topicId: "graph-theory",
@@ -229,6 +245,7 @@ const coursesData: Course[] = [
     bannerColor: "#E6E6FA",
   },
   {
+    url: "graph-theory-cpp",
     Level: "Intermediate",
     languageId: "cpp",
     topicId: "graph-theory",
@@ -243,6 +260,7 @@ const coursesData: Course[] = [
     bannerColor: "#E6E6FA",
   },
   {
+    url: "graph-tree-data-structures-java",
     Level: "Intermediate",
     languageId: "java",
     topicId: "data-structure",
@@ -257,6 +275,7 @@ const coursesData: Course[] = [
     bannerColor: "#E6E6FA",
   },
   {
+    url: "advanced-dbms",
     Level: "Advanced",
     languageId: "database",
     topicId: "dbms",
@@ -271,6 +290,7 @@ const coursesData: Course[] = [
     bannerColor: "#E6E6FA",
   },
   {
+    url: "basic-dbms",
     Level: "Beginner",
     languageId: "database",
     topicId: "dbms",
@@ -285,6 +305,7 @@ const coursesData: Course[] = [
     bannerColor: "#FCE2D8",
   },
   {
+    url: "intermediate-dbms",
     Level: "Intermediate",
     languageId: "database",
     topicId: "dbms",

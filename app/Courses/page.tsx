@@ -2,13 +2,14 @@
 import React, { useState, ChangeEvent } from "react";
 import { IoIosSearch } from "react-icons/io"; // Import the IoIosSearch icon
 import styles from "./styles.module.css";
-import Card from "../components/CourseCard";
+import Card from "./components/CourseCard";//"../components/CourseCard";
 import coursesData, { Course } from "./data/courseData";
 import BootcampData, { Bootcamp } from "./data/bootcampData";
 import CompanyData, { Company } from "./data/CompanyData";
-import SideBar from "../components/SideBar";
-import BootcampCard from "../components/BootcampCard";
-import CompanyCard from "../components/CompanyCard";
+import SideBar from "./components/SideBar";
+import BootcampCard from "./components/BootcampCard";
+import CompanyCard from "./components/CompanyCard";
+import Link from "next/link";
 
 const AllCourse: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -174,6 +175,7 @@ const AllCourse: React.FC = () => {
           <div className={styles.grid}>
             {filteredCourses.map((course, index) => (
               <Card
+                url={course.url}
                 key={index}
                 Level={course.Level}
                 icon={course.icon} // Pass the icon component
@@ -193,6 +195,7 @@ const AllCourse: React.FC = () => {
           <div className={styles.grid}>
             {filteredCourses.map((course, index) => (
               <Card
+                url={course.url}
                 key={index}
                 Level={course.Level}
                 icon={course.icon} // Pass the icon component
