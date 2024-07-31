@@ -1,4 +1,3 @@
-// allcourses/data/courseData.ts
 import { IconType } from "react-icons";
 import { FaPython, FaJs, FaJava, FaCode, FaDatabase, FaHtml5 } from "react-icons/fa";
 
@@ -12,6 +11,7 @@ export interface Bootcamp {
   price: string;
   originalPrice: string;
   bannerColor: string;
+  languageId: string;
 }
 
 const BootcampData: Bootcamp[] = [
@@ -25,6 +25,7 @@ const BootcampData: Bootcamp[] = [
     price: "₹999",
     originalPrice: "₹1499",
     bannerColor: "#E2D8FC",
+    languageId: "python",
   },
   {
     icon: FaCode,
@@ -36,6 +37,7 @@ const BootcampData: Bootcamp[] = [
     price: "₹899",
     originalPrice: "₹1199",
     bannerColor: "#FCE2D8",
+    languageId: "c",
   },
   {
     icon: FaCode,
@@ -47,6 +49,7 @@ const BootcampData: Bootcamp[] = [
     price: "₹999",
     originalPrice: "₹1399",
     bannerColor: "#D7FBED",
+    languageId: "cpp",
   },
   {
     icon: FaJava,
@@ -58,6 +61,7 @@ const BootcampData: Bootcamp[] = [
     price: "₹1099",
     originalPrice: "₹1699",
     bannerColor: "#EBEBEB",
+    languageId: "java",
   },
   {
     icon: FaHtml5,
@@ -69,6 +73,7 @@ const BootcampData: Bootcamp[] = [
     price: "₹1199",
     originalPrice: "₹1999",
     bannerColor: "#F5E6CC",
+    languageId: "html-css",
   },
 ];
 

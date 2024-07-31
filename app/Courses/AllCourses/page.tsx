@@ -12,9 +12,12 @@ import CompanyCard from "../components/CompanyCard";
 
 const AllCourse: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [filter, setFilter] = useState<{ category: string; value: string }>({
-    category: "",
-    value: "",
+  const [filters, setFilters] = useState<{ [key: string]: string[] }>({
+    Level: [],
+    languageId: [],
+    topicId: [],
+    companyId: [],
+    category: [],
   });
   const [selectedTab, setSelectedTab] = useState<string>("AllCourses");
 
@@ -24,35 +27,52 @@ const AllCourse: React.FC = () => {
   };
 
   // Function to handle filter change
-  const handleFilterChange = (category: string, value: string) => {
-    setFilter({ category, value });
-    setSelectedTab(""); // Deselect the tab when a filter is applied
+  const handleFilterChange = (
+    category: string,
+    value: string,
+    isActive: boolean
+  ) => {
+    setFilters((prevFilters) => {
+      const updatedFilters = { ...prevFilters };
+      if (isActive) {
+        if (!updatedFilters[category].includes(value)) {
+          updatedFilters[category].push(value);
+        }
+      } else {
+        updatedFilters[category] = updatedFilters[category].filter(
+          (item) => item !== value
+        );
+      }
+      return updatedFilters;
+    });
   };
 
   // Function to handle tab change
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab);
-    if (tab === "AllCourses") {
-      setFilter({ category: "", value: "" }); // Reset filters when All Courses tab is clicked
-    }
+    setFilters({
+      Level: [],
+      languageId: [],
+      topicId: [],
+      companyId: [],
+      category: [],
+    }); // Reset filters when a new tab is clicked
   };
 
-  // Filter courses based on search term and selected filter
+  // Filter courses based on search term and selected filters
   const filteredCourses = coursesData.filter((course: Course) => {
     const matchesSearch = course.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    let matchesFilter = true;
-    if (filter.category === "Level") {
-      matchesFilter = course.Level === filter.value;
-    } else if (filter.category === "languageId") {
-      matchesFilter = course.languageId === filter.value;
-    } else if (filter.category === "topicId") {
-      matchesFilter = course.topicId === filter.value;
-    }
+    const matchesFilters = Object.entries(filters).every(
+      ([category, values]) => {
+        if (values.length === 0) return true;
+        return values.includes(course[category as keyof Course] as string);
+      }
+    );
 
-    return matchesSearch && matchesFilter;
+    return matchesSearch && matchesFilters;
   });
 
   const filteredBootcamps = BootcampData.filter((bootcamp: Bootcamp) => {
@@ -60,8 +80,14 @@ const AllCourse: React.FC = () => {
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    // You can add similar filtering for bootcamps if needed
-    return matchesSearch;
+    const matchesFilters = Object.entries(filters).every(
+      ([category, values]) => {
+        if (values.length === 0) return true;
+        return values.includes(bootcamp[category as keyof Bootcamp] as string);
+      }
+    );
+
+    return matchesSearch && matchesFilters;
   });
 
   const filteredCompanies = CompanyData.filter((company: Company) => {
@@ -69,20 +95,49 @@ const AllCourse: React.FC = () => {
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    // You can add similar filtering for companies if needed
-    return matchesSearch;
+    const matchesFilters = Object.entries(filters).every(
+      ([category, values]) => {
+        if (values.length === 0) return true;
+        return values.includes(company[category as keyof Company] as string);
+      }
+    );
+
+    return matchesSearch && matchesFilters;
   });
+
+  const getTitle = () => {
+    switch (selectedTab) {
+      case "AllBootcamps":
+        return "All Bootcamps";
+      case "CompanySpecific":
+        return "Company Specific";
+      default:
+        return "All Courses";
+    }
+  };
+
+  const getPlaceholder = () => {
+    switch (selectedTab) {
+      case "AllBootcamps":
+        return "Search Bootcamps";
+      case "CompanySpecific":
+        return "Search Companies";
+      case "AllCourses":
+      default:
+        return "Search Courses";
+    }
+  };
 
   return (
     <div className={styles.container}>
-      <SideBar onFilterChange={handleFilterChange} />
+      <SideBar onFilterChange={handleFilterChange} selectedTab={selectedTab} />
       <div className={styles.mainContent}>
-        <h1 className={styles.title}>All Courses</h1>
+        <h1 className={styles.title}>{getTitle()}</h1>
         <div className={styles.searchContainer}>
           <IoIosSearch className={styles.searchIcon} />
           <input
             type="text"
-            placeholder="Search Course"
+            placeholder={getPlaceholder()}
             className={styles.searchBox}
             value={searchTerm}
             onChange={handleInputChange}

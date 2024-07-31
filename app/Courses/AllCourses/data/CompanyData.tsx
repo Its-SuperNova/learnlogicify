@@ -1,12 +1,13 @@
 import Accenture from "../../components/svg/Accenture";
 import AccentureMobile from "../../components/svg/AccentureMobile";
 import Capgemini from "../../components/svg/Capgemini";
-import TCSNinja from "../../components/svg/TcsNinja"
+import TCSNinja from "../../components/svg/TcsNinja";
 import Amcat from "../../components/svg/Amcat";
 import Cocubes from "../../components/svg/Cocubes";
 import InfyTQ from "../../components/svg/InfyTQ";
 import TCSCodevita from "../../components/svg/TcsCodevita";
 import CTSGenc from "../../components/svg/CTSGenc";
+
 export interface Company {
   title: string;
   desc: string;
@@ -16,6 +17,8 @@ export interface Company {
   bannerColor: string;
   desktopImage: JSX.Element;
   mobileImage: JSX.Element;
+  companyId: string;
+  category: string;
 }
 
 const CompanyData: Company[] = [
@@ -28,6 +31,8 @@ const CompanyData: Company[] = [
     bannerColor: "#F8FBD7",
     desktopImage: <Accenture />,
     mobileImage: <AccentureMobile />,
+    companyId: "accenture",
+    category: "service-based",
   },
   {
     title: "Capgemini Mock Test Series",
@@ -38,6 +43,8 @@ const CompanyData: Company[] = [
     bannerColor: "#CCFFF6",
     desktopImage: <Capgemini />,
     mobileImage: <Capgemini />,
+    companyId: "capgemini",
+    category: "service-based",
   },
   {
     title: "TCS Ninja Test Series",
@@ -48,6 +55,8 @@ const CompanyData: Company[] = [
     bannerColor: "#D8D9FF",
     desktopImage: <TCSNinja />,
     mobileImage: <TCSNinja />,
+    companyId: "tcs-ninja",
+    category: "service-based",
   },
   {
     title: "Amcat Mock Test Series",
@@ -58,6 +67,8 @@ const CompanyData: Company[] = [
     bannerColor: "#FBDDCE",
     desktopImage: <Amcat />,
     mobileImage: <Amcat />,
+    companyId: "amcat",
+    category: "service-based",
   },
   {
     title: "Cocubes Mock Test",
@@ -68,6 +79,8 @@ const CompanyData: Company[] = [
     bannerColor: "#FFC6F2",
     desktopImage: <Cocubes />,
     mobileImage: <Cocubes />,
+    companyId: "cocubes",
+    category: "service-based",
   },
   {
     title: "InfyTQ Mock Test Series",
@@ -78,6 +91,8 @@ const CompanyData: Company[] = [
     bannerColor: "#E1F4FE",
     desktopImage: <InfyTQ />,
     mobileImage: <InfyTQ />,
+    companyId: "infytq",
+    category: "product-based",
   },
   {
     title: "TCS Codevita",
@@ -88,6 +103,8 @@ const CompanyData: Company[] = [
     bannerColor: "#D7FBED",
     desktopImage: <TCSCodevita />,
     mobileImage: <TCSCodevita />,
+    companyId: "tcs-codevita",
+    category: "product-based",
   },
   {
     title: "CTS Genc Mock Test Series",
@@ -98,6 +115,8 @@ const CompanyData: Company[] = [
     bannerColor: "#EBEBEB",
     desktopImage: <CTSGenc />,
     mobileImage: <CTSGenc />,
+    companyId: "cts-genc",
+    category: "service-based",
   },
 ];
 
