@@ -24,11 +24,16 @@ const CompanyCard: React.FC<Props> = ({
   desktopImage,
   mobileImage,
 }) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 512px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 550px)" });
   const isTablet = useMediaQuery({
-    query: "(min-width: 700px) and (max-width: 830px)",
+    query: "(min-width: 700px) and (max-width: 890px)",
   });
-
+  const isTab = useMediaQuery({
+    query: "(min-width: 1195px) and (max-width: 1420px)",
+  });
+  const isBigScreen = useMediaQuery({
+    query: "(max-width: 1951px) and (min-width:1525px)",
+  });
   return (
     <div className={styles.card} style={{ backgroundColor: bannerColor }}>
       <div className={styles.left}>
@@ -56,7 +61,7 @@ const CompanyCard: React.FC<Props> = ({
         </div>
       </div>
       <div className={styles.right}>
-        {isMobile || isTablet ? mobileImage : desktopImage}
+        {isMobile || isTablet || isTab || isBigScreen? mobileImage : desktopImage}
       </div>
     </div>
   );

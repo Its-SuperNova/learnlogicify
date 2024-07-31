@@ -87,7 +87,7 @@ const CompanyData: Company[] = [
     originalPrice: "₹1499",
     bannerColor: "#D7FBED",
     desktopImage: <TCSCodevita />,
-    mobileImage: <AccentureMobile />,
+    mobileImage: <TCSCodevita />,
   },
   {
     title: "CTS Genc Mock Test Series",
