@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
+
 const Header = () => {
   return (
     <div className={styles.nav}>
@@ -22,16 +23,13 @@ const Header = () => {
         <li className={styles.gradientText}>Courses</li>
         <div className={styles.dropdownContent}>
           <li>
-            <Link href="/Courses">All Courses</Link>
+            <Link href="/Courses?tab=AllCourses">All Courses</Link>
           </li>
           <li>
-            <Link href="/Courses/AllBootcamps">All Bootcamps</Link>
+            <Link href="/Courses?tab=AllBootcamps">All Bootcamps</Link>
           </li>
           <li>
-            <Link href="/Courses/CompanySpecific">Company Specific</Link>
-          </li>
-          <li>
-            <Link href="/Courses/AptitudeCourses">Aptitude Courses</Link>
+            <Link href="/Courses?tab=CompanySpecific">Company Specific</Link>
           </li>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { MdSlowMotionVideo } from "react-icons/md";
 import { FaRegRectangleList } from "react-icons/fa6";
+
 interface Props {
   url: string;
   Level: string;
@@ -35,6 +36,7 @@ const Card = (props: Props) => {
   } = props;
 
   return (
+    <Link href={"/pages/CoursePage"}>
       <div className={styles.card}>
         <div className={styles.banner} style={{ backgroundColor: bannerColor }}>
           <div className={styles.Header}>
@@ -82,6 +84,7 @@ const Card = (props: Props) => {
           </div>
         </div>
       </div>
+    </Link>
   );
 };
 

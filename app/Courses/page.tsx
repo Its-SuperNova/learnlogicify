@@ -1,17 +1,18 @@
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { IoIosSearch } from "react-icons/io"; // Import the IoIosSearch icon
 import styles from "./styles.module.css";
-import Card from "./components/CourseCard";//"../components/CourseCard";
+import Card from "./components/CourseCard";
 import coursesData, { Course } from "./data/courseData";
 import BootcampData, { Bootcamp } from "./data/bootcampData";
 import CompanyData, { Company } from "./data/CompanyData";
 import SideBar from "./components/SideBar";
 import BootcampCard from "./components/BootcampCard";
 import CompanyCard from "./components/CompanyCard";
-import Link from "next/link";
 
 const AllCourse: React.FC = () => {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({
     Level: [],
@@ -21,6 +22,14 @@ const AllCourse: React.FC = () => {
     category: [],
   });
   const [selectedTab, setSelectedTab] = useState<string>("AllCourses");
+
+  // Set the selected tab based on the query parameter
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab) {
+      setSelectedTab(tab);
+    }
+  }, [searchParams]);
 
   // Function to handle search input change
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

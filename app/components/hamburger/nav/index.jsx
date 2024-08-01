@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import styles from './style.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -61,10 +61,9 @@ export default function Index() {
           <AnimatePresence>
             {coursesSubMenuOpen && (
               <motion.div className={styles.subMenu} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }}>
-                <Link href="/Courses/AllCourses">All Courses</Link>
-                <Link href="/Courses/AllBootcamps">All Bootcamps</Link>
-                <Link href="/Courses/CompanySpecific">Company Specific</Link>
-                <Link href="/Courses/AptitudeCourses">Aptitude Courses</Link>
+                <Link href="/Courses?tab=AllCourses">All Courses</Link>
+                <Link href="/Courses?tab=AllBootcamps">All Bootcamps</Link>
+                <Link href="/Courses?tab=CompanySpecific">Company Specific</Link>
               </motion.div>
             )}
           </AnimatePresence>
