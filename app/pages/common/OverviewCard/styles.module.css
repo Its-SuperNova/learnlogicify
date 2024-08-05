@@ -1,0 +1,144 @@
+.card{
+    width: 350px;
+    height: 480px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 20px;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.banner{
+    width:100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #E2D8FC;
+    padding: 20px;
+}
+.content{
+    height: 100px;
+    width: 100%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 6px;
+}
+.stats{
+    padding-top: 5px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+.sicon{
+    display: flex;
+    color: rgb(100, 100, 100);
+    align-items: end;
+}
+.list p{
+    color: rgb(100, 100, 100);
+    font-size: 18px;
+}
+
+.content {
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 3px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+.BuyBtn{
+    display: flex;
+    padding: 7px;
+    padding-left: 22px;
+    padding-right: 22px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border: 1px solid;
+}
+.EnqBtn {
+    display: flex;
+    padding: 7px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border: 1px solid;
+}
+
+.offer {
+    width: 52px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    padding-top: 1px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #A259FF;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.offprice {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.originalPrice {
+    margin-top: 2px;
+    color: rgb(157, 157, 157);
+    font-size: 14px;
+}

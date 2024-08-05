@@ -1,0 +1,143 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #868686;
+}
+
+.line {
+    width: 1px;
+    height: 20px;
+    background-color: #868686;
+}
+
+.content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    height: 100vh;
+}
+
+.SyllabusArea {
+    height: 100%;
+    width: 70%;
+}
+
+.right {
+    height: 100%;
+    width: 30%;
+}
+
+.list {
+    width: 100%;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    transition: height 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.listRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.expanded {
+    height: auto;
+}
+
+.icon {
+    height: 70px;
+    width: 79px;
+    background-color: #DCE2FD;
+    border-radius: 10px;
+    color: #82A1FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lisContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.listStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.module {
+    color: blue;
+    font-weight: 500;
+}
+
+.topic {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.DropdownIcon {
+    color: blue;
+    cursor: pointer;
+}
+
+.dropdownContent {
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid rgb(167, 167, 167);
+    margin-top: 10px;
+}
+
+.dropdownContent ul {
+    padding-left: 20px;
+}
+
+.dropdownContent li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+.why{
+    margin-top: 20px;
+    padding: 10px;
+}
+.tit{
+    font-size: 24px;
+    font-weight: 600;
+}

@@ -1,11 +1,18 @@
 import React from 'react'
 import styles from './styles.module.css';
+import Hero from './components/Hero'
+import Header from '@/app/components/common/Header';
+import Syllabus from './components/Syllabus';
 const CoursePage = () => {
   return (
-    <div className={styles.main}>
-      
-    </div>
-  )
+    <>
+      <Header />
+      <div className={styles.main}>
+        <Hero />
+        <Syllabus />
+      </div>
+    </>
+  );
 }
 
 export default CoursePage;
