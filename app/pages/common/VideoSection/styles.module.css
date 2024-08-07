@@ -2,19 +2,22 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    height: 100%;
+    width: 100%;
+    padding-top: 56.25%;
 }
 
 .thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 480px;
     cursor: pointer;
-    position: relative;
 }
 
 .playButton {
@@ -37,8 +40,11 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
 }
-@media screen and (max-width: 1400px) {
-    .thumbnail {
-        height: 675px;
-    }
+
+.videoWrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

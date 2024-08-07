@@ -70,8 +70,10 @@ const Syllabus: React.FC = () => {
           })}
         </div>
         <div className={styles.right}>
-          <Quotes />
-          <Probanner/>
+          <div className={styles.cardContainer}>
+            <Quotes />
+            <Probanner />
+          </div>
           <div className={styles.why}>
             <div className={styles.tit}>
               Why should take this Python course?

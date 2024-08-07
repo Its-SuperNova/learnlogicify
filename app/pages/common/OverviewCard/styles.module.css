@@ -1,7 +1,7 @@
 .card{
     width: 350px;
     height: 480px;
-    border: 1px solid rgb(210, 210, 210);
+    border: 1px solid rgb(190, 190, 190);
     border-radius: 20px;
     padding: 10px;
     padding-bottom: 0px;
@@ -36,12 +36,17 @@
 }
 .title{
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 6px;
 }
 .stats{
     padding-top: 5px;
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.left,.right{
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -56,6 +61,7 @@
     display: flex;
     color: rgb(100, 100, 100);
     align-items: end;
+
 }
 .list p{
     color: rgb(100, 100, 100);
@@ -143,6 +149,51 @@
     font-size: 14px;
 }
 
-@media screen and (max-width: 1400px) {
-    
+@media screen and (max-width: 920px) {
+    .card{
+        width: 100%;
+        max-width: 720px;
+        height: 100%;
+    }
+    .banner{
+        padding-bottom: 40px;
+    }
+    .stats{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 770px) {
+    .card {
+        width: 100%;
+        max-width: 720px;
+        height: 100%;
+    }
+
+    .banner {
+        padding-bottom: 40px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .title{
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 6px;
+    }
+    .list p{
+        color: rgb(100, 100, 100);
+        font-size: 16px;
+    }
+    .offprice {
+    font-size: 20px;
+    }
+    .originalPrice {
+        margin-top: 4px;
+        font-size: 12px;
+    }
 }

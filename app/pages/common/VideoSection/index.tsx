@@ -15,8 +15,6 @@ interface VideoProps {
 
 const Video: React.FC<VideoProps> = ({
   src,
-  width = "100%",
-  height = "100%",
   controls = true,
   autoPlay = false,
   loop = false,
@@ -38,7 +36,7 @@ const Video: React.FC<VideoProps> = ({
   };
 
   return (
-    <div className={styles.videoWrapper} style={{ width, height }}>
+    <div className={styles.videoWrapper}>
       {!isPlaying && (
         <div
           className={styles.thumbnail}
@@ -53,14 +51,11 @@ const Video: React.FC<VideoProps> = ({
         <video
           ref={videoRef}
           src={src}
-          width="100%"
-          height="480px"
           controls={controls}
           autoPlay={autoPlay}
           loop={loop}
           muted={muted}
           onEnded={handleEnded}
-          style={{ display: "block", maxWidth: "100%" }}
         />
       )}
     </div>

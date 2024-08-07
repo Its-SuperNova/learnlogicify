@@ -21,68 +21,72 @@ const overview = () => {
           </div>
         </div>
         <div className={styles.stats}>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <BiSolidBarChartAlt2 size={22} />
+          <div className={styles.left}>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <BiSolidBarChartAlt2 size={22} />
+              </div>
+              <div>
+                <p>Beginner</p>
+              </div>
             </div>
-            <div>
-              <p>Beginner</p>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <IoPlayCircleOutline size={22} />
+              </div>
+              <div>
+                <p>12 hours of HD video</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <IoPlayCircleOutline size={22} />
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <FaBook size={18} />
+              </div>
+              <div>
+                <p>20 topics</p>
+              </div>
             </div>
-            <div>
-              <p>12 hours of HD video</p>
-            </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <FaBook size={18} />
-            </div>
-            <div>
-              <p>20 topics</p>
-            </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <IoExtensionPuzzleSharp size={22} />
-            </div>
-            <div>
-              <p>200+ Problems</p>
-            </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <PiSidebarFill size={22} />
-            </div>
-            <div>
-              <p>Portal Access</p>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <IoExtensionPuzzleSharp size={22} />
+              </div>
+              <div>
+                <p>200+ Problems</p>
+              </div>
             </div>
           </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <FaClosedCaptioning size={20} />
+          <div className={styles.right}>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <PiSidebarFill size={22} />
+              </div>
+              <div>
+                <p>Portal Access</p>
+              </div>
             </div>
-            <div>
-              <p>English Captions</p>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <FaClosedCaptioning size={20} />
+              </div>
+              <div>
+                <p>English Captions</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <PiCertificate size={22} />
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <PiCertificate size={22} />
+              </div>
+              <div>
+                <p>Certificate of completion</p>
+              </div>
             </div>
-            <div>
-              <p>Certificate of completion</p>
-            </div>
-          </div>
-          <div className={styles.list}>
-            <div className={styles.sicon}>
-              <MdOutlineAccessTimeFilled size={22} />
-            </div>
-            <div>
-              <p>6 Months</p>
+            <div className={styles.list}>
+              <div className={styles.sicon}>
+                <MdOutlineAccessTimeFilled size={22} />
+              </div>
+              <div>
+                <p>6 Months</p>
+              </div>
             </div>
           </div>
         </div>
