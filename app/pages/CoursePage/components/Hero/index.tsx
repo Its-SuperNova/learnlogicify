@@ -1,11 +1,16 @@
-import React from "react";
+"use client";
+import React, { Suspense } from "react";
 import styles from "./styles.module.css";
+import { useSearchParams } from "next/navigation"; // Import useSearchParams
 import { FaStar } from "react-icons/fa6";
 import Overview from "../../../common/OverviewCard";
 import Link from "next/link";
 import Video from "../../../common/VideoSection";
 
-const Hero = () => {
+const Courses = () => {
+  const searchParams = useSearchParams();
+  const courseId = searchParams.get("id");
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -112,4 +117,10 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+const CoursesPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Courses />
+  </Suspense>
+);
+
+export default CoursesPage;
