@@ -82,17 +82,17 @@ const Syllabus: React.FC = () => {
               </div>
               <div>
                 <br />
-                <b>Beginner-Friendly:</b> This course requires no prior
+                <b>Beginner-Friendly</b> This course requires no prior
                 programming experience, making it ideal for complete beginners.
                 <br />
                 <br />
-                <b>Comprehensive Learning:</b> You'll gain a solid foundation in
+                <b>Comprehensive Learning</b> You ll gain a solid foundation in
                 Python, covering all essential concepts from variables and data
                 types to control structures and functions.
                 <br />
                 <br />
-                <b>Practical Skills:</b> Learn through hands-on exercises and
-                real-world examples, ensuring you can apply Python programming
+                <b>Practical Skills</b> Learn through hands on exercises and
+                real world examples, ensuring you can apply Python programming
                 skills effectively in various domains.
               </div>
             </div>
