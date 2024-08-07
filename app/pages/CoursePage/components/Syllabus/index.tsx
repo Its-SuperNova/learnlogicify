@@ -5,7 +5,8 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { BiMessageSquareDots } from "react-icons/bi";
 import { syllabusData } from "./data/syllabusData";
 import Quotes from "./components/quotes";
-import Probanner from "./components/proBanner"
+import Probanner from "./components/proBanner";
+
 const Syllabus: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -84,8 +85,8 @@ const Syllabus: React.FC = () => {
               programming experience, making it ideal for complete beginners.
               <br />
               <br />
-              <b>Comprehensive Learning:</b>You'll gain a solid foundation in
-              Python, covering all essential concepts from variables and data
+              <b>Comprehensive Learning:</b> You&apos;ll gain a solid foundation
+              in Python, covering all essential concepts from variables and data
               types to control structures and functions.
               <br />
               <br />

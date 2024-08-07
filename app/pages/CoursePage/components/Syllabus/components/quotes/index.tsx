@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { RiDoubleQuotesL } from "react-icons/ri";
+
 const Quotes = () => {
   return (
     <div className={styles.container}>
@@ -9,8 +10,8 @@ const Quotes = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.quote}>
-          " Success is not the key to happiness. Happiness is the key to
-          success. If you love what you are doing, you will be successful. "
+          &quot;Success is not the key to happiness. Happiness is the key to
+          success. If you love what you are doing, you will be successful.&quot;
         </div>
         <div className={styles.name}>- Sachin Nandha Sabarish</div>
       </div>
