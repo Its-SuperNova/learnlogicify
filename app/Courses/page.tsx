@@ -1,5 +1,5 @@
-"use client";
-import React, { useState, ChangeEvent, useEffect } from "react";
+"use client"
+import React, { useState, ChangeEvent, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { IoIosSearch } from "react-icons/io"; // Import the IoIosSearch icon
 import styles from "./styles.module.css";
@@ -11,7 +11,7 @@ import SideBar from "./components/SideBar";
 import BootcampCard from "./components/BootcampCard";
 import CompanyCard from "./components/CompanyCard";
 
-const AllCourse: React.FC = () => {
+const AllCourseContent: React.FC = () => {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({
@@ -257,6 +257,14 @@ const AllCourse: React.FC = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const AllCourse: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AllCourseContent />
+    </Suspense>
   );
 };
 
