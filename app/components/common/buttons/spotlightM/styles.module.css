@@ -1,0 +1,40 @@
+/* styles.module.css */
+
+.buttonWrapper {
+    display: flex;
+    min-height: 140px;
+    align-items: center;
+    justify-content: start;
+}
+
+.button {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background-color: #8d22ff;
+}
+
+.span1 {
+    pointer-events: none;
+    position: relative;
+    z-index: 10;
+
+}
+
+.span2 {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background-color: #151617;
+}

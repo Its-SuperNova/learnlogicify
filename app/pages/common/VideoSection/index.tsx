@@ -1,37 +1,70 @@
-import React from "react";
-import styles from "./VideoSection.module.css";
+"use client";
+import React, { useState, useRef } from "react";
+import styles from "./styles.module.css";
 
-interface VideoSectionProps {
-  thumbnail: string;
-  videoSrc: string;
+interface VideoProps {
+  src: string;
+  width?: string | number;
+  height?: string | number;
+  controls?: boolean;
+  autoPlay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  poster?: string;
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({ thumbnail, videoSrc }) => {
+const Video: React.FC<VideoProps> = ({
+  src,
+  width = "100%",
+  height = "100%",
+  controls = true,
+  autoPlay = false,
+  loop = false,
+  muted = false,
+  poster,
+}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const handlePlay = () => {
-    const video = document.getElementById("video") as HTMLVideoElement;
-    video.play();
+    setIsPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
   };
 
   return (
-    <div className={styles.videoContainer}>
-      <video id="video" className={styles.video} controls poster={thumbnail}>
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className={styles.overlay} onClick={handlePlay}>
-        <div className={styles.playButton}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className={styles.playIcon}
-          >
-            <path d="M8 5v14l11-7z" />
-          </svg>
+    <div className={styles.videoWrapper} style={{ width, height }}>
+      {!isPlaying && (
+        <div
+          className={styles.thumbnail}
+          style={{ backgroundImage: `url(${poster})` }}
+        >
+          <button className={styles.playButton} onClick={handlePlay}>
+            &#9658;
+          </button>
         </div>
-      </div>
+      )}
+      {isPlaying && (
+        <video
+          ref={videoRef}
+          src={src}
+          width="100%"
+          height="480px"
+          controls={controls}
+          autoPlay={autoPlay}
+          loop={loop}
+          muted={muted}
+          onEnded={handleEnded}
+          style={{ display: "block", maxWidth: "100%" }}
+        />
+      )}
     </div>
   );
 };
 
-export default VideoSection;
+export default Video;

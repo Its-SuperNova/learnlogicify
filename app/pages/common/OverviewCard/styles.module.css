@@ -142,3 +142,7 @@
     color: rgb(157, 157, 157);
     font-size: 14px;
 }
+
+@media screen and (max-width: 1400px) {
+    
+}

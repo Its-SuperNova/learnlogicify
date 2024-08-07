@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./styles.module.css";
 import { FaStar } from "react-icons/fa6";
 import Overview from "../../../common/OverviewCard";
-import VideoSection from "../../../common/VideoSection";
 import Link from "next/link";
+import Video from "../../../common/VideoSection";
+
 const Hero = () => {
   return (
     <div className={styles.container}>
@@ -28,7 +29,12 @@ const Hero = () => {
         <div className={styles.overview}>
           <Overview />
         </div>
-        <div className={styles.video}></div>
+        <div className={styles.video}>
+          <Video
+            src="/website-intro (1).mp4"
+            poster="/images/thumbnail/image.png"
+          />
+        </div>
       </div>
       <div className={styles.about}>
         <div className={styles.AbtTitle}>About This Course</div>

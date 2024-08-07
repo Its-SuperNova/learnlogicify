@@ -1,49 +1,44 @@
-.videoContainer {
+.videoWrapper {
     position: relative;
-    width: 770px;
-    height: 480px;
-    border-radius: 20px;
     overflow: hidden;
-}
-
-.video {
-    width: 100%;
-    height: 100%;
     border-radius: 20px;
+    height: 100%;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.thumbnail {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 480px;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.overlay:hover {
-    background: rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
 .playButton {
-    width: 70px;
-    height: 70px;
-    background: white;
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255);
+    border: none;
     border-radius: 50%;
+    width: 80px;
+    height: 80px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    padding-left: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.playIcon {
-    width: 40px;
-    height: 40px;
-    fill: black;
+.playButton:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+@media screen and (max-width: 1400px) {
+    .thumbnail {
+        height: 675px;
+    }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.css";
 import { IoLogoPython } from "react-icons/io5";
 import Link from "next/link";
-
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { FaBook } from "react-icons/fa";

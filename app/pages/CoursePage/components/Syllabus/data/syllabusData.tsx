@@ -18,7 +18,7 @@ export const syllabusData: SyllabusModule[] = [
   {
     icon: FaCode,
     title: "Module 1",
-    subtitle: "Introduction to Computers and Programming",
+    subtitle: "Introduction to Computers",
     topics: [
       "Overview of computer systems",
       "The role of Programming Language",
