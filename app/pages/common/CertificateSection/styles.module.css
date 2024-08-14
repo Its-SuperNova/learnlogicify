@@ -1,0 +1,86 @@
+.container{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(193, 193, 193);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.certificate{
+    height: 100%;
+    width: 475px;
+}
+.image {
+    height: 100%;
+    width: 475px;
+    border-radius: 20px;
+}
+.content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: start;
+}
+.desc{
+    padding-right: 40px;
+    font-size: 18px;
+    color: gray;
+    line-height: 26px;
+}
+.btn{
+    background-color: #7000FF;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    width: 160px;
+    height: 44px;
+}
+.btn:hover{
+    background-color: #5e00da;
+}
+
+@media screen and (max-width:1300px) {
+    .container{
+        flex-direction: column;
+    }
+    .content{
+        width: 100%;
+        gap: 20px;
+    }
+    .certificate{
+        height: 100%;
+        width: 100%;
+    }
+    .image {
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+    }
+    .desc{
+        padding-right: 0px;
+    }
+}
+@media screen and (max-width:700px) {
+    .title{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .desc{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .btn{
+        width: 140px;
+        height: 38px;
+        font-size: 14px;
+    }
+}
