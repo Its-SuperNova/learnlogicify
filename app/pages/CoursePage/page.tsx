@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Header from "@/app/components/common/Header";
 import Syllabus from "./components/Syllabus";
 import CertificateSection from "../common/CertificateSection"
+import CertificateProcess from "./components/CertificationProcess"
 const CoursePage = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const CoursePage = () => {
           <Hero />
           <Syllabus />
           <CertificateSection />
+          <CertificateProcess />
         </div>
       </div>
     </>

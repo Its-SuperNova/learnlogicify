@@ -16,6 +16,7 @@ export interface Course {
   price: string;
   originalPrice: string;
   bannerColor: string;
+  available: boolean;  // New member added here
 }
 
 const coursesData: Course[] = [
@@ -33,6 +34,7 @@ const coursesData: Course[] = [
     price: "₹999",
     originalPrice: "₹1499",
     bannerColor: "#E2D8FC",
+    available: true,  // Only Basic Python is available
   },
   {
     url: "basic-c",
@@ -48,6 +50,7 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#FCE2D8",
+    available: true,  // Only Basic C is available
   },
   {
     url: "basic-cpp",
@@ -63,6 +66,7 @@ const coursesData: Course[] = [
     price: "₹999",
     originalPrice: "₹1499",
     bannerColor: "#D7FBED",
+    available: false,  // Set to false
   },
   {
     url: "basic-java",
@@ -78,6 +82,7 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#EBEBEB",
+    available: false,  // Set to false
   },
   {
     url: "data-structures-python",
@@ -93,6 +98,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1999",
     bannerColor: "#E1F4FE",
+    available: false,  // Set to false
   },
   {
     url: "data-structures-c",
@@ -108,6 +114,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1899",
     bannerColor: "#FFC6C6",
+    available: false,  // Set to false
   },
   {
     url: "data-structures-cpp",
@@ -123,6 +130,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1999",
     bannerColor: "#FEFFC6",
+    available: false,  // Set to false
   },
   {
     url: "data-structures-java",
@@ -138,6 +146,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1899",
     bannerColor: "#FFC6F2",
+    available: false,  // Set to false
   },
   {
     url: "basic-html-css",
@@ -153,6 +162,7 @@ const coursesData: Course[] = [
     price: "₹899",
     originalPrice: "₹1299",
     bannerColor: "#F5E6CC",
+    available: false,  // Set to false
   },
   {
     url: "javascript-essentials",
@@ -168,6 +178,7 @@ const coursesData: Course[] = [
     price: "₹1099",
     originalPrice: "₹1699",
     bannerColor: "#FFF3CC",
+    available: false,  // Set to false
   },
   {
     url: "algorithms-java",
@@ -183,6 +194,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
+    available: false,  // Set to false
   },
   {
     url: "algorithms-python",
@@ -198,6 +210,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
+    available: false,  // Set to false
   },
   {
     url: "algorithms-c",
@@ -213,6 +226,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
+    available: false,  // Set to false
   },
   {
     url: "algorithms-cpp",
@@ -228,6 +242,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
+    available: false,  // Set to false
   },
   {
     url: "advanced-tree-algorithms-java",
@@ -243,6 +258,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
+    available: false,  // Set to false
   },
   {
     url: "graph-theory-cpp",
@@ -258,6 +274,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
+    available: false,  // Set to false
   },
   {
     url: "graph-tree-data-structures-java",
@@ -273,6 +290,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
+    available: false,  // Set to false
   },
   {
     url: "advanced-dbms",
@@ -288,6 +306,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
+    available: false,  // Set to false
   },
   {
     url: "basic-dbms",
@@ -303,6 +322,7 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#FCE2D8",
+    available: false,  // Set to false
   },
   {
     url: "intermediate-dbms",
@@ -318,6 +338,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
+    available: false,  // Set to false
   },
 ];
 

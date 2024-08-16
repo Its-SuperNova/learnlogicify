@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, ChangeEvent, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { IoIosSearch } from "react-icons/io"; // Import the IoIosSearch icon
@@ -22,6 +22,7 @@ const AllCourseContent: React.FC = () => {
     category: [],
   });
   const [selectedTab, setSelectedTab] = useState<string>("AllCourses");
+  const [showOnlyAvailable, setShowOnlyAvailable] = useState<boolean>(false); // New state for the toggle button
 
   // Set the selected tab based on the query parameter
   useEffect(() => {
@@ -82,7 +83,10 @@ const AllCourseContent: React.FC = () => {
       }
     );
 
-    return matchesSearch && matchesFilters;
+    // Apply the available filter
+    const matchesAvailability = !showOnlyAvailable || course.available;
+
+    return matchesSearch && matchesFilters && matchesAvailability;
   });
 
   const filteredBootcamps = BootcampData.filter((bootcamp: Bootcamp) => {
@@ -178,6 +182,14 @@ const AllCourseContent: React.FC = () => {
           >
             Company Specific
           </button>
+          <div className={styles.toggleButton}>
+            <input
+              type="checkbox"
+              id="toggle"
+              onChange={() => setShowOnlyAvailable(!showOnlyAvailable)}
+            />
+            <label htmlFor="toggle" className={styles.switch}></label>
+          </div>
         </div>
 
         {selectedTab === "AllCourses" && (
@@ -196,6 +208,7 @@ const AllCourseContent: React.FC = () => {
                 price={course.price}
                 originalPrice={course.originalPrice}
                 bannerColor={course.bannerColor}
+                available={course.available}
               />
             ))}
           </div>
@@ -216,6 +229,7 @@ const AllCourseContent: React.FC = () => {
                 price={course.price}
                 originalPrice={course.originalPrice}
                 bannerColor={course.bannerColor}
+                available={course.available}
               />
             ))}
           </div>

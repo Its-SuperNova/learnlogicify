@@ -62,7 +62,11 @@
     padding: 5px 5px 5px 40px;
     background-color: #d9e6ff;
 }
-
+.headcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
 .tabContainer {
     display: flex;
     margin-bottom: 20px;
@@ -93,7 +97,50 @@
     background-color: #f9f9f9;
     border-radius: 10px;
 }
+/* Add these styles to your existing CSS */
+.toggleButton {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    margin-top: 5px;
+}
 
+.toggleButton input[type="checkbox"] {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+input:checked+.switch {
+    background-color: #96d7ff;
+}
+
+input:checked+.switch::before {
+    transform: translateX(30px);
+}
+
+/* Ensure the rest of your CSS follows as usual... */
 @media screen and (max-width: 700px) {
     .container {
         padding-right: 25px;

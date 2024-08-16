@@ -1,5 +1,133 @@
-.container{
-    height: 400px;
-    background-color: lightgrey;
-    padding: 20px;
+.container {
+    height: auto;
+    background-color: #1c1d20;
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 300;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.bottom {
+    width: 100%;
+    height: 45px;
+    background-color: #323335;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(211, 211, 211);
+    font-weight: 300;
+    gap: 5px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.bold {
+    font-weight: 500;
+    color: #9263ff;
+}
+
+.section1 {
+    max-width: 250px;
+}
+.section2{
+    padding-left: 40px;
+}
+.section2,
+.section3,
+.section4 {
+    margin-top: 25px;
+    min-width: 230px;
+}
+.section4{
+    border-right: 1px solid rgb(120, 120, 120);
+}
+.section5 {
+    margin-top: 25px;
+    max-width: 310px;
+    padding-left: 10px;
+}
+
+.section1 h4,
+.section2 h4,
+.section3 h4,
+.section4 h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.section1 ul,
+.section2 ul,
+.section3 ul,
+.section4 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section1 ul li,
+.section2 ul li,
+.section3 ul li,
+.section4 ul li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.section1 ul li::before,
+.section2 ul li::before,
+.section3 ul li::before,
+.section4 ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.section1 ul li a,
+.section2 ul li a,
+.section3 ul li a,
+.section4 ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.section1 ul li a:hover,
+.section2 ul li a:hover,
+.section3 ul li a:hover,
+.section4 ul li a:hover {
+    text-decoration: underline;
+}
+
+.contactItem {
+    display: flex;
+    align-items: top;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    margin-top: 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .top {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
 }

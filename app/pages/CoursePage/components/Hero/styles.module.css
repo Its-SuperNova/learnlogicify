@@ -54,7 +54,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 40px;
 }
 .AbtTitle{
     font-weight: 600;
