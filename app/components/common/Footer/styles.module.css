@@ -7,7 +7,6 @@
     color: white;
     font-weight: 300;
     justify-content: space-between;
-    gap: 50px;
 }
 
 .bottom {
@@ -129,5 +128,56 @@
 @media screen and (max-width: 768px) {
     .top {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
+@media screen and (max-width: 1470px) {
+    .section4{
+        border-right: none;
+    }
+    .section5 {
+        padding-left: 0px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section2{
+        margin-top: 0px;
+        padding-top: 20px;
+        padding-left: 0px;
+        border-top: 1px solid rgb(107, 107, 107);
+    }
+    .container {
+        padding: 30px 50px;
+    }
+    .section2,
+    .section3,
+    .section4 {
+        margin-top: 0px;
+    }
+
+    .section5{
+        margin-top: 0px;
+        border-top: 1px solid rgb(107, 107, 107);
+        padding-top: 30px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .bottom {
+            height: 40px;
+            font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .bottom {
+        height: 40px;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .bottom {
+        height: 40px;
+        font-size: 11px;
     }
 }
