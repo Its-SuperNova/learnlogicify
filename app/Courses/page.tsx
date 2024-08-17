@@ -1,9 +1,12 @@
 "use client";
 import React, { useState, ChangeEvent, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { IoIosSearch } from "react-icons/io"; // Import the IoIosSearch icon
+import { IoIosSearch } from "react-icons/io";
 import styles from "./styles.module.css";
 import Card from "./components/CourseCard";
+import SkeletonCourseCard from "./components/skeletonCourseCard";
+import SkeletonBootcampCard from "./components/skeletonBootcampCard";
+import SkeletonCompanyCard from "./components/skeletonCompanyCard";
 import coursesData, { Course } from "./data/courseData";
 import BootcampData, { Bootcamp } from "./data/bootcampData";
 import CompanyData, { Company } from "./data/CompanyData";
@@ -22,9 +25,9 @@ const AllCourseContent: React.FC = () => {
     category: [],
   });
   const [selectedTab, setSelectedTab] = useState<string>("AllCourses");
-  const [showOnlyAvailable, setShowOnlyAvailable] = useState<boolean>(false); // New state for the toggle button
+  const [loading, setLoading] = useState<boolean>(true); // State for loading
+  const [showOnlyAvailable, setShowOnlyAvailable] = useState<boolean>(false);
 
-  // Set the selected tab based on the query parameter
   useEffect(() => {
     const tab = searchParams.get("tab");
     if (tab) {
@@ -32,12 +35,20 @@ const AllCourseContent: React.FC = () => {
     }
   }, [searchParams]);
 
-  // Function to handle search input change
+  // Simulate loading effect
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // 1.5 seconds for the loading effect
+
+    return () => clearTimeout(timer);
+  }, [selectedTab, filters]);
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
-  // Function to handle filter change
   const handleFilterChange = (
     category: string,
     value: string,
@@ -58,7 +69,6 @@ const AllCourseContent: React.FC = () => {
     });
   };
 
-  // Function to handle tab change
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab);
     setFilters({
@@ -70,7 +80,6 @@ const AllCourseContent: React.FC = () => {
     }); // Reset filters when a new tab is clicked
   };
 
-  // Filter courses based on search term and selected filters
   const filteredCourses = coursesData.filter((course: Course) => {
     const matchesSearch = course.title
       .toLowerCase()
@@ -83,7 +92,6 @@ const AllCourseContent: React.FC = () => {
       }
     );
 
-    // Apply the available filter
     const matchesAvailability = !showOnlyAvailable || course.available;
 
     return matchesSearch && matchesFilters && matchesAvailability;
@@ -192,82 +200,95 @@ const AllCourseContent: React.FC = () => {
           </div>
         </div>
 
-        {selectedTab === "AllCourses" && (
-          <div className={styles.grid}>
-            {filteredCourses.map((course, index) => (
-              <Card
-                url={course.url}
-                key={index}
-                Level={course.Level}
-                icon={course.icon} // Pass the icon component
-                title={course.title}
-                topics={course.topics}
-                videos={course.videos}
-                desc={course.desc}
-                offer={course.offer}
-                price={course.price}
-                originalPrice={course.originalPrice}
-                bannerColor={course.bannerColor}
-                available={course.available}
-              />
-            ))}
-          </div>
-        )}
-        {selectedTab === "" && (
-          <div className={styles.grid}>
-            {filteredCourses.map((course, index) => (
-              <Card
-                url={course.url}
-                key={index}
-                Level={course.Level}
-                icon={course.icon} // Pass the icon component
-                title={course.title}
-                topics={course.topics}
-                videos={course.videos}
-                desc={course.desc}
-                offer={course.offer}
-                price={course.price}
-                originalPrice={course.originalPrice}
-                bannerColor={course.bannerColor}
-                available={course.available}
-              />
-            ))}
-          </div>
-        )}
-        {selectedTab === "AllBootcamps" && (
-          <div className={styles.bootcampGrid}>
-            {filteredBootcamps.map((bootcamp, index) => (
-              <BootcampCard
-                key={index}
-                icon={bootcamp.icon} // Pass the icon component
-                title={bootcamp.title}
-                Problems={bootcamp.Problems}
-                Courses={bootcamp.Courses}
-                desc={bootcamp.desc}
-                offer={bootcamp.offer}
-                price={bootcamp.price}
-                originalPrice={bootcamp.originalPrice}
-                bannerColor={bootcamp.bannerColor}
-              />
-            ))}
-          </div>
-        )}
-        {selectedTab === "CompanySpecific" && (
-          <div className={styles.companyGrid}>
-            {filteredCompanies.map((company, index) => (
-              <CompanyCard
-                key={index}
-                title={company.title}
-                desc={company.desc}
-                offer={company.offer}
-                price={company.price}
-                originalPrice={company.originalPrice}
-                bannerColor={company.bannerColor}
-                desktopImage={company.desktopImage}
-                mobileImage={company.mobileImage}
-              />
-            ))}
-          </div>
+        {loading ? (
+          <>
+            {selectedTab === "AllCourses" && (
+              <div className={styles.grid}>
+                {Array(6)
+                  .fill(0)
+                  .map((_, index) => (
+                    <SkeletonCourseCard key={index} />
+                  ))}
+              </div>
+            )}
+            {selectedTab === "AllBootcamps" && (
+              <div className={styles.bootcampGrid}>
+                {Array(3)
+                  .fill(0)
+                  .map((_, index) => (
+                    <SkeletonBootcampCard key={index} />
+                  ))}
+              </div>
+            )}
+            {selectedTab === "CompanySpecific" && (
+              <div className={styles.companyGrid}>
+                {Array(3)
+                  .fill(0)
+                  .map((_, index) => (
+                    <SkeletonCompanyCard key={index} />
+                  ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            {selectedTab === "AllCourses" && (
+              <div className={styles.grid}>
+                {filteredCourses.map((course, index) => (
+                  <Card
+                    url={course.url}
+                    key={index}
+                    Level={course.Level}
+                    icon={course.icon}
+                    title={course.title}
+                    topics={course.topics}
+                    videos={course.videos}
+                    desc={course.desc}
+                    offer={course.offer}
+                    price={course.price}
+                    originalPrice={course.originalPrice}
+                    bannerColor={course.bannerColor}
+                    available={course.available}
+                  />
+                ))}
+              </div>
+            )}
+            {selectedTab === "AllBootcamps" && (
+              <div className={styles.bootcampGrid}>
+                {filteredBootcamps.map((bootcamp, index) => (
+                  <BootcampCard
+                    key={index}
+                    icon={bootcamp.icon}
+                    title={bootcamp.title}
+                    Problems={bootcamp.Problems}
+                    Courses={bootcamp.Courses}
+                    desc={bootcamp.desc}
+                    offer={bootcamp.offer}
+                    price={bootcamp.price}
+                    originalPrice={bootcamp.originalPrice}
+                    bannerColor={bootcamp.bannerColor}
+                  />
+                ))}
+              </div>
+            )}
+            {selectedTab === "CompanySpecific" && (
+              <div className={styles.companyGrid}>
+                {filteredCompanies.map((company, index) => (
+                  <CompanyCard
+                    key={index}
+                    title={company.title}
+                    desc={company.desc}
+                    offer={company.offer}
+                    price={company.price}
+                    originalPrice={company.originalPrice}
+                    bannerColor={company.bannerColor}
+                    desktopImage={company.desktopImage}
+                    mobileImage={company.mobileImage}
+                  />
+                ))}
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

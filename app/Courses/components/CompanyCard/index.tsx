@@ -29,7 +29,7 @@ const CompanyCard: React.FC<Props> = ({
     query: "(min-width: 700px) and (max-width: 890px)",
   });
   const isTab = useMediaQuery({
-    query: "(min-width: 1195px) and (max-width: 1400px)",
+    query: "(min-width: 1135px) and (max-width: 1400px)",
   });
   const isBigScreen = useMediaQuery({
     query: "(max-width: 1951px) and (min-width:1525px)",
