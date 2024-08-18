@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { FaCircle } from "react-icons/fa";
-import Link from "next/link";
 
 const Terms = () => {
   return (
     <div className={styles.termsContainer}>
       <div className={styles.section}>
         <div className={styles.titleContainer}>
-          <h3 className={styles.title}>Terms & Conditions</h3>
+          <h3 className={styles.title}>Terms &amp; Conditions</h3>
         </div>
         <div className={styles.lastUpdatedContainer}>
           <p className={styles.lastUpdated}>Last Updated: August 8, 2024</p>
@@ -23,15 +22,15 @@ const Terms = () => {
             terms and conditions. These terms outline the rules and guidelines
             for using our website and services. By accessing this site, you
             agree to be bound by these terms. Our goal is to provide you with a
-            seamless and enriching learning experience, but it’s essential to
-            follow these guidelines to ensure a safe and respectful environment
-            for all users. If you do not agree with any part of these terms, we
-            kindly ask that you refrain from using our website and services.
-            Your continued use of LearnLogicify signifies your acceptance of
-            these terms, and we appreciate your cooperation in helping us
-            maintain a positive learning community. We’re committed to
-            supporting you on your educational journey and look forward to being
-            part of your growth and success.
+            seamless and enriching learning experience, but it&apos;s essential
+            to follow these guidelines to ensure a safe and respectful
+            environment for all users. If you do not agree with any part of
+            these terms, we kindly ask that you refrain from using our website
+            and services. Your continued use of LearnLogicify signifies your
+            acceptance of these terms, and we appreciate your cooperation in
+            helping us maintain a positive learning community. We&apos;re
+            committed to supporting you on your educational journey and look
+            forward to being part of your growth and success.
           </p>
         </div>
       </div>
@@ -43,18 +42,19 @@ const Terms = () => {
         <div className={styles.paragraphContainer}>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> "<b>Company</b>", "<b>We</b>",
-              "<b>Us</b>", or "<b>Our</b>": Refers to LearnLogicify Technologies
-              LLP.
+              <FaCircle size={7} color="blue" /> &quot;<b>Company</b>&quot;,
+              &quot;<b>We</b>&quot;, &quot;<b>Us</b>&quot;, or &quot;<b>Our</b>
+              &quot;: Refers to LearnLogicify Technologies LLP.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> "<b>You</b>" or "<b>Your</b>":
-              Refers to the user or viewer of our website and services.
+              <FaCircle size={7} color="blue" /> &quot;<b>You</b>&quot; or
+              &quot;<b>Your</b>&quot;: Refers to the user or viewer of our
+              website and services.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> "<b>Services</b>": Refers to
-              any products, courses, bootcamps, and software offered through our
-              platform.
+              <FaCircle size={7} color="blue" /> &quot;<b>Services</b>&quot;:
+              Refers to any products, courses, bootcamps, and software offered
+              through our platform.
             </li>
           </ul>
         </div>
@@ -298,21 +298,21 @@ const Terms = () => {
             Coimbatore, Tamil Nadu - 641602
             <br />
             Email:{" "}
-            <Link
+            <a
               href="mailto:support@learnlogicify.com"
               className={styles.emailLink}
             >
               support@learnlogicify.com
-            </Link>
+            </a>
             <br />
             WhatsApp:{" "}
-            <Link
+            <a
               href="https://wa.me/919876543210"
               target="_blank"
               className={styles.phoneLink}
             >
               +91 98765 43210
-            </Link>
+            </a>
           </p>
         </div>
       </div>

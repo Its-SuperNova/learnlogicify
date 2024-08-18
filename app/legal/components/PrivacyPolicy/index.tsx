@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { FaCircle } from "react-icons/fa";
-import Link from "next/link";
 
 const Privacy = () => {
   return (
@@ -18,12 +17,13 @@ const Privacy = () => {
       <div className={styles.section}>
         <div className={styles.introContainer}>
           <p className={styles.introText}>
-            Welcome to LearnLogicify Technologies LLP ("Company," "We," "Us," or
-            "Our"). We are committed to protecting your privacy and ensuring a
-            secure experience on our website and while using our services. This
-            Privacy Policy explains how we collect, use, and protect your
-            information when you visit our website, enroll in our courses, or
-            engage with our services.
+            Welcome to LearnLogicify Technologies LLP (&quot;Company,&quot;
+            &quot;We,&quot; &quot;Us,&quot; or &quot;Our&quot;). We are
+            committed to protecting your privacy and ensuring a secure
+            experience on our website and while using our services. This Privacy
+            Policy explains how we collect, use, and protect your information
+            when you visit our website, enroll in our courses, or engage with
+            our services.
             <br />
             By accessing our website and utilizing our services, you agree to
             the terms of this Privacy Policy. If you do not agree with this
@@ -118,9 +118,9 @@ const Privacy = () => {
             We use cookies and similar tracking technologies to enhance your
             experience on our website. Cookies are small data files stored on
             your device that help us remember your preferences and improve our
-            website's performance. You can choose to disable cookies through
-            your browser settings, but doing so may affect your ability to
-            access certain features of our website.
+            website&apos;s performance. You can choose to disable cookies
+            through your browser settings, but doing so may affect your ability
+            to access certain features of our website.
           </p>
         </div>
       </div>
@@ -294,21 +294,21 @@ const Privacy = () => {
             Coimbatore, Tamil Nadu - 641602
             <br />
             Email:{" "}
-            <Link
+            <a
               href="mailto:support@learnlogicify.com"
               className={styles.emailLink}
             >
               support@learnlogicify.com
-            </Link>
+            </a>
             <br />
             WhatsApp:{" "}
-            <Link
+            <a
               href="https://wa.me/919876543210"
               target="_blank"
               className={styles.phoneLink}
             >
               +91 98765 43210
-            </Link>
+            </a>
           </p>
         </div>
       </div>
