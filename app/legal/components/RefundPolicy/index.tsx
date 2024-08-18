@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { FaCircle } from "react-icons/fa";
 
 const Refund = () => {
   return (
@@ -33,7 +32,7 @@ const Refund = () => {
         <div className={styles.paragraphContainer}>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Course Purchases:</b> Refunds are available within 7 days of
                 purchase if you have not accessed more than 10% of the course
@@ -41,7 +40,7 @@ const Refund = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Bootcamps and Special Programs:</b> Due to the nature of live
                 sessions and limited slots, refunds for bootcamps are available
@@ -49,7 +48,7 @@ const Refund = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Services:</b> Refunds for additional services (e.g., resume
                 review, mentorship) are processed on a case-by-case basis and
@@ -102,21 +101,21 @@ const Refund = () => {
         <div className={styles.paragraphContainer}>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Discounted Purchases:</b> Items purchased at a discount or as
                 part of a promotion are non-refundable.
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Digital Downloads:</b> Digital products like eBooks, study
                 guides, and templates are non-refundable once downloaded.
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Completed Services:</b> Once a service has been fully
                 rendered, it is non-refundable.

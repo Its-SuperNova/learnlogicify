@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { FaCircle } from "react-icons/fa";
 
 const Privacy = () => {
   return (
@@ -39,7 +38,7 @@ const Privacy = () => {
         <div className={styles.paragraphContainer}>
           <ul>
             <li>
-              <FaCircle size={13} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Personal Information: </b>
                 Includes your name, email address, phone number, postal address,
@@ -48,7 +47,7 @@ const Privacy = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Payment Information: </b>
                 Includes credit/debit card details, billing address, and
@@ -56,7 +55,7 @@ const Privacy = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={10} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Usage Data: </b> Includes information about how you interact
                 with our website, such as pages visited, time spent on the
@@ -64,7 +63,7 @@ const Privacy = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Technical Data: </b> Includes your IP address, browser type,
                 device type, and operating system.
@@ -84,23 +83,23 @@ const Privacy = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> To provide, maintain, and
+              <span className={styles.bullet}>●</span> To provide, maintain, and
               improve our services.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> To process your course
+              <span className={styles.bullet}>●</span> To process your course
               enrollment, transactions, and payments.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> To personalize your experience
-              and deliver content tailored to your interests.
+              <span className={styles.bullet}>●</span> To personalize your
+              experience and deliver content tailored to your interests.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> To communicate with you
+              <span className={styles.bullet}>●</span> To communicate with you
               regarding updates, promotions, or customer support.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> To monitor and prevent
+              <span className={styles.bullet}>●</span> To monitor and prevent
               fraudulent activity and ensure the integrity of our services.
             </li>
           </ul>
@@ -137,7 +136,7 @@ const Privacy = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={11} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Service Providers:</b> We may share your information with
                 trusted service providers who assist us in operating our
@@ -145,14 +144,14 @@ const Privacy = () => {
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Legal Requirements:</b> We may disclose your information if
                 required by law, regulation, or legal process.
               </p>
             </li>
             <li>
-              <FaCircle size={9} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Business Transfers:</b> If we undergo a merger, acquisition,
                 or asset sale, your information may be transferred as part of
@@ -189,28 +188,28 @@ const Privacy = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Access:</b> You can request access to the personal
                 information we hold about you.
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Correction:</b> You can request corrections if your
                 information is inaccurate or incomplete.
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Deletion:</b> You can request that we delete your personal
                 information, subject to certain legal obligations.
               </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" />{" "}
+              <span className={styles.bullet}>●</span>{" "}
               <p>
                 <b>Opt-Out:</b> You can opt out of receiving promotional
                 communications from us by following the unsubscribe link in our

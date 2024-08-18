@@ -5,3 +5,27 @@
     height: 100vh;
     padding: 50px 100px 100px 100px;
 }
+@media (max-width: 800px) {
+    .container {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (max-width: 500px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media (max-width: 400px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

@@ -1,29 +1,4 @@
-/* Custom Scrollbar Styles */
-.content::-webkit-scrollbar {
-    width: 14px;
-    height: 8px;
-}
-
-.content::-webkit-scrollbar-track {
-    background: #daecff;
-    border-radius: 10px;
-}
-
-.content::-webkit-scrollbar-thumb {
-    background-color: #0077ff;
-    border-radius: 10px;
-    border: 2px solid #daecff;
-    /* Adds padding around the thumb */
-}
-
-.content::-webkit-scrollbar-thumb:hover {
-    background-color: #005bb5;
-    /* Darker blue on hover */
-}
-
-.content::-webkit-scrollbar-corner {
-    background: #daecff;
-}
+/* General Container */
 .container {
     height: 100%;
     width: 100%;
@@ -33,19 +8,28 @@
     display: flex;
     flex-direction: row;
     padding: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Sidebar Tabs */
 .tabs {
     background-color: #daecff;
     border-radius: 20px;
     width: 325px;
     padding: 15px;
-    position: sticky;
-    top: 20px;
-    /* Adjust this value as per your layout */
+    position: absolute;
+    right: 0;
+    top: 0;
     height: 100%;
     max-height: 100vh;
-    /* Ensures it remains visible within the viewport */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+}
+
+.showSidebar {
+    transform: translateX(0);
 }
 
 .h2 {
@@ -99,8 +83,138 @@
     border-radius: 20px;
     margin-left: 20px;
     max-height: calc(100vh - 40px);
-    /* Adjusts according to the viewport */
     overflow-y: auto;
-        padding-bottom: 50px;
-    /* Allows scrolling for content */
+    padding-bottom: 50px;
+}
+
+/* Custom Scrollbar Styles */
+.content::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #daecff;
+    border-radius: 10px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #0077ff;
+    border-radius: 10px;
+    border: 2px solid #daecff;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background-color: #005bb5;
+}
+
+.content::-webkit-scrollbar-corner {
+    background: #daecff;
+}
+
+/* Hamburger Menu */
+.navIcon3 {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    /* Adjusted to move down */
+    right: 30px;
+    /* Adjusted to move left */
+    cursor: pointer;
+    z-index: 300;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.navIcon3 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    /* Thinner lines */
+    width: 100%;
+    background: #000;
+    /* Changed color to black */
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+.navIcon3 span:nth-child(1) {
+    top: 0px;
+}
+
+.navIcon3 span:nth-child(2),
+.navIcon3 span:nth-child(3) {
+    top: 8px;
+    /* Adjusted spacing between lines */
+}
+
+.navIcon3 span:nth-child(4) {
+    top: 16px;
+    /* Adjusted spacing between lines */
+}
+
+.navIcon3.open span:nth-child(1) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+}
+
+.navIcon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navIcon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.navIcon3.open span:nth-child(4) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+}
+
+/* Responsive Styling for Small Screens */
+@media (max-width: 1000px) {
+    .tabs {
+        position: absolute;
+        right: 0;
+        width: 325px;
+        height: 100%;
+        transform: translateX(100%);
+    }
+
+    .showSidebar {
+        transform: translateX(0);
+    }
+
+    .hamburgerMenu {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
 }

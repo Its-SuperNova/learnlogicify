@@ -3,16 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation"; // Updated import
 import styles from "./styles.module.css";
-import { LuFileSignature } from "react-icons/lu";
-import { GoShieldLock } from "react-icons/go";
-import { RiMoneyRupeeCircleLine } from "react-icons/ri";
 import Privacy from "../PrivacyPolicy";
 import Refund from "../RefundPolicy";
 import Terms from "../terms&Conditions";
 
 const LegalPoliciesBox = () => {
   const [activeTab, setActiveTab] = useState<string>("terms");
-  const searchParams = useSearchParams(); // Use useSearchParams instead of useRouter
+  const [showSidebar, setShowSidebar] = useState<boolean>(false); // State to toggle sidebar visibility
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const tab = searchParams.get("tab") as string;
@@ -34,9 +32,30 @@ const LegalPoliciesBox = () => {
     }
   };
 
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    if (window.innerWidth < 1000) {
+      setShowSidebar(false); // Close sidebar only on small screens
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.tabs}>
+      {/* Hamburger Menu for Small Screens */}
+      <div
+        className={`${styles.navIcon3} ${showSidebar ? styles.open : ""}`}
+        onClick={() => setShowSidebar(!showSidebar)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Sidebar with Tabs */}
+      <div
+        className={`${styles.tabs} ${showSidebar ? styles.showSidebar : ""}`}
+      >
         <div className={styles.header}>
           <h2 className={styles.h2}>Legal & Policies</h2>
         </div>
@@ -46,12 +65,9 @@ const LegalPoliciesBox = () => {
               className={`${styles.btn} ${
                 activeTab === "terms" ? styles.active : ""
               }`}
-              onClick={() => setActiveTab("terms")}
+              onClick={() => handleTabClick("terms")}
             >
               <div className={styles.btnContainer}>
-                <div className={styles.icon}>
-                  <LuFileSignature size={20} />
-                </div>
                 <div>
                   <p>Terms & Conditions</p>
                 </div>
@@ -63,12 +79,9 @@ const LegalPoliciesBox = () => {
               className={`${styles.btn} ${
                 activeTab === "privacy" ? styles.active : ""
               }`}
-              onClick={() => setActiveTab("privacy")}
+              onClick={() => handleTabClick("privacy")}
             >
               <div className={styles.btnContainer}>
-                <div className={styles.icon}>
-                  <GoShieldLock size={20} />
-                </div>
                 <div>
                   <p>Privacy Policy</p>
                 </div>
@@ -80,12 +93,9 @@ const LegalPoliciesBox = () => {
               className={`${styles.btn} ${
                 activeTab === "refund" ? styles.active : ""
               }`}
-              onClick={() => setActiveTab("refund")}
+              onClick={() => handleTabClick("refund")}
             >
               <div className={styles.btnContainer}>
-                <div className={styles.icon}>
-                  <RiMoneyRupeeCircleLine size={20} />
-                </div>
                 <div>
                   <p>Refund Policy</p>
                 </div>
@@ -94,6 +104,8 @@ const LegalPoliciesBox = () => {
           </div>
         </div>
       </div>
+
+      {/* Content Section */}
       <div className={styles.content}>{renderContent()}</div>
     </div>
   );

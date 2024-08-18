@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { FaCircle } from "react-icons/fa";
 
 const Terms = () => {
   return (
     <div className={styles.termsContainer}>
       <div className={styles.section}>
         <div className={styles.titleContainer}>
-          <h3 className={styles.title}>Terms &amp; Conditions</h3>
+          <h3 className={styles.title}>Terms & Conditions</h3>
         </div>
         <div className={styles.lastUpdatedContainer}>
           <p className={styles.lastUpdated}>Last Updated: August 8, 2024</p>
@@ -22,15 +21,15 @@ const Terms = () => {
             terms and conditions. These terms outline the rules and guidelines
             for using our website and services. By accessing this site, you
             agree to be bound by these terms. Our goal is to provide you with a
-            seamless and enriching learning experience, but it&apos;s essential
-            to follow these guidelines to ensure a safe and respectful
-            environment for all users. If you do not agree with any part of
-            these terms, we kindly ask that you refrain from using our website
-            and services. Your continued use of LearnLogicify signifies your
-            acceptance of these terms, and we appreciate your cooperation in
-            helping us maintain a positive learning community. We&apos;re
-            committed to supporting you on your educational journey and look
-            forward to being part of your growth and success.
+            seamless and enriching learning experience, but it’s essential to
+            follow these guidelines to ensure a safe and respectful environment
+            for all users. If you do not agree with any part of these terms, we
+            kindly ask that you refrain from using our website and services.
+            Your continued use of LearnLogicify signifies your acceptance of
+            these terms, and we appreciate your cooperation in helping us
+            maintain a positive learning community. We’re committed to
+            supporting you on your educational journey and look forward to being
+            part of your growth and success.
           </p>
         </div>
       </div>
@@ -42,25 +41,30 @@ const Terms = () => {
         <div className={styles.paragraphContainer}>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> &quot;<b>Company</b>&quot;,
-              &quot;<b>We</b>&quot;, &quot;<b>Us</b>&quot;, or &quot;<b>Our</b>
-              &quot;: Refers to LearnLogicify Technologies LLP.
+              <span className={styles.bullet}>●</span>{" "}
+              <p>
+                <b>Company</b>, <b>We</b>, <b>Us</b>, or <b>Our</b>: Refers to
+                LearnLogicify Technologies LLP.
+              </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> &quot;<b>You</b>&quot; or
-              &quot;<b>Your</b>&quot;: Refers to the user or viewer of our
-              website and services.
+              <span className={styles.bullet}>●</span>{" "}
+              <p>
+                <b>You</b> or <b>Your</b>: Refers to the user or viewer of our
+                website and services.
+              </p>
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> &quot;<b>Services</b>&quot;:
-              Refers to any products, courses, bootcamps, and software offered
-              through our platform.
+              <span className={styles.bullet}>●</span>{" "}
+              <p>
+                <b>Services</b>: Refers to any products, courses, bootcamps, and
+                software offered through our platform.
+              </p>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* User Accounts Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>User Accounts</h4>
@@ -72,27 +76,26 @@ const Terms = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> Provide accurate and complete
-              information when creating your account.
+              <span className={styles.bullet}>●</span> Provide accurate and
+              complete information when creating your account.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Maintain and promptly update
-              your account information.
+              <span className={styles.bullet}>●</span> Maintain and promptly
+              update your account information.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Keep your login credentials
-              confidential and secure.
+              <span className={styles.bullet}>●</span> Keep your login
+              credentials confidential and secure.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Notify us immediately of any
-              unauthorized use of your account. You are responsible for all
+              <span className={styles.bullet}>●</span> Notify us immediately of
+              any unauthorized use of your account. You are responsible for all
               activities that occur under your account.
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Use of Our Services Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Use of Our Services</h4>
@@ -103,22 +106,21 @@ const Terms = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> Not engage in any activity that
-              may disrupt or interfere with our services.
+              <span className={styles.bullet}>●</span> Not engage in any
+              activity that may disrupt or interfere with our services.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Not use our services for any
-              illegal or unauthorized purpose.
+              <span className={styles.bullet}>●</span> Not use our services for
+              any illegal or unauthorized purpose.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Not attempt to hack, reverse
-              engineer, or exploit any part of our website.
+              <span className={styles.bullet}>●</span> Not attempt to hack,
+              reverse engineer, or exploit any part of our website.
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Payment Terms Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Payment Terms</h4>
@@ -130,22 +132,21 @@ const Terms = () => {
           </p>
           <ul>
             <li>
-              <FaCircle size={7} color="blue" /> All payments are due at the
-              time of purchase.
+              <span className={styles.bullet}>●</span> All payments are due at
+              the time of purchase.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> Prices are subject to change,
-              but any changes will not affect existing purchases.
+              <span className={styles.bullet}>●</span> Prices are subject to
+              change, but any changes will not affect existing purchases.
             </li>
             <li>
-              <FaCircle size={7} color="blue" /> We may offer promotions or
-              discounts, but these are subject to our discretion.
+              <span className={styles.bullet}>●</span> We may offer promotions
+              or discounts, but these are subject to our discretion.
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Refund Policy Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Refund Policy</h4>
@@ -158,7 +159,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Privacy Policy Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Privacy Policy</h4>
@@ -173,7 +173,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Intellectual Property Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Intellectual Property</h4>
@@ -189,7 +188,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Limitation of Liability Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Limitation of Liability</h4>
@@ -205,7 +203,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* User-Generated Content Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>User-Generated Content</h4>
@@ -221,7 +218,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Monitoring and Plagiarism Detection Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>
@@ -240,7 +236,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Termination Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Termination</h4>
@@ -254,7 +249,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Changes to Terms Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Changes to Terms</h4>
@@ -269,7 +263,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Governing Law Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Governing Law</h4>
@@ -283,7 +276,6 @@ const Terms = () => {
         </div>
       </div>
 
-      {/* Contact Information Section */}
       <div className={styles.section}>
         <div className={styles.subheadingContainer}>
           <h4 className={styles.subheading}>Contact Information</h4>
@@ -291,8 +283,7 @@ const Terms = () => {
         <div className={styles.paragraphContainer}>
           <p className={styles.paragraph}>
             If you have any questions or concerns regarding these terms, please
-            contact us at:
-            <br />
+            contact us at: <br />
             <b>LearnLogicify Technologies LLP</b>
             <br />
             Coimbatore, Tamil Nadu - 641602
