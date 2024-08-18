@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./styles.module.css";
 import Logo from "../../images/logo/darkLogo";
@@ -96,13 +97,13 @@ const Footer = () => {
           <h4>Legal & Policies</h4>
           <ul>
             <li>
-              <Link href="/terms-conditions">Terms & Conditions</Link>
+              <Link href="/legal?tab=terms">Terms & Conditions</Link>
             </li>
             <li>
-              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/legal?tab=privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/refund-policy">Refund Policy</Link>
+              <Link href="/legal?tab=refund">Refund Policy</Link>
             </li>
           </ul>
         </div>
