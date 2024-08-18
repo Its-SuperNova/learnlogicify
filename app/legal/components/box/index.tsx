@@ -1,6 +1,7 @@
-"use client";
+"use client"; // Ensure this is at the top of the file
+
 import React, { useState, useEffect } from "react";
-import { useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation"; // Updated import
 import styles from "./styles.module.css";
 import { LuFileSignature } from "react-icons/lu";
 import { GoShieldLock } from "react-icons/go";
@@ -11,11 +12,10 @@ import Terms from "../terms&Conditions";
 
 const LegalPoliciesBox = () => {
   const [activeTab, setActiveTab] = useState<string>("terms");
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const searchParams = useSearchParams(); // Use useSearchParams instead of useRouter
 
   useEffect(() => {
-    const tab = searchParams.get("tab");
+    const tab = searchParams.get("tab") as string;
     if (tab) {
       setActiveTab(tab);
     }

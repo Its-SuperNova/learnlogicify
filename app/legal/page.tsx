@@ -1,9 +1,12 @@
-import React from "react";
+"use client"; // This should be at the top
+
+import React, { Suspense } from "react";
 import styles from "./styles.module.css";
 import Header from "@/app/components/common/Header";
 import Footer from "@/app/components/common/Footer";
-import Box from "./components/box"
-const legal = () => {
+import LegalPoliciesBox from "./components/box";
+
+const LegalPage = () => {
   return (
     <>
       <main className={styles.main}>
@@ -11,7 +14,9 @@ const legal = () => {
           <Header />
         </header>
         <section className={styles.container}>
-          <Box/>
+          <Suspense fallback={<div>Loading...</div>}>
+            <LegalPoliciesBox />
+          </Suspense>
         </section>
         <footer>
           <Footer />
@@ -21,4 +26,4 @@ const legal = () => {
   );
 };
 
-export default legal;
+export default LegalPage;
