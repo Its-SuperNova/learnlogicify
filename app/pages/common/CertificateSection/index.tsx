@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
+import Image from "next/image";
 const Certificate = () => {
   return (
     <div className={styles.container}>
       <div className={styles.certificate}>
-        <img
+        <Image
           className={styles.image}
           src="/images/certificate/c-1.png"
           alt="certificate"

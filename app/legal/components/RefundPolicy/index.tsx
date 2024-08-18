@@ -53,7 +53,7 @@ const Refund = () => {
               <p>
                 <b>Services:</b> Refunds for additional services (e.g., resume
                 review, mentorship) are processed on a case-by-case basis and
-                depend on the service's completion stage.
+                depend on the service&apos;s completion stage.
               </p>
             </li>
           </ul>
