@@ -4,10 +4,68 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+    padding: 100px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 40px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.title,.subHeading,.titleDesc{
+    text-align: center;
+}
+.animatedGradient {
+    font-weight: 700;
+    background: linear-gradient(90deg, #AB2FF8, #FC059F);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
 }
 
-.title {
-    font-size: 4rem;
-    color: rgb(0, 0, 0);
-    text-align: center;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.subHeading{
+    font-weight: 500;
+    margin-bottom: -8px;
+}
+.title{
+    font-size: 44px;
+    font-weight: 600;       
+}
+.titleDesc{
+    font-size:20px;
+    font-weight: 300;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: start;
+    width: 100%;
 }

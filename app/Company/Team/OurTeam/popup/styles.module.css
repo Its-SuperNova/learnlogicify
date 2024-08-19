@@ -1,0 +1,103 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 30px;
+    padding: 40px;
+    width: 930px;
+    max-width: 930px;
+    position: relative;
+    height: 550px;
+    box-sizing: border-box;
+}
+
+.closeButton {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.profileImage {
+    width: 255px;
+    height: 265px;
+    object-fit: cover;
+    border-radius: 15px;
+    background-color: #E1F4FE;
+}
+
+.textContent {
+    flex: 1;
+}
+.name{
+    font-size: 24px;
+    font-weight: bold;
+}
+.role {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconI,
+.iconW,
+.iconL,
+.iconG {
+    background-color: rgb(239, 239, 239);
+    padding: 13px;
+    border-radius: 50%;
+    color: rgb(87, 87, 87);
+    transition: all 0.4s ease-in-out;
+}
+
+
+.iconG:hover{
+    color: rgb(229, 0, 0);
+    background-color:rgb(255, 213, 213);
+    transform: scale(1.1);
+}
+.iconI:hover {
+    color: rgb(255, 0, 157);
+    background-color: rgb(255, 220, 242);
+    transform: scale(1.1);
+}
+.iconW:hover {
+    color: rgb(0, 212, 60);
+    background-color: rgb(221, 255, 231);
+    transform: scale(1.1);
+}
+.iconL:hover {
+    color: rgba(0, 47, 218, 0.852);
+    background-color: rgba(226, 239, 255, 0.852);
+    transform: scale(1.1);
+}
