@@ -5,6 +5,8 @@
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease;
+    /* Smooth hover effect for the card */
 }
 
 .profileImage {
@@ -12,6 +14,14 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+    transition: transform 0.5s ease;
+    /* Smooth hover effect for the image */
+}
+
+/* Image hover animation */
+.card:hover .profileImage {
+    transform: scale(1.1);
+    /* Slightly zoom the image on hover */
 }
 
 /* Icon container */
@@ -117,4 +127,16 @@
 .card:hover .popup {
     opacity: 1;
     transform: translateY(0);
+}
+
+.name {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Add a slight zoom and lift effect when hovering over the entire card */
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
 }

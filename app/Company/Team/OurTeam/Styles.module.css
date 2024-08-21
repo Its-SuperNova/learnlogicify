@@ -1,36 +1,33 @@
 .container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 50px 20px;
     background-color: #ffffff;
-    padding: 100px;
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
     gap: 40px;
+    align-items: center;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
-.title,.subHeading,.titleDesc{
+
+.title,
+.subHeading,
+.titleDesc {
     text-align: center;
 }
+
 .animatedGradient {
     font-weight: 700;
-    background: linear-gradient(90deg, #AB2FF8, #FC059F);
+    background: linear-gradient(90deg, #ab2ff8, #fc059f);
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -ms-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    -ms-text-fill-color: transparent;
     background-size: 200% 200%;
     animation: gradientAnimation 3s ease infinite;
 }
@@ -48,24 +45,79 @@
         background-position: 0% 50%;
     }
 }
-.subHeading{
+
+.subHeading {
     font-weight: 500;
     margin-bottom: -8px;
 }
-.title{
+
+.title {
     font-size: 44px;
-    font-weight: 600;       
+    font-weight: 600;
 }
-.titleDesc{
-    font-size:20px;
+
+.titleDesc {
+    font-size: 20px;
     font-weight: 300;
-
 }
 
-.content{
+.content {
     display: flex;
-    flex-direction: row;
-    align-items: top;
-    justify-content: start;
+    gap: 50px;
     width: 100%;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: gray;
+    text-align: center;
+    padding: 20px;
+}
+
+.imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamImg {
+    width: 950px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.overlayText {
+    position: absolute;
+    top: 20px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 62px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    /* Optional: add background for better visibility */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .titleDesc {
+        font-size: 18px;
+    }
+
+    .subHeading {
+        font-size: 18px;
+    }
 }
