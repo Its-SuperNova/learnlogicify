@@ -1,13 +1,72 @@
 .container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    height: auto;
     justify-content: center;
-    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.title{
+    font-size: 44px;
+    text-align: center;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.btn{
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+}
+.desc{
+    margin-top: 10px;
+    width: 1000px;
+    text-align: center;
+}
+.animatedGradient {
+    font-weight: 600;
+    background: linear-gradient(90deg, #ab2ff8, #fc059f);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
 }
 
-.title {
-    font-size: 4rem;
-    color: rgb(0, 0, 0);
-    text-align: center;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.btn {
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #ab2ff8, #fc059f);
+    transform: scale(1.05);
 }

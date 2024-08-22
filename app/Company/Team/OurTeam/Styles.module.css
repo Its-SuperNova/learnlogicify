@@ -21,7 +21,7 @@
 }
 
 .animatedGradient {
-    font-weight: 700;
+    font-weight: 600;
     background: linear-gradient(90deg, #ab2ff8, #fc059f);
     -webkit-background-clip: text;
     -moz-background-clip: text;

@@ -20,8 +20,8 @@ const Team: React.FC = () => {
       <Header />
       <main className={styles.main}>
         <OurTeam />
-        <JoinUs />
       </main>
+      <JoinUs />
       <Footer />
     </>
   );
