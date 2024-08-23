@@ -36,7 +36,9 @@
 .desc {
     margin-top: 10px;
     width: 100%;
+    font-weight: 400;
     text-align: center;
+    color: gray;
     max-width: 900px;
 }
 
@@ -88,9 +90,11 @@
 @media (max-width: 768px) {
     .title {
         font-size: 32px;
+        text-align: start;
     }
 
     .desc {
+        text-align: start;
         font-size: 16px;
         padding: 0 15px;
     }

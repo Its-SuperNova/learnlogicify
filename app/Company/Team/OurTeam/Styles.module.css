@@ -175,6 +175,9 @@
         height: auto;
         border-radius: 40px;
     }
+    .desc{
+        text-align: start;
+    }
 }
 
 @media (max-width: 568px) {
