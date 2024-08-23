@@ -1,5 +1,5 @@
 .container {
-    padding: 50px 20px;
+    padding: 50px;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -61,12 +61,32 @@
     font-weight: 300;
 }
 
+.descContainer {
+    max-width: 1100px;
+}
+
 .content {
-    display: flex;
-    gap: 50px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 255px);
+    gap: 30px;
     justify-content: center;
-    padding: 0 20px;
+    width: 100%;
+}
+
+/* Responsive layout */
+@media (max-width: 1180px) {
+    .content {
+        grid-template-columns: repeat(2, 255px);
+        column-gap: 80px;
+        /* 2 cards in a row for tablets and small laptops */
+    }
+}
+
+@media (max-width: 700px) {
+    .content {
+        grid-template-columns: repeat(1, 255px);
+        /* 1 card per row for mobile */
+    }
 }
 
 .desc {
@@ -76,7 +96,6 @@
     margin-bottom: 10px;
     color: gray;
     text-align: center;
-    padding: 20px;
 }
 
 .imageContainer {
@@ -95,16 +114,46 @@
 .overlayText {
     position: absolute;
     top: 20px;
-    /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
     font-size: 62px;
     font-weight: bold;
     color: white;
-    background-color: rgba(0, 0, 0, 0);
-    /* Optional: add background for better visibility */
     padding: 10px 20px;
     border-radius: 10px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .overlayText {
+        font-size: 48px;
+        top: 15px;
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 768px) {
+    .overlayText {
+        font-size: 38px;
+        top: 15px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 568px) {
+    .overlayText {
+        font-size: 28px;
+        top: 14px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 460px) {
+    .overlayText {
+        font-size: 24px;
+        top: 10px;
+        padding: 4px 8px;
+    }
 }
 
 /* Responsive Typography */
@@ -119,5 +168,31 @@
 
     .subHeading {
         font-size: 18px;
+    }
+
+    .teamImg {
+        width: auto;
+        height: auto;
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 568px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .titleDesc {
+        font-size: 16px;
+    }
+
+    .subHeading {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 460px) {
+    .container {
+        padding: 30px;
     }
 }

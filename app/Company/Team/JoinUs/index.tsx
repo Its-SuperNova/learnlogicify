@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Styles.module.css";
-import Button from "@/app/components/common/buttons/magic-button"
+import Button from "@/app/components/common/buttons/magic-button";
+
 const JoinUs = () => {
   return (
     <div className={styles.container}>
@@ -19,7 +20,11 @@ const JoinUs = () => {
         </p>
         <Button />
       </div>
-      <img src="/images/banner/Frame 11.png" alt="" />
+      <img
+        src="/images/banner/Frame 11.png"
+        alt=""
+        className={styles.bannerImage}
+      />
     </div>
   );
 };

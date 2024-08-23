@@ -19,7 +19,7 @@ const OurTeam = () => {
       </section>
       <section className={styles.content}>
         {teamMembers.map((member, index) => (
-          <Card key={index} member={member} /> // Pass each member to the Card component
+          <Card key={index} member={member} /> 
         ))}
       </section>
       <section className={styles.descContainer}>
