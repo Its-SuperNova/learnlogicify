@@ -15,7 +15,7 @@ const Contact = () => {
         <section className={styles.left}></section>
         <section className={styles.right}>
           <header>
-            <h1 className={styles.title}>Let's Get in Touch</h1>
+            <h1 className={styles.title}>Let &apos; s Get in Touch</h1>
             <div className={styles.content}>
               <ContactForm /> {/* Use the imported form component */}
             </div>
