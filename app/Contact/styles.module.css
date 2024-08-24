@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+}
+
+.left {
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    width: 55%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    justify-content: top;
+    padding-top: 70px;
+}
+
+.title {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    font-family: "Wix Madefor Text", sans-serif;
+    margin-bottom: 20px;
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+}

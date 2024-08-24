@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
@@ -19,7 +20,9 @@
     "@studio-freight/react-lenis": "^0.0.47",
     "bootstrap": "^5.3.3",
     "boxicons": "^2.1.4",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.17",
+    "gsap": "^3.12.5",
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
     "next": "14.2.5",
