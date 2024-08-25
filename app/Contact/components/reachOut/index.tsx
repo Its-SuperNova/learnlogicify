@@ -6,20 +6,24 @@ const ReachOut = () => {
   const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Dynamically load the Lordicon script
+    const script = document.createElement("script");
+    script.src = "https://cdn.lordicon.com/lordicon.js";
+    script.async = true;
+    document.body.appendChild(script);
+
     if (iconRef.current) {
       const lordIcon = iconRef.current.querySelector("lord-icon");
 
       const handleMouseEnter = () => {
         if (lordIcon) {
-          // Trigger the hover event manually on the lord-icon element
           lordIcon.setAttribute("trigger", "hover");
-          lordIcon.dispatchEvent(new Event("mouseenter")); // Simulate hover to start animation
+          lordIcon.dispatchEvent(new Event("mouseenter"));
         }
       };
 
       const handleMouseLeave = () => {
         if (lordIcon) {
-          // Reset the animation trigger to stop further animations
           lordIcon.setAttribute("trigger", "none");
         }
       };
@@ -43,13 +47,12 @@ const ReachOut = () => {
           </div>
           <h2 className={styles.title}>We&apos;d love to hear from you!</h2>
           <p className={styles.subtitle}>
-            Reach out with any questions or ideas – we’re here to help!
+            Reach out with any questions or ideas – we&apos;re here to help!
           </p>
         </header>
         <section className={styles.cardContainer}>
           <div className={styles.card}></div>
           <div className={styles.card} ref={iconRef}>
-            <script src="https://cdn.lordicon.com/lordicon.js"></script>
             <lord-icon
               src="https://cdn.lordicon.com/ebjjjrhp.json"
               trigger="none" // Initially no animation is triggered
