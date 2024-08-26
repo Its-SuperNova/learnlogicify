@@ -4,7 +4,8 @@
 }
 .container{
     display: flex;
-    height: 89vh;
+    height: auto;
+    padding-bottom: 50px;
 }
 .left {
     width: 45%;
