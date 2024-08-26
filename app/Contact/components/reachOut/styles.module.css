@@ -86,25 +86,27 @@
     transition: transform 0.4s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* Hover effects for larger screens only */
+@media (min-width: 769px) {
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card:hover .h3 {
+        margin-top: 15px;
+        font-size: 32px;
+    }
+
+    .card:hover .desc {
+        font-size: 20px;
+    }
+
+    .card:hover .link {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.card:hover .h3 {
-    margin-top: 15px;
-    font-size: 32px;
-}
-
-.card:hover .desc {
-    font-size: 20px;
-}
-
-.card:hover .link {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1600px) {
     .container {
         padding: 50px 100px;
@@ -147,6 +149,12 @@
     .desc {
         font-size: 16px;
     }
+
+    /* Always show the link in mobile view */
+    .link {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -159,11 +167,5 @@
 @media screen and (max-width: 500px) {
     .container {
         padding: 50px;
-    }
-
-    /* Make the link always visible on mobile */
-    .link {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

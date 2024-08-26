@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import styles from "./styles.module.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -60,62 +61,73 @@ const ReachOut = () => {
         </header>
         <section className={styles.cardContainer}>
           {/* Email Support Card */}
-          <div className={styles.card} ref={emailIconRef}>
-            <lord-icon
-              src="https://cdn.lordicon.com/ebjjjrhp.json"
-              trigger="none"
-              stroke="bold"
-              colors="primary:#121331,secondary:#6c16c7"
-              style={{ width: "50px", height: "50px" }}
-            ></lord-icon>
-            <h3 className={styles.h3}>Email Support</h3>
-            <p className={styles.desc}>Quick responses to all your queries.</p>
-            <p className={styles.link}>support@learnlogicify.com</p>
-            <FaArrowRightLong
-              size={30}
-              color="#6c16c7"
-              className={styles.arrow}
-            />
-          </div>
+          <Link href="mailto:support@learnlogicify.com" passHref>
+            <div className={styles.card} ref={emailIconRef}>
+              <lord-icon
+                src="https://cdn.lordicon.com/ebjjjrhp.json"
+                trigger="none"
+                stroke="bold"
+                colors="primary:#121331,secondary:#6c16c7"
+                style={{ width: "50px", height: "50px" }}
+              ></lord-icon>
+              <h3 className={styles.h3}>Email Support</h3>
+              <p className={styles.desc}>
+                Quick responses to all your queries.
+              </p>
+              <p className={styles.link}>support@learnlogicify.com</p>
+              <FaArrowRightLong
+                size={30}
+                color="#6c16c7"
+                className={styles.arrow}
+              />
+            </div>
+          </Link>
 
           {/* Phone Support Card */}
-          <div className={styles.card} ref={phoneIconRef}>
-            <lord-icon
-              src="https://cdn.lordicon.com/rsvfayfn.json"
-              trigger="none"
-              colors="primary:#6c16c7"
-              style={{ width: "50px", height: "50px" }}
-            ></lord-icon>
-            <h3 className={styles.h3}>Phone Support</h3>
-            <p className={styles.desc}>Speak directly with our support team.</p>
-            <p className={styles.link}>+91 89250 84608</p>
-            <FaArrowRightLong
-              size={30}
-              color="#6c16c7"
-              className={styles.arrow}
-            />
-          </div>
+          <Link href="https://wa.me/918925084608" passHref>
+            <div className={styles.card} ref={phoneIconRef}>
+              <lord-icon
+                src="https://cdn.lordicon.com/rsvfayfn.json"
+                trigger="none"
+                colors="primary:#6c16c7"
+                style={{ width: "50px", height: "50px" }}
+              ></lord-icon>
+              <h3 className={styles.h3}>Phone Support</h3>
+              <p className={styles.desc}>
+                Speak directly with our support team.
+              </p>
+              <p className={styles.link}>+91 89250 84608</p>
+              <FaArrowRightLong
+                size={30}
+                color="#6c16c7"
+                className={styles.arrow}
+              />
+            </div>
+          </Link>
 
           {/* Office Location Card */}
-          <div className={styles.card} ref={locationIconRef}>
-            <lord-icon
-              src="https://cdn.lordicon.com/surcxhka.json"
-              trigger="none"
-              stroke="bold"
-              colors="primary:#121331,secondary:#6c16c7"
-              style={{ width: "50px", height: "50px" }}
-            ></lord-icon>
-            <h3 className={styles.h3}>Visit Our Office</h3>
-            <p className={styles.desc}>We’re here to welcome you anytime.</p>
-            <p className={styles.link}>
-              Coimbatore , Tamilnadu -641 602
-            </p>
-            <FaArrowRightLong
-              size={30}
-              color="#6c16c7"
-              className={styles.arrow}
-            />
-          </div>
+          <Link
+            href="https://www.google.com/maps/search/?api=1&query=Coimbatore,Tamilnadu-641602"
+            passHref
+          >
+            <div className={styles.card} ref={locationIconRef}>
+              <lord-icon
+                src="https://cdn.lordicon.com/surcxhka.json"
+                trigger="none"
+                stroke="bold"
+                colors="primary:#121331,secondary:#6c16c7"
+                style={{ width: "50px", height: "50px" }}
+              ></lord-icon>
+              <h3 className={styles.h3}>Visit Our Office</h3>
+              <p className={styles.desc}>We’re here to welcome you anytime.</p>
+              <p className={styles.link}>Coimbatore , Tamilnadu -641 602</p>
+              <FaArrowRightLong
+                size={30}
+                color="#6c16c7"
+                className={styles.arrow}
+              />
+            </div>
+          </Link>
         </section>
       </div>
     </main>
