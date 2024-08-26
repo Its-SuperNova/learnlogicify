@@ -1,15 +1,16 @@
 .container {
-    height: 700px;
+    height: auto;
     width: 100%;
     padding: 50px 150px;
     background-color: #efefef;
+    padding-bottom: 100px;
 }
 
 .ReachOutContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #bd4bfa;
+    background-color: #6c16c7;
     width: 150px;
     height: 40px;
     border-radius: 20px;
@@ -34,19 +35,74 @@
 }
 
 .card {
-    height: 300px;
+    height: auto;
     width: 400px;
     border-radius: 30px;
     background-color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: top;
+    flex-direction: column;
+    padding: 35px;
+    padding-top: 45px;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 .cardContainer {
-    display: flex;
-    justify-content: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 50px;
     align-items: center;
     margin-top: 40px;
+}
+
+.h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-top: 10px;
+    transition: font-size 0.4s ease;
+    /* Smooth transition for h3 */
+}
+
+.desc {
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    transition: font-size 0.4s ease;
+}
+
+.link {
+    margin-left: 5px;
+    margin-bottom: 15px;
+    color: #6c16c7;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.arrow {
+    margin-left: 7px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover .h3 {
+    margin-top: 15px;
+    font-size: 32px;
+}
+
+.card:hover .desc {
+    font-size: 20px;
+}
+
+.card:hover .link {
+    opacity: 1;
+    transform: translateY(0);
 }
