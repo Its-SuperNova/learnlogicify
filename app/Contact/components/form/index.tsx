@@ -1,33 +1,50 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import styles from "./styles.module.css";
 import RoundButton from "../../../components/common/buttons/roundButton";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const form = useRef<HTMLFormElement>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted: ", formData); // You can replace this with any other functionality you need.
+
+    emailjs
+      .sendForm(
+        "service_6hnne5g",
+        "template_zqmxyuq",
+        form.current || "",
+        "MwYEue3OMW5_CaHhl"
+      )
+      .then(
+        () => {
+          emailjs.sendForm(
+            "service_6hnne5g",
+            "template_85ez3ch",
+            form.current || "",
+            "MwYEue3OMW5_CaHhl"
+          );
+          Swal.fire({
+            title: "Good job!",
+            text: "Message sent successfully!",
+            icon: "success",
+          });
+        },
+        (error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+          console.error("FAILED...", error.text);
+        }
+      );
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form ref={form} className={styles.form} onSubmit={sendEmail}>
       <div className={styles.formGroup}>
         <div className={styles.formField}>
           <label className={styles.label} htmlFor="name">
@@ -36,11 +53,9 @@ const ContactForm = () => {
           <input
             type="text"
             id="name"
-            name="name"
+            name="from_name" // Matching the template variable
             className={styles.input}
             placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
             required
           />
         </div>
@@ -51,11 +66,9 @@ const ContactForm = () => {
           <input
             type="text"
             id="phone"
-            name="phone"
+            name="user_phone"
             className={styles.input}
             placeholder="Your Phone"
-            value={formData.phone}
-            onChange={handleChange}
             required
           />
         </div>
@@ -67,11 +80,9 @@ const ContactForm = () => {
         <input
           type="email"
           id="email"
-          name="email"
+          name="from_email" // Matching the template variable
           className={styles.input}
           placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
           required
         />
       </div>
@@ -81,17 +92,15 @@ const ContactForm = () => {
         </label>
         <textarea
           id="message"
-          name="message"
+          name="message" // Matching the template variable
           className={styles.input}
           placeholder="Your Message"
           rows={5}
-          value={formData.message}
-          onChange={handleChange}
           required
         />
       </div>
       <RoundButton type="submit">
-        <p>Submit</p>
+        <p>Send Message</p>
       </RoundButton>
     </form>
   );
