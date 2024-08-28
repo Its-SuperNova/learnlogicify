@@ -1,13 +1,74 @@
 .container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
+    align-items: start;
     background-color: #ffffff;
+    padding: 50px 150px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title,
+.subtitle {
+    text-align: center;
+}
+
+.animatedGradient {
+    font-weight: 600;
+    background: linear-gradient(90deg, #ab2ff8, #fc059f);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.subtitle {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .title {
-    font-size: 4rem;
-    color: rgb(0, 0, 0);
-    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 0px 110px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+}
+.videoContainer {
+    width: 800px;
+    height:auto ;
 }

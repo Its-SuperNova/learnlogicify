@@ -6,7 +6,7 @@ const Certificate = () => {
   return (
     <div className={styles.container}>
       <div className={styles.certificate}>
-        <Image
+        <img
           className={styles.image}
           src="/images/certificate/c-1.png"
           alt="certificate"
