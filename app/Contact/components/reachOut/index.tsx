@@ -67,17 +67,17 @@ const ReachOut = () => {
                 src="https://cdn.lordicon.com/ebjjjrhp.json"
                 trigger="none"
                 stroke="bold"
-                colors="primary:#121331,secondary:#6c16c7"
+                colors="primary:#121331,secondary:#00FF7C"
                 style={{ width: "50px", height: "50px" }}
               ></lord-icon>
               <h3 className={styles.h3}>Email Support</h3>
               <p className={styles.desc}>
                 Quick responses to all your queries.
               </p>
-              <p className={styles.link}>support@learnlogicify.com</p>
+              <p className={styles.link_1}>support@learnlogicify.com</p>
               <FaArrowRightLong
                 size={30}
-                color="#6c16c7"
+                color="#00FF7C"
                 className={styles.arrow}
               />
             </div>
@@ -89,17 +89,17 @@ const ReachOut = () => {
               <lord-icon
                 src="https://cdn.lordicon.com/rsvfayfn.json"
                 trigger="none"
-                colors="primary:#6c16c7"
+                colors="primary:#008BFF"
                 style={{ width: "50px", height: "50px" }}
               ></lord-icon>
               <h3 className={styles.h3}>Phone Support</h3>
               <p className={styles.desc}>
                 Speak directly with our support team.
               </p>
-              <p className={styles.link}>+91 89250 84608</p>
+              <p className={styles.link_2}>+91 89250 84608</p>
               <FaArrowRightLong
                 size={30}
-                color="#6c16c7"
+                color="#008BFF"
                 className={styles.arrow}
               />
             </div>
@@ -115,15 +115,15 @@ const ReachOut = () => {
                 src="https://cdn.lordicon.com/surcxhka.json"
                 trigger="none"
                 stroke="bold"
-                colors="primary:#121331,secondary:#6c16c7"
+                colors="primary:#121331,secondary:#FF001C"
                 style={{ width: "50px", height: "50px" }}
               ></lord-icon>
               <h3 className={styles.h3}>Visit Our Office</h3>
               <p className={styles.desc}>We’re here to welcome you anytime.</p>
-              <p className={styles.link}>Coimbatore , Tamilnadu -641 602</p>
+              <p className={styles.link_3}>Coimbatore , Tamilnadu -641 602</p>
               <FaArrowRightLong
                 size={30}
-                color="#6c16c7"
+                color="#FF001C"
                 className={styles.arrow}
               />
             </div>

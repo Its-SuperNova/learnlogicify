@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6c16c7;
+    background-color: #008BFF;
     width: 150px;
     height: 40px;
     border-radius: 20px;
@@ -71,16 +71,21 @@
     transition: font-size 0.4s ease;
 }
 
-.link {
+.link_1,.link_2,.link_3 {
     margin-left: 5px;
     margin-bottom: 15px;
-    color: #6c16c7;
+    color: #00FF7C;
     font-weight: 500;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
+.link_2{
+    color: #008BFF;
+}
+.link_3{
+    color: #FF001C;
+}
 .arrow {
     margin-left: 7px;
     transition: transform 0.4s ease;
@@ -101,7 +106,7 @@
         font-size: 20px;
     }
 
-    .card:hover .link {
+    .card:hover .link_1,.card:hover .link_2,.card:hover .link_3 {
         opacity: 1;
         transform: translateY(0);
     }
@@ -151,7 +156,7 @@
     }
 
     /* Always show the link in mobile view */
-    .link {
+    .link_1, .link_2, .link_3{
         opacity: 1;
         transform: translateY(0);
     }
