@@ -27,6 +27,7 @@
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
     "lord-icon-element": "^4.1.2",
+    "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "next": "14.2.5",
     "react": "^18",
