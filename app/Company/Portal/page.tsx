@@ -19,9 +19,7 @@ const LMSPortal: React.FC = () => {
       <ScrollHandler />
       <main className={styles.main}>
         <Header />
-        <div className="hero-section">
-          <AboutPortal />
-        </div>
+        <AboutPortal />
         <Different />
         <AboutPortalInterface />
         <Footer />

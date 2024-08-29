@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import styles from "./Styles.module.css";
-import Video from "./components/video section"; // Import the Video component
+import Video from "./components/video section";
 import CodeIcon from "@/public/SVG/icons/code.svg";
 import BarIcon from "@/public/SVG/icons/bar.svg";
 import GraphIcon from "@/public/SVG/icons/graph.svg";
 import { GiCircle } from "react-icons/gi";
 import { GiSquare } from "react-icons/gi";
 import Lottie from "lottie-react";
-import GearAnimation from "@/public/SVG/icons/gear.json"; // Import the Lottie JSON file
+import GearAnimation from "@/public/SVG/icons/gear.json";
 
 const AboutPortal = () => {
   return (
@@ -50,7 +50,6 @@ const AboutPortal = () => {
             alt="Graph Icon"
             className={`${styles.icon} ${styles.icon3}`}
           />
-          {/* Additional Icons */}
           <GiCircle className={`${styles.icon} ${styles.icon4}`} />
           <GiSquare className={`${styles.icon} ${styles.icon5}`} />
           <div className={`${styles.icon} ${styles.icon6}`}>
@@ -61,11 +60,11 @@ const AboutPortal = () => {
       <section className={styles.desc}>
         <p>
           The LearnLogicify LMS Portal offers personalized dashboards,
-          interactive modules, and a built&hyphen;in compiler for hands-on
-          practice. Each course includes detailed notes and engaging animated
-          videos to simplify complex concepts. With comprehensive resources at
-          your fingertips, you&apos;ll be well-equipped to excel in your studies
-          and career.
+          interactive modules, and a built-in compiler for hands-on practice.
+          Each course includes detailed notes and engaging animated videos to
+          simplify complex concepts. With comprehensive resources at your
+          fingertips, you&apos;ll be well-equipped to excel in your studies and
+          career.
         </p>
       </section>
     </main>
