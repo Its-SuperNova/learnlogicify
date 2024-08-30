@@ -9,12 +9,12 @@ const Different = () => {
     <main className={styles.container}>
       <header>
         <h1 className={styles.title}>
-          What makes us 
-          <span className={styles.animatedGradient}>Different</span>
+          What makes us 
+           <span className={styles.animatedGradient}> Different</span>
         </h1>
         <section className={styles.content}>
           <div className={styles.card1}>
-            <h2 className={styles.cardTitle}>In&#45;Depth Understanding</h2>
+            <h2 className={styles.cardTitle}>In&#45;Depth <br />Understanding</h2>
             <p className={styles.desc}>
               Explore a profound grasp of programming fundamentals, tailored to
               simplify complex concepts for effective learning.
