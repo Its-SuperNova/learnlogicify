@@ -1,13 +1,234 @@
-.container {
-    height: 100vh;
+.main {
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+    padding: 50px 30px;
+}
+
+.container {
+    padding: 60px;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, rgba(255, 175, 189, 0.8) 0%, rgba(255, 118, 246, 0.8) 50%, rgba(190, 220, 255, 0.8) 100%),
+        linear-gradient(90deg, rgba(255, 118, 191, 0.8), rgba(160, 200, 255, 0.8));
+    background-blend-mode: screen;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.title,
+.subtitle {
+    text-align: center;
 }
 
 .title {
-    font-size: 4rem;
-    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #000000;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-family: 'Wix Madefor Text', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333333;
+    text-align: center;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 50px;
+    align-items: stretch;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 35px;
+    padding-top: 50px;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.desc {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.icon,
+.icon1,
+.icon2 {
+    width: 230px;
+    height: auto;
+    transform: scale(1.4);
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.icon1 {
+    transform: scale(1.2);
+}
+
+.icon2 {
+    margin-top: -30px;
+}
+
+.card:hover .icon,
+.card:hover .icon2 {
+    transform: scale(1.6);
+}
+
+.card:hover .icon1 {
+    transform: scale(1.4);
+}
+
+.card:hover .desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .cardContainer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card {
+        padding: 30px;
+        padding-top: 40px;
+    }
+    .desc{
+        padding: 0;
+    }
+    .icon,
+    .icon1,
+    .icon2 {
+        width: 200px;
+        transform: scale(1.2);
+    }
+
+    .card:hover .icon,
+    .card:hover .icon2 {
+        transform: scale(1.4);
+    }
+
+    .card:hover .icon1 {
+        transform: scale(1.3);
+    }
+}
+@media screen and (max-width: 580px) {
+    .icon,
+        .icon1,
+        .icon2 {
+            width: 200px;
+            transform: scale(1.2);
+        }
+    
+        .card:hover .icon,
+        .card:hover .icon2 {
+            transform: scale(1.2);
+        }
+    
+        .card:hover .icon1 {
+            transform: scale(1.2);
+        }
+        .desc{
+            opacity: 1;
+            transform: translateY(0);
+            padding: 0;
+        }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 30px 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .icon,
+    .icon1,
+    .icon2 {
+        width: 180px;
+        transform: scale(1.1);
+    }
+
+    .card:hover .icon,
+    .card:hover .icon2 {
+        transform: scale(1.2);
+    }
+
+    .card:hover .icon1 {
+        transform: scale(1.2);
+    }
+
+    .desc {
+        font-size: 14px;
+        padding: 0 20px;
+    }
 }
