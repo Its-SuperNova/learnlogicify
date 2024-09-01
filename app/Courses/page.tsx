@@ -13,7 +13,7 @@ import CompanyData, { Company } from "./data/CompanyData";
 import SideBar from "./components/SideBar";
 import BootcampCard from "./components/BootcampCard";
 import CompanyCard from "./components/CompanyCard";
-
+import Footer from "../components/common/Footer";
 const AllCourseContent: React.FC = () => {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -151,147 +151,153 @@ const AllCourseContent: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <SideBar onFilterChange={handleFilterChange} selectedTab={selectedTab} />
-      <div className={styles.mainContent}>
-        <h1 className={styles.title}>{getTitle()}</h1>
-        <div className={styles.searchContainer}>
-          <IoIosSearch className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder={getPlaceholder()}
-            className={styles.searchBox}
-            value={searchTerm}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className={styles.tabContainer}>
-          <button
-            className={`${styles.tabButton} ${
-              selectedTab === "AllCourses" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabChange("AllCourses")}
-          >
-            All Courses
-          </button>
-          <button
-            className={`${styles.tabButton} ${
-              selectedTab === "AllBootcamps" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabChange("AllBootcamps")}
-          >
-            All Bootcamps
-          </button>
-          <button
-            className={`${styles.tabButton} ${
-              selectedTab === "CompanySpecific" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabChange("CompanySpecific")}
-          >
-            Company Specific
-          </button>
-          <div className={styles.toggleButton}>
+    <>
+      <div className={styles.container}>
+        <SideBar
+          onFilterChange={handleFilterChange}
+          selectedTab={selectedTab}
+        />
+        <div className={styles.mainContent}>
+          <h1 className={styles.title}>{getTitle()}</h1>
+          <div className={styles.searchContainer}>
+            <IoIosSearch className={styles.searchIcon} />
             <input
-              type="checkbox"
-              id="toggle"
-              onChange={() => setShowOnlyAvailable(!showOnlyAvailable)}
+              type="text"
+              placeholder={getPlaceholder()}
+              className={styles.searchBox}
+              value={searchTerm}
+              onChange={handleInputChange}
             />
-            <label htmlFor="toggle" className={styles.switch}></label>
           </div>
-        </div>
+          <div className={styles.tabContainer}>
+            <button
+              className={`${styles.tabButton} ${
+                selectedTab === "AllCourses" ? styles.activeTab : ""
+              }`}
+              onClick={() => handleTabChange("AllCourses")}
+            >
+              All Courses
+            </button>
+            <button
+              className={`${styles.tabButton} ${
+                selectedTab === "AllBootcamps" ? styles.activeTab : ""
+              }`}
+              onClick={() => handleTabChange("AllBootcamps")}
+            >
+              All Bootcamps
+            </button>
+            <button
+              className={`${styles.tabButton} ${
+                selectedTab === "CompanySpecific" ? styles.activeTab : ""
+              }`}
+              onClick={() => handleTabChange("CompanySpecific")}
+            >
+              Company Specific
+            </button>
+            <div className={styles.toggleButton}>
+              <input
+                type="checkbox"
+                id="toggle"
+                onChange={() => setShowOnlyAvailable(!showOnlyAvailable)}
+              />
+              <label htmlFor="toggle" className={styles.switch}></label>
+            </div>
+          </div>
 
-        {loading ? (
-          <>
-            {selectedTab === "AllCourses" && (
-              <div className={styles.grid}>
-                {Array(6)
-                  .fill(0)
-                  .map((_, index) => (
-                    <SkeletonCourseCard key={index} />
+          {loading ? (
+            <>
+              {selectedTab === "AllCourses" && (
+                <div className={styles.grid}>
+                  {Array(6)
+                    .fill(0)
+                    .map((_, index) => (
+                      <SkeletonCourseCard key={index} />
+                    ))}
+                </div>
+              )}
+              {selectedTab === "AllBootcamps" && (
+                <div className={styles.bootcampGrid}>
+                  {Array(3)
+                    .fill(0)
+                    .map((_, index) => (
+                      <SkeletonBootcampCard key={index} />
+                    ))}
+                </div>
+              )}
+              {selectedTab === "CompanySpecific" && (
+                <div className={styles.companyGrid}>
+                  {Array(3)
+                    .fill(0)
+                    .map((_, index) => (
+                      <SkeletonCompanyCard key={index} />
+                    ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {selectedTab === "AllCourses" && (
+                <div className={styles.grid}>
+                  {filteredCourses.map((course, index) => (
+                    <Card
+                      url={course.url}
+                      key={index}
+                      Level={course.Level}
+                      icon={course.icon}
+                      title={course.title}
+                      topics={course.topics}
+                      videos={course.videos}
+                      desc={course.desc}
+                      offer={course.offer}
+                      price={course.price}
+                      originalPrice={course.originalPrice}
+                      bannerColor={course.bannerColor}
+                      available={course.available}
+                    />
                   ))}
-              </div>
-            )}
-            {selectedTab === "AllBootcamps" && (
-              <div className={styles.bootcampGrid}>
-                {Array(3)
-                  .fill(0)
-                  .map((_, index) => (
-                    <SkeletonBootcampCard key={index} />
+                </div>
+              )}
+              {selectedTab === "AllBootcamps" && (
+                <div className={styles.bootcampGrid}>
+                  {filteredBootcamps.map((bootcamp, index) => (
+                    <BootcampCard
+                      key={index}
+                      icon={bootcamp.icon}
+                      title={bootcamp.title}
+                      Problems={bootcamp.Problems}
+                      Courses={bootcamp.Courses}
+                      desc={bootcamp.desc}
+                      offer={bootcamp.offer}
+                      price={bootcamp.price}
+                      originalPrice={bootcamp.originalPrice}
+                      bannerColor={bootcamp.bannerColor}
+                    />
                   ))}
-              </div>
-            )}
-            {selectedTab === "CompanySpecific" && (
-              <div className={styles.companyGrid}>
-                {Array(3)
-                  .fill(0)
-                  .map((_, index) => (
-                    <SkeletonCompanyCard key={index} />
+                </div>
+              )}
+              {selectedTab === "CompanySpecific" && (
+                <div className={styles.companyGrid}>
+                  {filteredCompanies.map((company, index) => (
+                    <CompanyCard
+                      key={index}
+                      title={company.title}
+                      desc={company.desc}
+                      offer={company.offer}
+                      price={company.price}
+                      originalPrice={company.originalPrice}
+                      bannerColor={company.bannerColor}
+                      desktopImage={company.desktopImage}
+                      mobileImage={company.mobileImage}
+                    />
                   ))}
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            {selectedTab === "AllCourses" && (
-              <div className={styles.grid}>
-                {filteredCourses.map((course, index) => (
-                  <Card
-                    url={course.url}
-                    key={index}
-                    Level={course.Level}
-                    icon={course.icon}
-                    title={course.title}
-                    topics={course.topics}
-                    videos={course.videos}
-                    desc={course.desc}
-                    offer={course.offer}
-                    price={course.price}
-                    originalPrice={course.originalPrice}
-                    bannerColor={course.bannerColor}
-                    available={course.available}
-                  />
-                ))}
-              </div>
-            )}
-            {selectedTab === "AllBootcamps" && (
-              <div className={styles.bootcampGrid}>
-                {filteredBootcamps.map((bootcamp, index) => (
-                  <BootcampCard
-                    key={index}
-                    icon={bootcamp.icon}
-                    title={bootcamp.title}
-                    Problems={bootcamp.Problems}
-                    Courses={bootcamp.Courses}
-                    desc={bootcamp.desc}
-                    offer={bootcamp.offer}
-                    price={bootcamp.price}
-                    originalPrice={bootcamp.originalPrice}
-                    bannerColor={bootcamp.bannerColor}
-                  />
-                ))}
-              </div>
-            )}
-            {selectedTab === "CompanySpecific" && (
-              <div className={styles.companyGrid}>
-                {filteredCompanies.map((company, index) => (
-                  <CompanyCard
-                    key={index}
-                    title={company.title}
-                    desc={company.desc}
-                    offer={company.offer}
-                    price={company.price}
-                    originalPrice={company.originalPrice}
-                    bannerColor={company.bannerColor}
-                    desktopImage={company.desktopImage}
-                    mobileImage={company.mobileImage}
-                  />
-                ))}
-              </div>
-            )}
-          </>
-        )}
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
 
