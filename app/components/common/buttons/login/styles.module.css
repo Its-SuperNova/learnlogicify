@@ -4,13 +4,13 @@
 }
 
 .btnHover {
-  width: 150px;
-  font-size: 16px;
+  width: 120px;
+  font-size: 14px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
   margin: 20px;
-  height: 45px;
+  height: 40px;
   text-align: center;
   border: none;
   background-size: 300% 100%;

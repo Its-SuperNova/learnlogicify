@@ -1,7 +1,15 @@
-.nav {
+.nav{
     width: 400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0px 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222629;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    padding-top: 1px;  
 }
 
 .gradientText {
@@ -9,16 +17,18 @@
     animation: rainbow 2s ease-in-out infinite;
     background-clip: text;
     -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(222, 222, 222);
     display: block;
     text-align: center;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
     font-weight: 500;
     position: relative;
+    font-size: 14px;
 }
 
 .gradientText:hover {
     color: rgba(0, 0, 0, 0);
+    font-weight: 700;
 }
 
 
@@ -50,7 +60,7 @@
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #222629;
     border-radius: 10px;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -62,12 +72,12 @@
 }
 
 /* Links inside the dropdown */
-.dropdownContent li {
+.dropdownContent li{
     background: linear-gradient(to right, rgb(111, 0, 255), rgb(179, 0, 255), rgb(255, 0, 187));
     animation: rainbow 2s ease-in-out infinite;
     background-clip: text;
     -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(215, 215, 215);
     display: block;
     text-align: left;
     transition: color 0.2s ease-in-out;
@@ -91,3 +101,6 @@
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+
+
