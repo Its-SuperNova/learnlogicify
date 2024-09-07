@@ -19,6 +19,7 @@
   width: 100%;
   animation: slideInFromTop 2s cubic-bezier(0.76, 0, 0.24, 1);
   position: relative;
+  z-index: 999;
 }
 .bg {
   width: 100%;
@@ -40,7 +41,7 @@
   flex-direction: row;
   flex: 1;
   justify-content: center;
-  
+  z-index: 9999;
 }
 .right {
   width: 260px;

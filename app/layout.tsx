@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "./components/hooks/smoothscroll"; // Adjust the import path if necessary
+import SmoothScroll from "./components/hooks/smoothscroll"; // Locomotive Scroll Hook
 import Head from "next/head";
+import CustomCursor from "./components/CustomCursor"; // Import the custom cursor component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -37,9 +34,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap"
           rel="stylesheet"
         />
-        
       </Head>
       <body className={inter.className}>
+        <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

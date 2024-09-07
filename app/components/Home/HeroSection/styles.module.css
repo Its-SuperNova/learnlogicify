@@ -1,5 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .container {
     height: 100vh;
+    margin-top: -100px;
     background-color: #15181a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.title {
+    text-align: center;
+    font-size: 130px;
+    font-family: 'Wix Madefor Text';
+}
+
+.animatedGradient {
+    font-weight: 600;
+    background: linear-gradient(90deg, #ab2ff8, #fc059f, #fb6161);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -13,6 +13,7 @@ const HomePage: React.FC = () => {
     <main className={styles.main}>
       <Header />
       <HeroPage />
+      <ServicesSection />
     </main>
   );
 };
