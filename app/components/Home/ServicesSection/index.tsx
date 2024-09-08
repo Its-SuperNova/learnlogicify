@@ -12,7 +12,7 @@ const ServicesSection = () => {
       <p className={styles.desc}>
         At LearnLogicify Technologies, we are committed to accelerating tech
         careers by providing a comprehensive, cutting-edge learning platform.
-        Whether you're a beginner or an advanced learner, our courses cover
+        Whether you&apos;re a beginner or an advanced learner, our courses cover
         essential skills in web development, AI, and other emerging
         technologies. With expert trainers, real-world projects, and hands-on
         experience, we ensure that every learner can fast-track their career
