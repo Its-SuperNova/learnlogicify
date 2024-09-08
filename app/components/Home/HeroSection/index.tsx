@@ -41,7 +41,7 @@ const HeroHome = () => {
 
         <motion.div className={styles.title} variants={childVariants}>
           <h3 className={styles.animatedGradient}>
-            "Accelerate the Tech Career and build your Future Faster"
+            &quot;Accelerate the Tech Career and build your Future Faster&quot;
           </h3>
         </motion.div>
 
