@@ -8,6 +8,9 @@ import Probanner from "../common/ProBanner";
 import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
 import Footer from "../common/Footer";
+
+
+
 const HomePage: React.FC = () => {
   return (
     <main className={styles.main}>

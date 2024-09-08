@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .container {
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 150px 200px; 
     background-color: #ffffff;
+    flex-direction: column;
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 60px;
     color: rgb(0, 0, 0);
-    text-align: center;
+    text-align: left;
+    font-weight: 400;
+    font-family: 'Wix Madefor Text';
+    line-height: 70px;
+    margin-bottom: 50px;
+}
+
+.desc{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Wix Madefor Text';
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+.btnContainer{
+    z-index: 9999;
 }

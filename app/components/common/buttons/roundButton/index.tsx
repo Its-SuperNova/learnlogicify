@@ -6,12 +6,16 @@ import gsap from "gsap";
 type RoundButtonProps = {
   children: React.ReactNode;
   backgroundColor?: string;
+  width?: string;
+  height?: string;
   type?: "button" | "submit" | "reset";
 };
 
 const RoundButton: React.FC<RoundButtonProps> = ({
   children,
   backgroundColor = "#455CE9",
+  width = "150px", // default width
+  height = "50px", // default height
   type = "button",
   ...attributes
 }) => {
@@ -48,10 +52,10 @@ const RoundButton: React.FC<RoundButtonProps> = ({
   return (
     <button
       className={styles.roundedButton}
-      style={{ overflow: "hidden" }}
+      style={{ width, height, overflow: "hidden" }}
       onMouseEnter={manageMouseEnter}
       onMouseLeave={manageMouseLeave}
-      type={type} // Added the type attribute here
+      type={type}
       {...attributes}
     >
       {children}
