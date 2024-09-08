@@ -1,6 +1,6 @@
 import React from "react";
 import HeroPage from "./HeroSection";
-import ServicesSection from "./ServicesSection";
+import Description from "./Description";
 import VideoSection from "./Videosection";
 import ServiceGallery from "../common/ServiceGallery";
 import FeedBack from "./FeedBack";
@@ -16,7 +16,8 @@ const HomePage: React.FC = () => {
     <main className={styles.main}>
       <Header />
       <HeroPage />
-      <ServicesSection />
+      <Description />
+      <VideoSection />
     </main>
   );
 };
