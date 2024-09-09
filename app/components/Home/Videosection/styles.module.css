@@ -1,14 +1,19 @@
 .container {
-    height: 100vh;
+    height: 200vh;
+    padding-top: 80px;
+    /* Extra top padding */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Align items at the top */
     flex-direction: column;
     background-color: white;
 }
 
-.title {
-    font-size: 4rem;
-    color: #333;
-    text-align: center;
+.videoPlayer {
+    height: 600px;
+    /* Fixed height */
+    border-radius: 40px;
+    width: 80%;
+    /* Initial width */
 }
