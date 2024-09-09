@@ -4,11 +4,9 @@ import Description from "./Description";
 import VideoSection from "./Videosection";
 import ServiceGallery from "../common/ServiceGallery";
 import FeedBack from "./FeedBack";
-import Probanner from "../common/ProBanner";
 import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
-import Footer from "../common/Footer";
-
+import GetToKnow from "./GetToKnow";
 
 
 const HomePage: React.FC = () => {
@@ -18,6 +16,7 @@ const HomePage: React.FC = () => {
       <HeroPage />
       <Description />
       <VideoSection />
+      <GetToKnow />
     </main>
   );
 };

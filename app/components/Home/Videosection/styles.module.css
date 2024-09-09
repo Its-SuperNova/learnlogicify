@@ -1,6 +1,6 @@
 .container {
-    height: 200vh;
-    padding-top: 80px;
+    height: 100%;
+    padding: 80px 0px;
     /* Extra top padding */
     display: flex;
     align-items: center;
