@@ -45,7 +45,6 @@ export const gridFadeIn = {
   closed: { opacity: 0, transition: { duration: 0.5 } }, // Close animation
 };
 
-// Button reveal animation
 export const buttonReveal = {
   initial: { opacity: 0, y: 50 }, // Start below view with opacity 0
   open: {
@@ -56,5 +55,4 @@ export const buttonReveal = {
       ease: "easeOut", // Smooth easing
     },
   },
-  closed: { opacity: 0, y: 50, transition: { duration: 0.4 } }, // Slide down and fade out
 };

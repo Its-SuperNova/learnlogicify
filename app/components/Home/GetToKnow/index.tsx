@@ -23,10 +23,11 @@ export default function Index() {
     threshold: 0.1,
   });
 
-  const { ref: buttonRef, inView: isButtonInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
+ const { ref: buttonRef, inView: isButtonInView } = useInView({
+   triggerOnce: true, // Ensure the animation only happens once
+   threshold: 0.1,
+ });
+
 
   // Title and description
   const title = "Get to Know About Us";

@@ -2,7 +2,7 @@ import React from "react";
 import HeroPage from "./HeroSection";
 import Description from "./Description";
 import VideoSection from "./Videosection";
-import ServiceGallery from "../common/ServiceGallery";
+import ServiceGallery from "../common/serviceGallery";
 import FeedBack from "./FeedBack";
 import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
@@ -17,6 +17,7 @@ const HomePage: React.FC = () => {
       <Description />
       <VideoSection />
       <GetToKnow />
+      <ServiceGallery />
     </main>
   );
 };
