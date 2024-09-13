@@ -5,7 +5,7 @@ import VideoSection from "./Videosection";
 import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
 import GetToKnow from "./GetToKnow";
-import ServiceGallery from "../common/serviceGallery"
+import ServiceGallery from "@/app/components/common/serviceGallery"
 
 const HomePage: React.FC = () => {
   return (
