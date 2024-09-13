@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.description {
+    padding: 150px 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    padding-bottom: 0;
+}
+
+/* Body container for text and buttons */
+.body {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Styling for title */
+.title {
+    font-size: 60px;
+    line-height: 65px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: "Wix Madefor Text";
+}
+
+.title div {
+    margin-bottom: 10px;
+    /* Space between title lines */
+}
+
+.title span {
+    margin-right: 5px;
+}
+
+.mask {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+}
+
+/* Description text */
+.descriptionText {
+    font-size: 24px;
+    text-align: left;
+    font-weight: 400;
+    padding-right: 180px;
+    font-family: "Wix Madefor Text";
+}
+
+/* Button styling */
+.btn {
+    margin-top: 20px;
+    font-family: "Wix Madefor Text";
+    z-index: 9999;
+}
+
+/* Container for floating button */
+.buttonContainer {
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Floating button (removed motion animations) */
+.button {
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #1c1d20;
+    color: white;
+    font-family: "Wix Madefor Text";
+    border-radius: 5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.button p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}

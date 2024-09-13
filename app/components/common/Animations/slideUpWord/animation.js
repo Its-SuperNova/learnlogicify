@@ -1,4 +1,4 @@
-// Slide up animation for title
+// Slide up animation for words
 export const slideUp = {
   initial: { y: "100%" }, // Start below the view
   open: (i) => ({

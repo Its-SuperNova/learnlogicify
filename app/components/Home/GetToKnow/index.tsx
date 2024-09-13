@@ -1,21 +1,20 @@
 "use client";
-import { useEffect, useRef } from "react";
-import styles from "./styles.module.scss";
-import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import SlideUpWord from "../../common/Animations/slideUpWord";
+import FadeTransition from "../../common/Animations/textFade";
+import { motion } from "framer-motion";
 import {
-  slideUp,
-  fadeIn,
   gridSlideUp,
   gridFadeIn,
   buttonReveal,
-} from "./animation"; // Import new animations
+} from "../../common/Animations/animation";
 import Rounded from "../../common/buttons/roundButton";
+import styles from "./styles.module.css"; // CSS Modules
 
-export default function Index() {
+export default function GetToKnow() {
   const { ref: descriptionRef, inView: isInView } = useInView({
-    triggerOnce: false, // Allows triggering multiple times when scrolling in and out
-    threshold: 0.1, // Trigger animation when 10% of the element is visible
+    triggerOnce: false,
+    threshold: 0.1,
   });
 
   const { ref: gridRef, inView: isGridInView } = useInView({
@@ -23,59 +22,46 @@ export default function Index() {
     threshold: 0.1,
   });
 
- const { ref: buttonRef, inView: isButtonInView } = useInView({
-   triggerOnce: true, // Ensure the animation only happens once
-   threshold: 0.1,
- });
+  // Change triggerOnce to false to trigger every time the button enters the viewport
+  const { ref: buttonRef, inView: isButtonInView } = useInView({
+    triggerOnce: false, // Trigger the animation every time the button enters the viewport
+    threshold: 0.1,
+  });
 
-
-  // Title and description
-  const title = "Get to Know About Us";
+  const title = ["Get to Know About Us"];
   const description =
-    "At LearnLogicify Technologies, we are dedicated to empowering individuals to achieve success in the tech industry through innovative and accessible learning solutions. Our platform bridges the gap between theoretical knowledge and real-world application, offering expertly crafted courses, hands-on projects, and tailored assessments. By leveraging cutting-edge educational tools and a supportive learning environment, we ensure that every learner can fast-track their career growth and gain the skills necessary to excel in the ever-evolving tech landscape.";
+    "At LearnLogicify Technologies, we are dedicated to empowering individuals to achieve success in the tech industry through innovative and accessible learning solutions. Our platform bridges the gap between theoretical knowledge and real-world application, offering expertly crafted courses, hands-on projects, and tailored assessments.";
 
   return (
-    <div ref={descriptionRef} className={styles.description}>
+    <div ref={descriptionRef} className={styles.getToKnow}>
       <div className={styles.body}>
-        <h1 className={styles.title}>
-          {title.split(" ").map((word, wordIndex) => (
-            <span key={wordIndex} className={styles.mask}>
-              <motion.span
-                variants={slideUp} // Title animation unchanged
-                custom={wordIndex}
-                initial="initial"
-                animate={isInView ? "open" : "initial"} // Trigger text reveal animation
-              >
-                {word}
-              </motion.span>{" "}
-            </span>
-          ))}
-        </h1>
-        <motion.p
-          variants={fadeIn} // Description animation unchanged
-          initial="initial"
-          animate={isInView ? "open" : "initial"} // Trigger fade-in animation
+        <SlideUpWord
+          title={title}
+          isInView={isInView}
+          className={styles.title}
+        />
+        <FadeTransition
+          description={description}
+          isInView={isInView}
           className={styles.descriptionText}
-        >
-          {description}
-        </motion.p>
-        {/* New section */}
+        />
+
         <div ref={gridRef} className={styles.gridSection}>
           <motion.div
             className={styles.gridItem}
-            variants={gridSlideUp} // Apply new gridSlideUp animation here
+            variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
           >
             <motion.h2
-              variants={gridSlideUp} // Apply smooth slide-up for h2
+              variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
               Comprehensive Learning
             </motion.h2>
             <motion.p
-              variants={gridFadeIn} // Apply smooth fade-in for p
+              variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
@@ -84,21 +70,22 @@ export default function Index() {
               your education is covered.
             </motion.p>
           </motion.div>
+
           <motion.div
             className={styles.gridItem}
-            variants={gridSlideUp} // Apply new gridSlideUp animation
+            variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
           >
             <motion.h2
-              variants={gridSlideUp} // Apply smooth slide-up for h2
+              variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
               Expert Guidance
             </motion.h2>
             <motion.p
-              variants={gridFadeIn} // Apply smooth fade-in for p
+              variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
@@ -106,21 +93,22 @@ export default function Index() {
               experience, helping you gain real-world knowledge and skills.
             </motion.p>
           </motion.div>
+
           <motion.div
             className={styles.gridItem}
-            variants={gridSlideUp} // Apply new gridSlideUp animation
+            variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
           >
             <motion.h2
-              variants={gridSlideUp} // Apply smooth slide-up for h2
+              variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
               Career Focused
             </motion.h2>
             <motion.p
-              variants={gridFadeIn} // Apply smooth fade-in for p
+              variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
             >
@@ -129,6 +117,8 @@ export default function Index() {
             </motion.p>
           </motion.div>
         </div>
+
+        {/* Apply button reveal animation */}
         <div ref={buttonRef} className={styles.btnContainer}>
           <motion.div
             variants={buttonReveal} // Button reveal animation for "View Courses"
@@ -139,14 +129,14 @@ export default function Index() {
               <p>View Courses</p>
             </Rounded>
           </motion.div>
-          <motion.button
-            className={styles.btn1}
+
+          <motion.div
             variants={buttonReveal} // Button reveal animation for "Contact Us"
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
           >
-            Contact Us
-          </motion.button>
+            <motion.button className={styles.btn1}>Contact Us</motion.button>
+          </motion.div>
         </div>
       </div>
     </div>

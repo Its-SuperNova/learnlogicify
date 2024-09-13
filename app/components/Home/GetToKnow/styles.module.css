@@ -1,0 +1,96 @@
+.getToKnow {
+  padding: 0px 200px;
+  margin-bottom: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.body {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.title {
+  font-size: 60px;
+  line-height: 65px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: "Wix Madefor Text";
+}
+
+.descriptionText {
+  font-size: 22px;
+  text-align: left;
+  font-weight: 400;
+  font-family: "Wix Madefor Text";
+}
+
+.btnContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn {
+  font-family: "Wix Madefor Text";
+  z-index: 9999;
+}
+
+.btn1 {
+  font-family: "Wix Madefor Text";
+  z-index: 9999;
+  width: 300px;
+  height: 50px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: 1.5px solid black;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: rgb(69, 92, 233);
+  color: white;
+  border: none;
+}
+
+/* Grid section */
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.gridItem {
+  text-align: left;
+  border-top: 1px solid rgb(149, 149, 149);
+  padding: 20px 0px;
+}
+
+.gridItem h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.gridItem p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .gridSection {
+    grid-template-columns: 1fr;
+  }
+}

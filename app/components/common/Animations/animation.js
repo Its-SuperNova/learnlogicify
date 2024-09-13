@@ -1,23 +1,3 @@
-// Slide up animation for title (unchanged)
-export const slideUp = {
-  initial: { y: "100%" }, // Start below the view
-  open: (i) => ({
-    y: "0%", // Move to normal position
-    transition: { duration: 0.5, delay: i * 0.1 }, // Delay each word's reveal
-  }),
-  closed: { y: "100%", transition: { duration: 0.5 } },
-};
-
-// Fade-in animation for description (unchanged)
-export const fadeIn = {
-  initial: { opacity: 0 }, // Start invisible
-  open: {
-    opacity: 1, // Fade in to visible
-    transition: { duration: 1 }, // Animation duration
-  },
-  closed: { opacity: 0, transition: { duration: 0.5 } },
-};
-
 // Smooth slide-up animation for grid items
 export const gridSlideUp = {
   initial: { opacity: 0, y: 30 }, // Start slightly below with opacity 0
@@ -45,6 +25,7 @@ export const gridFadeIn = {
   closed: { opacity: 0, transition: { duration: 0.5 } }, // Close animation
 };
 
+// Button reveal animation
 export const buttonReveal = {
   initial: { opacity: 0, y: 50 }, // Start below view with opacity 0
   open: {
