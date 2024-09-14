@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"; // Correctly import motion from framer-motion
 import { useInView } from "react-intersection-observer";
-import SlideUpWord from "../../common/Animations/slideUpWord";
-import FadeTransition from "../../common/Animations/textFade";
-import Rounded from "../../common/buttons/roundButton";
+import SlideUpWord from "../../../common/Animations/slideUpWord";
+import FadeTransition from "../../../common/Animations/textFade";
+import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css";
 
 export default function Index() {

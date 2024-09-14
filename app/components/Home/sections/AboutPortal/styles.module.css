@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    height: auto;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.left {
+    background-color: #E2D8FF;
+    width: 600px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.right {
+    background-color: #b89cff;
+    flex-grow: 1;
+    height: auto;
+}
+
+.right video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 750px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        height: auto;
+    }
+
+    .right video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .right video {
+        width: 100%;
+        height: auto;
+    }
+}

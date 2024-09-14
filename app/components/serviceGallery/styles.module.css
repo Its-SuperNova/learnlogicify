@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .serviceGallery {
     padding: 30px 200px;
     display: flex;
@@ -14,4 +15,9 @@
     margin-bottom: 20px;
     text-align: left;
     font-family: "Wix Madefor Text";
+}
+
+/* Ensure the images have a clean look with a border radius */
+.img {
+    border-radius: 10px;
 }

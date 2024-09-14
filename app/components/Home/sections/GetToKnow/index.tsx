@@ -1,14 +1,14 @@
 "use client";
 import { useInView } from "react-intersection-observer";
-import SlideUpWord from "../../common/Animations/slideUpWord";
-import FadeTransition from "../../common/Animations/textFade";
+import SlideUpWord from "../../../common/Animations/slideUpWord";
+import FadeTransition from "../../../common/Animations/textFade";
 import { motion } from "framer-motion";
 import {
   gridSlideUp,
   gridFadeIn,
   buttonReveal,
-} from "../../common/Animations/animation";
-import Rounded from "../../common/buttons/roundButton";
+} from "../../../common/Animations/animation";
+import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css"; // CSS Modules
 
 export default function GetToKnow() {
