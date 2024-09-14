@@ -1,19 +1,16 @@
 .container {
-    height: 100%;
-    padding: 80px 0px;
-    /* Extra top padding */
+    height: 100%; /* Full viewport height */
+    padding: 80px 130px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    /* Align items at the top */
+    justify-content: center; /* Center the video */
     flex-direction: column;
     background-color: white;
 }
 
 .videoPlayer {
-    height: 600px;
-    /* Fixed height */
+    height: 100%; /* Make the video take up the full height */
+    width: 100%; /* Make the video take up the full width */
     border-radius: 40px;
-    width: 80%;
-    /* Initial width */
+    object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
 }

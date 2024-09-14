@@ -28,7 +28,7 @@ const VideoSection: React.FC = () => {
   return (
     <div className={styles.container}>
       <video controls className={styles.videoPlayer} ref={videoRef}>
-        <source src="/path-to-your-video.mp4" type="video/mp4" />
+        <source src="MP4/video2.mp4" type="video/mp4" />
       </video>
     </div>
   );

@@ -3,13 +3,22 @@
     height: auto;
     margin-bottom: 100px;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .left {
     background-color: #E2D8FF;
-    width: 600px;
+    width: 620px;
     height: auto;
     flex-shrink: 0;
+    padding: 70px;
+    padding-left: 90px;
+    /* Added padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    /* Added gap between elements */
 }
 
 .right {
@@ -24,6 +33,32 @@
     aspect-ratio: 4 / 3;
 }
 
+.title {
+    font-size: 50px;
+    line-height: 60px;
+    font-family: "Wix Madefor Text";
+    text-align: left;
+}
+
+.description {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: "Wix Madefor Text";
+    font-weight: 400;
+    text-align: left;
+}
+
+.btnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn {
+    font-family: "Wix Madefor Text";
+    z-index: 9999;
+}
+
 @media (max-width: 750px) {
     .container {
         flex-direction: column;
@@ -32,6 +67,7 @@
     .left {
         width: 100%;
         height: auto;
+        padding: 20px;
     }
 
     .right video {
