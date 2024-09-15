@@ -5,6 +5,7 @@ import VideoSection from "./sections/Videosection";
 import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
 import GetToKnow from "./sections/GetToKnow";
+import Courses from "./sections/Courses"
 import dynamic from "next/dynamic";
 
 // Dynamically import AboutPortal with SSR disabled
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
       <VideoSection />
       <GetToKnow />
       <AboutPortal />
+      <Courses />
     </main>
   );
 };
