@@ -8,7 +8,6 @@ import GetToKnow from "./sections/GetToKnow";
 import Courses from "./sections/Courses"
 import dynamic from "next/dynamic";
 
-// Dynamically import AboutPortal with SSR disabled
 const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
   ssr: false,
 });
