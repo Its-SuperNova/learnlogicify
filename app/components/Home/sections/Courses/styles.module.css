@@ -19,7 +19,6 @@
 .title {
     font-size: 60px;
     line-height: 65px;
-    margin-bottom: 20px;
     text-align: left;
     font-family: "Wix Madefor Text";
 }
@@ -29,4 +28,58 @@
     text-align: left;
     font-weight: 400;
     font-family: "Wix Madefor Text";
+    margin-top: 20px;
+}
+
+.grid {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.viewAllLink {
+    font-size: 20px;
+    color: #000;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Wix Madefor Text";
+    font-weight: 500;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.viewAllLink:hover {
+    color: blue;
+    cursor: pointer;
+
+}
+
+.arrowIcon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.viewAllLink:hover .arrowIcon {
+    transform: translateX(5px);
 }
