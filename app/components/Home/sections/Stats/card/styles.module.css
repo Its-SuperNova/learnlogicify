@@ -1,0 +1,51 @@
+.container {
+    width: 350px;
+    height: 120px;
+    border-radius: 15px;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    gap: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    /* Add a hover effect to the entire card */
+}
+
+.iconBox {
+    width: 90px;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(108, 108, 108, 0.1);
+    align-items: center;
+    display: flex;
+    color: black;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.count {
+    font-size: 34px;
+    font-weight: bold;
+    color: #5096ff;
+    text-align: left;
+    margin-top: 3px;
+}
+
+.title {
+    font-size: 20px;
+    color: #001638;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 3px;
+}

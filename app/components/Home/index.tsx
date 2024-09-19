@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import Header from "../common/HeaderDark";
 import GetToKnow from "./sections/GetToKnow";
 import Courses from "./sections/Courses"
+import Stats from "./sections/Stats";
 import dynamic from "next/dynamic";
 
 const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
@@ -22,6 +23,7 @@ const HomePage: React.FC = () => {
       <GetToKnow />
       <AboutPortal />
       <Courses />
+      <Stats />
     </main>
   );
 };
