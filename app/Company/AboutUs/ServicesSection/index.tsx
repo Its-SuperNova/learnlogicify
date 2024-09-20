@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./styles.module.css";
-import LightLogo from "../../../components/images/People/Sachin/image_1";
 
 const ServicesSection = () => {
   const controlsContent = useAnimation();
@@ -58,7 +57,6 @@ const ServicesSection = () => {
           animate={controlsImg}
           className={styles.img}
         >
-          <LightLogo />
         </motion.div>
         <motion.div
           ref={refContent}
