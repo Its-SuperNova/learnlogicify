@@ -5,8 +5,9 @@ import SlideUpWord from "../../../common/Animations/slideUpWord"; // Slide up an
 import FadeTransition from "../../../common/Animations/textFade"; // Fade transition animation for the description
 import styles from "./styles.module.css"; // CSS Modules
 import Card from "./courseCard";
-import coursesData, { Course } from "./courseData/courseData";
+import coursesData from "./courseData/courseData";
 import Link from "next/link"; // Import Link from Next.js for navigation
+import { motion } from "framer-motion"; // Import Framer Motion
 
 export default function ExplorePopularCourses() {
   const { ref: descriptionRef, inView: isInView } = useInView({
@@ -23,35 +24,63 @@ export default function ExplorePopularCourses() {
     .filter((course) => course.available)
     .slice(0, 4);
 
+  // Animation variants for the grid
+  const gridVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // Stagger the card animations by 0.2 seconds
+      },
+    },
+  };
+
+  // Animation variants for each card
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 }, // Initial state (hidden and moved down)
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }, // Final state (fade in and move up)
+  };
+
   return (
     <div ref={descriptionRef} className={styles.exploreCourses}>
       <div className={styles.body}>
+        {/* Title animation */}
         <SlideUpWord
           title={title}
           isInView={isInView}
           className={styles.title}
         />
 
-        <div className={styles.grid}>
+        {/* Grid with card reveal animations */}
+        <motion.div
+          className={styles.grid}
+          variants={gridVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"} // Trigger animation when in view
+        >
           {filteredCourses.map((course, index) => (
-            <Card
-              url={course.url}
+            <motion.div
               key={index}
-              Level={course.Level}
-              icon={course.icon}
-              title={course.title}
-              topics={course.topics}
-              videos={course.videos}
-              desc={course.desc}
-              offer={course.offer}
-              price={course.price}
-              originalPrice={course.originalPrice}
-              bannerColor={course.bannerColor}
-              available={course.available}
-            />
+              variants={cardVariants} // Apply card animation
+              className={styles.cardWrapper}
+            >
+              <Card
+                url={course.url}
+                Level={course.Level}
+                icon={course.icon}
+                title={course.title}
+                topics={course.topics}
+                videos={course.videos}
+                desc={course.desc}
+                offer={course.offer}
+                price={course.price}
+                originalPrice={course.originalPrice}
+                bannerColor={course.bannerColor}
+                available={course.available}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
+        {/* Description fade-in animation */}
         <FadeTransition
           description={description}
           isInView={isInView}

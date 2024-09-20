@@ -28,8 +28,8 @@ const StatsCard: React.FC<StatsCardProps> = ({
   };
 
   const { ref, inView } = useInView({
-    triggerOnce: false, // We want the animation to trigger every time
-    threshold: 0.5, // Adjust this as needed for the visibility threshold
+    triggerOnce: false,
+    threshold: 0.5, 
   });
 
   return (
@@ -37,13 +37,13 @@ const StatsCard: React.FC<StatsCardProps> = ({
       className={styles.container}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      ref={ref} // Attach the intersection observer ref
+      ref={ref} 
     >
       <div className={styles.iconBox}>
         <Lottie
           options={defaultOptions}
-          isStopped={!isHovered} // Starts the animation on hover
-          isPaused={!isHovered} // Pauses the animation when not hovered
+          isStopped={!isHovered} 
+          isPaused={!isHovered} 
           height={55}
           width={55}
         />
@@ -52,11 +52,11 @@ const StatsCard: React.FC<StatsCardProps> = ({
         {inView ? (
           <CountUp
             start={0}
-            end={count} // Dynamic count value
-            duration={2.5} // Set the animation duration
+            end={count} 
+            duration={2.5} 
             separator=","
             suffix="+"
-            key={inView ? "count-up-visible" : "count-up-hidden"} // Changing the key forces a re-render
+            key={inView ? "count-up-visible" : "count-up-hidden"} 
           >
             {({ countUpRef }) => (
               <p
@@ -66,9 +66,9 @@ const StatsCard: React.FC<StatsCardProps> = ({
             )}
           </CountUp>
         ) : (
-          <p className={styles.count}>0</p> // Show 0 when not in view
+          <p className={styles.count}>0</p> 
         )}
-        <p className={styles.title}>{title}</p> {/* Dynamic title */}
+        <p className={styles.title}>{title}</p> 
       </div>
     </div>
   );

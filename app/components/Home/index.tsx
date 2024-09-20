@@ -8,6 +8,7 @@ import GetToKnow from "./sections/GetToKnow";
 import Courses from "./sections/Courses"
 import Stats from "./sections/Stats";
 import dynamic from "next/dynamic";
+import Testimonials from "./sections/Testimonial";
 
 const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
   ssr: false,
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => {
       <AboutPortal />
       <Courses />
       <Stats />
+      <Testimonials />
     </main>
   );
 };
