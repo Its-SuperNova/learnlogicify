@@ -67,22 +67,6 @@ const ServicesSection = () => {
           <div className={styles.title}>
             Our <span className={styles.animatedGradient}>Vision</span>
           </div>
-          <div className={styles.desc}>
-            At LearnLogicify Technologies LLP, we envision a world where every
-            individual has the opportunity to achieve their fullest potential.
-            Our goal is to bridge the gap between academic learning and
-            real-world application by offering comprehensive training programs
-            and courses. We are dedicated to providing students with the tools,
-            skills, and confidence needed to thrive in today’s competitive job
-            market. <br />
-            <br />
-            Through our placement training, technical courses, and personalized
-            support, we strive to ensure that every learner is well-prepared to
-            meet the challenges and seize the opportunities of their chosen
-            career paths. We believe in empowering our students not just with
-            knowledge, but with practical experience and the ability to apply
-            what they’ve learned in meaningful ways.
-          </div>
         </motion.div>
       </div>
     </div>
