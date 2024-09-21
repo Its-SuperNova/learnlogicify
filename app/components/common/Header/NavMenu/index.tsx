@@ -9,7 +9,7 @@ const Header = () => {
         <li className={styles.gradientText}>Company</li>
         <div className={styles.dropdownContent}>
           <li>
-            <Link href="/Company/AboutUs">About Us</Link>
+            <Link href="/Company/Team">Services</Link>
           </li>
           <li>
             <Link href="/Company/Team">Team</Link>
@@ -32,11 +32,6 @@ const Header = () => {
             <Link href="/Courses?tab=CompanySpecific">Company Specific</Link>
           </li>
         </div>
-      </div>
-      <div>
-        <li className={styles.gradientText}>
-          <Link href={"/Services"}>Services</Link>
-        </li>
       </div>
       <div>
         <li className={styles.gradientText}>
