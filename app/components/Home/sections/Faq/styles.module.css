@@ -1,0 +1,137 @@
+.exploreCourses {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    width: 100vw;
+    padding: 0px 200px;
+    padding-bottom: 100px;
+}
+
+.body {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100vw;
+}
+
+.title,
+.subTitle {
+    font-size: 60px;
+    line-height: 75px;
+    text-align: left;
+    font-family: "Wix Madefor Text";
+    color: rgb(0, 0, 0);
+}
+
+.subTitle {
+    margin-top: -40px;
+    color: rgb(172, 172, 172);
+    font-size: 45px;
+}
+
+/* FAQ Section */
+.faqSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+/* FAQ Card */
+.faqCard {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove background color change when active */
+.active.faqCard {
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+/* Question and Answer Section */
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.icon {
+    font-size: 25px;
+    font-weight: 400;
+    transition: transform 0.5s ease;
+}
+
+.clicked {
+    transform: rotate(45deg);
+    /* Rotates the + to a cross when clicked */
+}
+
+/* Answer Section */
+.answer {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* FAQ Card hover effect (Scaling Effect) */
+.faqCard:hover {
+    transform: scale(1.05);
+}
+
+/* FAQ Icon hover effect - Keep the color same */
+.faqCard:hover .icon {
+    color: #000;
+    /* No color change on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .exploreCourses {
+        padding: 0 20px;
+    }
+
+    .body {
+        width: 100%;
+        align-items: center;
+    }
+
+    .faqSection {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .title,
+    .subTitle {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .subTitle {
+        font-size: 30px;
+    }
+}
