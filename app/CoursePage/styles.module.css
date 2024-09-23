@@ -1,0 +1,141 @@
+/* General container styling */
+.container {
+    display: flex;
+    background-color: #ececec;
+    height: 100vh;
+    padding: 10px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 330px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border-radius: 20px;
+    transition: width 0.3s ease, left 0.3s ease;
+    /* Added smooth transition for mobile */
+    position: relative;
+}
+
+/* Collapsed sidebar style */
+.collapsed {
+    width: 60px;
+}
+
+/* Mobile sidebar hidden by default */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -330px;
+        top: 0;
+        height: 100vh;
+        width: 330px;
+        z-index: 1000;
+    }
+
+    /* Show sidebar when the menu button is clicked */
+    .mobileSidebarVisible {
+        left: 0;
+    }
+
+    /* Hide desktop collapse button and show mobile menu button */
+    .collapseButtonDesktop {
+        display: none;
+    }
+}
+
+/* Main content section */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+/* Header section */
+.header {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Collapse button styling for desktop */
+.collapseButtonDesktop {
+    height: 45px;
+    width: 45px;
+    background-color: #e5e5ff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+}
+
+/* Menu button for mobile view */
+.collapseButtonMobile {
+    display: none;
+    /* Initially hidden on desktop */
+    height: 45px;
+    width: 45px;
+    background-color: #e5e5ff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+}
+
+/* Show menu button on mobile and hide desktop collapse button */
+@media (max-width: 768px) {
+    .collapseButtonMobile {
+        display: flex;
+        /* Shown only on mobile */
+    }
+
+    .collapseButtonDesktop {
+        display: none;
+        /* Hidden on mobile */
+    }
+}
+
+/* Close button inside mobile sidebar */
+.closeMobileSidebar {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 10px;
+    display: none;
+    /* Hidden by default on desktop */
+}
+
+/* Show close button only on mobile screens */
+@media (max-width: 768px) {
+    .closeMobileSidebar {
+        display: block;
+    }
+}
+
+/* Body section */
+.body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    border-radius: 20px;
+}

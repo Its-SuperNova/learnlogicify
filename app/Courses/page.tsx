@@ -14,6 +14,7 @@ import SideBar from "./components/SideBar";
 import BootcampCard from "./components/BootcampCard";
 import CompanyCard from "./components/CompanyCard";
 import Footer from "../components/common/Footer";
+
 const AllCourseContent: React.FC = () => {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -25,7 +26,7 @@ const AllCourseContent: React.FC = () => {
     category: [],
   });
   const [selectedTab, setSelectedTab] = useState<string>("AllCourses");
-  const [loading, setLoading] = useState<boolean>(true); // State for loading
+  const [loading, setLoading] = useState<boolean>(true);
   const [showOnlyAvailable, setShowOnlyAvailable] = useState<boolean>(false);
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const AllCourseContent: React.FC = () => {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500); // 1.5 seconds for the loading effect
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [selectedTab, filters]);
@@ -77,7 +78,7 @@ const AllCourseContent: React.FC = () => {
       topicId: [],
       companyId: [],
       category: [],
-    }); // Reset filters when a new tab is clicked
+    });
   };
 
   const filteredCourses = coursesData.filter((course: Course) => {
@@ -158,52 +159,58 @@ const AllCourseContent: React.FC = () => {
           selectedTab={selectedTab}
         />
         <div className={styles.mainContent}>
-          <h1 className={styles.title}>{getTitle()}</h1>
-          <div className={styles.searchContainer}>
-            <IoIosSearch className={styles.searchIcon} />
-            <input
-              type="text"
-              placeholder={getPlaceholder()}
-              className={styles.searchBox}
-              value={searchTerm}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className={styles.tabContainer}>
-            <button
-              className={`${styles.tabButton} ${
-                selectedTab === "AllCourses" ? styles.activeTab : ""
-              }`}
-              onClick={() => handleTabChange("AllCourses")}
-            >
-              All Courses
-            </button>
-            <button
-              className={`${styles.tabButton} ${
-                selectedTab === "AllBootcamps" ? styles.activeTab : ""
-              }`}
-              onClick={() => handleTabChange("AllBootcamps")}
-            >
-              All Bootcamps
-            </button>
-            <button
-              className={`${styles.tabButton} ${
-                selectedTab === "CompanySpecific" ? styles.activeTab : ""
-              }`}
-              onClick={() => handleTabChange("CompanySpecific")}
-            >
-              Company Specific
-            </button>
-            <div className={styles.toggleButton}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>{getTitle()}</h1>
+            <div className={styles.searchContainer}>
+              <IoIosSearch className={styles.searchIcon} />
               <input
-                type="checkbox"
-                id="toggle"
-                onChange={() => setShowOnlyAvailable(!showOnlyAvailable)}
+                type="text"
+                placeholder={getPlaceholder()}
+                className={styles.searchBox}
+                value={searchTerm}
+                onChange={handleInputChange}
               />
-              <label htmlFor="toggle" className={styles.switch}></label>
+            </div>
+            <div className={styles.tabContainer}>
+              <button
+                className={`${styles.tabButton} ${
+                  selectedTab === "AllCourses" ? styles.activeTab : ""
+                }`}
+                onClick={() => handleTabChange("AllCourses")}
+              >
+                All Courses
+              </button>
+              <button
+                className={`${styles.tabButton} ${
+                  selectedTab === "AllBootcamps" ? styles.activeTab : ""
+                }`}
+                onClick={() => handleTabChange("AllBootcamps")}
+              >
+                All Bootcamps
+              </button>
+              <button
+                className={`${styles.tabButton} ${
+                  selectedTab === "CompanySpecific" ? styles.activeTab : ""
+                }`}
+                onClick={() => handleTabChange("CompanySpecific")}
+              >
+                Company Specific
+              </button>
+              <div className={styles.toggleContainer}>
+                <label htmlFor="toggle" className={styles.availableLabel}>
+                  Available Courses
+                </label>
+                <div className={styles.toggleButton}>
+                  <input
+                    type="checkbox"
+                    id="toggle"
+                    onChange={() => setShowOnlyAvailable(!showOnlyAvailable)}
+                  />
+                  <label htmlFor="toggle" className={styles.switch}></label>
+                </div>
+              </div>
             </div>
           </div>
-
           {loading ? (
             <>
               {selectedTab === "AllCourses" && (
@@ -296,7 +303,7 @@ const AllCourseContent: React.FC = () => {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer className={styles.footer} />
     </>
   );
 };

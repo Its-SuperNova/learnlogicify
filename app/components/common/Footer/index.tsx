@@ -1,4 +1,3 @@
-
 import React from "react";
 import styles from "./styles.module.css";
 import Logo from "../../images/logo/darkLogo";
@@ -14,9 +13,15 @@ import {
 import SocialLink from "../SocialLinks";
 import Link from "next/link";
 
-const Footer = () => {
+interface FooterProps {
+  className?: string; // Accepts className prop
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className || ""}`}>
+      {" "}
+      {/* Merge className with styles.container */}
       <div className={styles.top}>
         {/* Section 1 - Left (Logo, Description, Social Media Links) */}
         <div className={styles.section1}>
@@ -128,7 +133,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       {/* Bottom Section */}
       <div className={styles.bottom}>
         <div>

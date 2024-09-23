@@ -5,6 +5,7 @@
     position: relative;
     padding: 25px;
     padding-right: 10px;
+    min-height: 1000px;
 }
 
 .mainContent {
@@ -13,13 +14,18 @@
     flex: 1;
     margin-left: 250px;
 }
-
+.header{
+    padding-left: 20px;
+}
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 270px));
+    gap: 30px;
+    justify-content: start;
+    max-width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
-
 .bootcampGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -69,8 +75,11 @@
 }
 .tabContainer {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .tabButton {
@@ -97,14 +106,18 @@
     background-color: #f9f9f9;
     border-radius: 10px;
 }
-/* Add these styles to your existing CSS */
 .toggleButton {
     display: inline-block;
     margin-left: 10px;
     position: relative;
     margin-top: 5px;
 }
-
+.toggleContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .toggleButton input[type="checkbox"] {
     display: none;
 }
@@ -188,3 +201,6 @@ input:checked+.switch::before {
         padding: 20px;
     }
 }
+
+
+
