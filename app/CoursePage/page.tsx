@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { FaArrowLeft, FaArrowRight, FaBars} from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
-
+import Sidebar from "./components/SideBar";
 const Course = () => {
   // State to manage the collapsed/expanded state of the sidebar
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -27,14 +27,14 @@ const Course = () => {
           isMobileSidebarVisible ? styles.mobileSidebarVisible : ""
         }`}
       >
-        {/* Close Button for Mobile View */}
         <button
           className={styles.closeMobileSidebar}
           onClick={toggleMobileSidebar}
         >
           <RxCross1 size={20} />
         </button>
-        {/* Add sidebar content here */}
+        
+        <Sidebar/>
       </div>
 
       {/* Main Content */}

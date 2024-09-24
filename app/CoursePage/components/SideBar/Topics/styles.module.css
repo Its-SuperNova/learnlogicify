@@ -1,0 +1,79 @@
+.LangContainer {
+    height: auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #161616;
+    display: flex;
+    flex-direction: column;
+}
+
+.langHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #282828;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.c {
+    width: 23px;
+}
+
+.languages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-top 0.5s ease;
+    padding-top: 10px;
+}
+
+.languages.visible {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.languages.collapsing {
+    padding-top: 10px;
+}
+
+.languages:not(.collapsing):not(.visible) {
+    padding-top: 0px;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lang:hover {
+    background-color: #0004ff;
+    cursor: pointer;
+}
+
+.langName {
+    font-size: 18px;
+}
+
+.lang:hover .icon {
+    background-color: white;
+    color: #0004ff;
+}

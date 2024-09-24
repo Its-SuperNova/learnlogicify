@@ -8,22 +8,21 @@
 
 /* Sidebar styles */
 .sidebar {
-    width: 330px;
-    background-color: #222;
+    min-width: 330px;
+    background-color: #000000;
     color: white;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     border-radius: 20px;
-    transition: width 0.3s ease, left 0.3s ease;
-    /* Added smooth transition for mobile */
+    transition: width 0.3s ease, left 0.3s ease; /* Added smooth transition for mobile */
     position: relative;
 }
 
 /* Collapsed sidebar style */
 .collapsed {
-    width: 60px;
+    width: 74px;
 }
 
 /* Mobile sidebar hidden by default */
@@ -84,8 +83,7 @@
 
 /* Menu button for mobile view */
 .collapseButtonMobile {
-    display: none;
-    /* Initially hidden on desktop */
+    display: none; /* Initially hidden on desktop */
     height: 45px;
     width: 45px;
     background-color: #e5e5ff;
@@ -100,13 +98,11 @@
 /* Show menu button on mobile and hide desktop collapse button */
 @media (max-width: 768px) {
     .collapseButtonMobile {
-        display: flex;
-        /* Shown only on mobile */
+        display: flex; /* Shown only on mobile */
     }
 
     .collapseButtonDesktop {
-        display: none;
-        /* Hidden on mobile */
+        display: none; /* Hidden on mobile */
     }
 }
 
@@ -118,8 +114,7 @@
     cursor: pointer;
     align-self: flex-end;
     margin-top: 10px;
-    display: none;
-    /* Hidden by default on desktop */
+    display: none; /* Hidden by default on desktop */
 }
 
 /* Show close button only on mobile screens */
