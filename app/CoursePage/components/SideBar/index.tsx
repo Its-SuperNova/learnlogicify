@@ -5,13 +5,14 @@ import Topics from "./Topics";
 import Level from "./Level";
 
 const Sidebar = () => {
-  const TabTitle = "All Courses";
+  const [expandedSection, setExpandedSection] = useState<string | null>(
+    "Languages"
+  ); // Allow 'string | null'
 
-  // State to manage which dropdown is open
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-  const handleToggle = (dropdownName: string) => {
-    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
+  const handleToggle = (section: string) => {
+    setExpandedSection((prevSection) =>
+      prevSection === section ? null : section
+    );
   };
 
   return (
@@ -25,21 +26,21 @@ const Sidebar = () => {
           />
         </div>
         <div className={styles.title}>
-          <span className={styles.bold}>Catalog</span> / {TabTitle}
+          <span className={styles.bold}>Catalog</span> / All Courses
         </div>
       </div>
 
       <Languages
-        isOpen={openDropdown === "languages"}
-        toggleDropdown={() => handleToggle("languages")}
+        isExpanded={expandedSection === "Languages"}
+        onToggle={() => handleToggle("Languages")}
       />
       <Topics
-        isOpen={openDropdown === "topics"}
-        toggleDropdown={() => handleToggle("topics")}
+        isExpanded={expandedSection === "Topics"}
+        onToggle={() => handleToggle("Topics")}
       />
       <Level
-        isOpen={openDropdown === "level"}
-        toggleDropdown={() => handleToggle("level")}
+        isExpanded={expandedSection === "Level"}
+        onToggle={() => handleToggle("Level")}
       />
     </div>
   );

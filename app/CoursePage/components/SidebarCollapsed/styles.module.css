@@ -12,7 +12,9 @@
     margin-top: 4px;
 }
 
-.langContainer {
+.langContainer,
+.TopicContainer,
+.LevelContainer {
     background-color: #1c1c1c;
     width: 100%;
     display: flex;
@@ -53,22 +55,37 @@
     /* Position to the right of the icon */
     top: 50%;
     transform: translateY(-50%);
-    background-color: #d3d3ff;
-    color: #0003a7;
+    background-color: #d8d8ff;
+    color: #0004e2;
+    font-weight: 600;
     padding: 6px 12px;
     border-radius: 8px;
     opacity: 0;
     /* Hidden by default */
     pointer-events: none;
-        transition: opacity 0.3s ease;
-            /* Smooth transition */
-            white-space: nowrap;
-            font-size: 14px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            /* Slight shadow for effect */
-        }
-        
-        .icon:hover::after {
-            opacity: 1;
-            /* Show the tooltip on hover */
-        }
+    transition: opacity 0.3s ease;
+    /* Smooth transition */
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for effect */
+}
+
+.icon:hover::after {
+    opacity: 1;
+    /* Show the tooltip on hover */
+}
+
+/* Hide LevelContainer if the screen height is below 772px */
+@media (max-height: 772px) {
+    .LevelContainer {
+        display: none;
+    }
+}
+
+/* Hide TopicContainer if the screen height is below 390px */
+@media (max-height: 615px) {
+    .TopicContainer {
+        display: none;
+    }
+}

@@ -6,24 +6,26 @@ import { SlGraph } from "react-icons/sl";
 import { FaGear } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
 
-// Define the types for props
-interface DropdownProps {
-  isOpen: boolean;
-  toggleDropdown: () => void;
-}
-
-const Topics: React.FC<DropdownProps> = ({ isOpen, toggleDropdown }) => {
+const Topics = ({
+  isExpanded,
+  onToggle,
+}: {
+  isExpanded: boolean;
+  onToggle: () => void;
+}) => {
   return (
     <div className={styles.LangContainer}>
-      <div className={styles.langHeader} onClick={toggleDropdown}>
+      <div className={styles.langHeader} onClick={onToggle}>
         <h1 className={styles.langTitle}>Topics</h1>
-        {isOpen ? (
+        {isExpanded ? (
           <IoMdArrowDropup size={25} />
         ) : (
           <IoMdArrowDropdown size={25} />
         )}
       </div>
-      <div className={`${styles.languages} ${isOpen ? styles.visible : ""}`}>
+      <div
+        className={`${styles.languages} ${isExpanded ? styles.visible : ""}`}
+      >
         <div className={styles.lang}>
           <div className={styles.icon}>
             <IoExtensionPuzzle size={23} />

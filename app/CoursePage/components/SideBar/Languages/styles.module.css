@@ -1,4 +1,3 @@
-/* Main container for each dropdown */
 .LangContainer {
     height: auto;
     padding: 10px;
@@ -9,7 +8,6 @@
     flex-direction: column;
 }
 
-/* Header of each dropdown with title and arrow icon */
 .langHeader {
     display: flex;
     justify-content: space-between;
@@ -18,7 +16,6 @@
     cursor: pointer;
 }
 
-/* Icon styling for items within dropdown */
 .icon {
     display: flex;
     justify-content: center;
@@ -30,12 +27,10 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* For the "C" icon specifically */
 .c {
     width: 23px;
 }
 
-/* Container for all items in the dropdown */
 .languages {
     display: flex;
     flex-direction: column;
@@ -44,26 +39,14 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, padding-top 0.5s ease;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
-/* When dropdown is open, expand it with max-height and padding */
 .languages.visible {
     max-height: 500px;
     padding-top: 10px;
 }
 
-/* When collapsing, retain the padding */
-.languages.collapsing {
-    padding-top: 10px;
-}
-
-/* Reset padding when dropdown is fully collapsed */
-.languages:not(.collapsing):not(.visible) {
-    padding-top: 0px;
-}
-
-/* Each individual dropdown item */
 .lang {
     display: flex;
     align-items: center;
@@ -73,50 +56,15 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for dropdown items */
 .lang:hover {
     background-color: #0004ff;
     cursor: pointer;
 }
 
-/* Text inside each dropdown item */
 .langName {
     font-size: 18px;
-    color: white;
 }
 
-/* Hover effect for icons inside dropdown */
 .lang:hover .icon {
-    background-color: white;
-    color: #0004ff;
-}
-
-/* Title for dropdown sections like "Languages", "Topics", and "Level" */
-.langTitle {
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-/* Custom scrollbar styling */
-.LangContainer {
-    scrollbar-width: thin;
-    scrollbar-color: #5a5a5a #161616;
-}
-
-.LangContainer::-webkit-scrollbar {
-    width: 8px;
-}
-
-.LangContainer::-webkit-scrollbar-track {
-    background: #161616;
-}
-
-.LangContainer::-webkit-scrollbar-thumb {
-    background-color: #5a5a5a;
-    border-radius: 10px;
-}
-
-.LangContainer::-webkit-scrollbar-thumb:hover {
     background-color: #0004ff;
 }

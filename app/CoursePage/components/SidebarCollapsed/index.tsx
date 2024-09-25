@@ -34,7 +34,7 @@ const CollapseSidebar = () => {
           <IoLogoHtml5 size={23} />
         </div>
       </div>
-      <div className={styles.langContainer}>
+      <div className={styles.TopicContainer}>
         <div className={styles.icon} data-name="Python">
           <FaPython size={23} />
         </div>
@@ -48,12 +48,15 @@ const CollapseSidebar = () => {
           <FaJava size={23} />
         </div>
       </div>
-      <div className={styles.langContainer}>
+      <div className={styles.LevelContainer}>
         <div className={styles.icon} data-name="Python">
           <FaPython size={23} />
         </div>
         <div className={styles.icon} data-name="C">
           <img className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
+        </div>
+        <div className={styles.icon} data-name="C++">
+          <SiCplusplus size={23} />
         </div>
       </div>
     </div>

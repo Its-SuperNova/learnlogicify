@@ -5,24 +5,26 @@ import { FaPython, FaJava, FaJsSquare } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
 
-// Define the types for props
-interface DropdownProps {
-  isOpen: boolean;
-  toggleDropdown: () => void;
-}
-
-const Languages: React.FC<DropdownProps> = ({ isOpen, toggleDropdown }) => {
+const Languages = ({
+  isExpanded,
+  onToggle,
+}: {
+  isExpanded: boolean;
+  onToggle: () => void;
+}) => {
   return (
     <div className={styles.LangContainer}>
-      <div className={styles.langHeader} onClick={toggleDropdown}>
+      <div className={styles.langHeader} onClick={onToggle}>
         <h1 className={styles.langTitle}>Languages</h1>
-        {isOpen ? (
+        {isExpanded ? (
           <IoMdArrowDropup size={25} />
         ) : (
           <IoMdArrowDropdown size={25} />
         )}
       </div>
-      <div className={`${styles.languages} ${isOpen ? styles.visible : ""}`}>
+      <div
+        className={`${styles.languages} ${isExpanded ? styles.visible : ""}`}
+      >
         <div className={styles.lang}>
           <div className={styles.icon}>
             <FaPython size={23} />
