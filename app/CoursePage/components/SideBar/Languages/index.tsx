@@ -1,43 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { FaPython, FaJava, FaJsSquare } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
 
-const Languages = () => {
-  // State to manage the dropdown visibility
-  const [isLangOpen, setIsLangOpen] = useState(true);
-  const [isCollapsing, setIsCollapsing] = useState(false);
+// Define the types for props
+interface DropdownProps {
+  isOpen: boolean;
+  toggleDropdown: () => void;
+}
 
-  // Function to toggle dropdown
-  const toggleLanguages = () => {
-    if (isLangOpen) {
-      setIsCollapsing(true); // Start collapsing
-      setTimeout(() => {
-        setIsLangOpen(false); // After timeout, complete collapse
-        setIsCollapsing(false); // Reset collapse state
-      }, 500); // Match the max-height transition time (0.5s)
-    } else {
-      setIsLangOpen(true); // Immediately expand
-    }
-  };
-
+const Languages: React.FC<DropdownProps> = ({ isOpen, toggleDropdown }) => {
   return (
     <div className={styles.LangContainer}>
-      <div className={styles.langHeader} onClick={toggleLanguages}>
+      <div className={styles.langHeader} onClick={toggleDropdown}>
         <h1 className={styles.langTitle}>Languages</h1>
-        {isLangOpen ? (
-          <IoMdArrowDropup size={25} /> // Show up arrow when dropdown is open
+        {isOpen ? (
+          <IoMdArrowDropup size={25} />
         ) : (
-          <IoMdArrowDropdown size={25} /> // Show down arrow when dropdown is closed
+          <IoMdArrowDropdown size={25} />
         )}
       </div>
-      <div
-        className={`${styles.languages} ${isLangOpen ? styles.visible : ""} ${
-          isCollapsing ? styles.collapsing : ""
-        }`}
-      >
+      <div className={`${styles.languages} ${isOpen ? styles.visible : ""}`}>
         <div className={styles.lang}>
           <div className={styles.icon}>
             <FaPython size={23} />

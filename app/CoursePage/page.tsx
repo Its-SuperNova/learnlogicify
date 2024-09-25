@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { FaArrowLeft, FaArrowRight, FaBars} from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
-import Sidebar from "./components/SideBar";
+import Sidebar from "./components/SideBar"; // Full Sidebar
+import CollapsedSidebar from "./components/SidebarCollapsed"; // Collapsed Sidebar
+
 const Course = () => {
-  // State to manage the collapsed/expanded state of the sidebar
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
 
@@ -33,8 +34,13 @@ const Course = () => {
         >
           <RxCross1 size={20} />
         </button>
-        
-        <Sidebar/>
+
+        {/* Dynamically switch between full sidebar and collapsed sidebar */}
+        {isCollapsed ? (
+          <CollapsedSidebar /> // Show CollapsedSidebar when collapsed
+        ) : (
+          <Sidebar /> // Show full Sidebar when not collapsed
+        )}
       </div>
 
       {/* Main Content */}

@@ -8,7 +8,7 @@
 
 /* Sidebar styles */
 .sidebar {
-    min-width: 330px;
+    width: 360px;
     background-color: #000000;
     color: white;
     padding: 15px;
@@ -18,11 +18,13 @@
     border-radius: 20px;
     transition: width 0.3s ease, left 0.3s ease; /* Added smooth transition for mobile */
     position: relative;
+    overflow: hidden;
 }
 
 /* Collapsed sidebar style */
 .collapsed {
     width: 74px;
+    padding: 10px;
 }
 
 /* Mobile sidebar hidden by default */

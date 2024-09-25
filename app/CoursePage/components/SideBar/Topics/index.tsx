@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { IoExtensionPuzzle } from "react-icons/io5";
@@ -6,39 +6,24 @@ import { SlGraph } from "react-icons/sl";
 import { FaGear } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
 
-const Topics = () => {
-  // State to manage the dropdown visibility
-  const [isLangOpen, setIsLangOpen] = useState(true);
-  const [isCollapsing, setIsCollapsing] = useState(false);
+// Define the types for props
+interface DropdownProps {
+  isOpen: boolean;
+  toggleDropdown: () => void;
+}
 
-  // Function to toggle dropdown
-  const toggleLanguages = () => {
-    if (isLangOpen) {
-      setIsCollapsing(true); // Start collapsing
-      setTimeout(() => {
-        setIsLangOpen(false); // After timeout, complete collapse
-        setIsCollapsing(false); // Reset collapse state
-      }, 500); // Match the max-height transition time (0.5s)
-    } else {
-      setIsLangOpen(true); // Immediately expand
-    }
-  };
-
+const Topics: React.FC<DropdownProps> = ({ isOpen, toggleDropdown }) => {
   return (
     <div className={styles.LangContainer}>
-      <div className={styles.langHeader} onClick={toggleLanguages}>
+      <div className={styles.langHeader} onClick={toggleDropdown}>
         <h1 className={styles.langTitle}>Topics</h1>
-        {isLangOpen ? (
-          <IoMdArrowDropup size={25} /> // Show up arrow when dropdown is open
+        {isOpen ? (
+          <IoMdArrowDropup size={25} />
         ) : (
-          <IoMdArrowDropdown size={25} /> // Show down arrow when dropdown is closed
+          <IoMdArrowDropdown size={25} />
         )}
       </div>
-      <div
-        className={`${styles.languages} ${isLangOpen ? styles.visible : ""} ${
-          isCollapsing ? styles.collapsing : ""
-        }`}
-      >
+      <div className={`${styles.languages} ${isOpen ? styles.visible : ""}`}>
         <div className={styles.lang}>
           <div className={styles.icon}>
             <IoExtensionPuzzle size={23} />

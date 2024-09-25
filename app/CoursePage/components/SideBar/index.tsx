@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import Languages from "./Languages"; // Import Languages Component
+import Languages from "./Languages";
 import Topics from "./Topics";
 import Level from "./Level";
+
 const Sidebar = () => {
   const TabTitle = "All Courses";
+
+  // State to manage which dropdown is open
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const handleToggle = (dropdownName: string) => {
+    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
+  };
 
   return (
     <div className={styles.main}>
@@ -20,9 +28,19 @@ const Sidebar = () => {
           <span className={styles.bold}>Catalog</span> / {TabTitle}
         </div>
       </div>
-      <Languages />
-      <Topics />
-      <Level />
+
+      <Languages
+        isOpen={openDropdown === "languages"}
+        toggleDropdown={() => handleToggle("languages")}
+      />
+      <Topics
+        isOpen={openDropdown === "topics"}
+        toggleDropdown={() => handleToggle("topics")}
+      />
+      <Level
+        isOpen={openDropdown === "level"}
+        toggleDropdown={() => handleToggle("level")}
+      />
     </div>
   );
 };
