@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 import Sidebar from "./components/SideBar"; // Full Sidebar
 import CollapsedSidebar from "./components/SidebarCollapsed"; // Collapsed Sidebar
-
+import Header from "./components/Header"; // Importing the header component
+import HamburgerMenu from "../components/CourseHamburger";
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
@@ -21,56 +21,42 @@ const Course = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {/* Sidebar */}
-      <div
-        className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""} ${
-          isMobileSidebarVisible ? styles.mobileSidebarVisible : ""
-        }`}
-      >
-        <button
-          className={styles.closeMobileSidebar}
-          onClick={toggleMobileSidebar}
+    <>
+      <HamburgerMenu />
+      <div className={styles.container}>
+        {/* Sidebar */}
+        <div
+          className={`${styles.sidebar} ${
+            isCollapsed ? styles.collapsed : ""
+          } ${isMobileSidebarVisible ? styles.mobileSidebarVisible : ""}`}
         >
-          <RxCross1 size={20} />
-        </button>
+          <button
+            className={styles.closeMobileSidebar}
+            onClick={toggleMobileSidebar}
+          >
+            <RxCross1 size={20} />
+          </button>
 
-        {/* Dynamically switch between full sidebar and collapsed sidebar */}
-        {isCollapsed ? (
-          <CollapsedSidebar /> // Show CollapsedSidebar when collapsed
-        ) : (
-          <Sidebar /> // Show full Sidebar when not collapsed
-        )}
-      </div>
-
-      {/* Main Content */}
-      <div className={styles.main}>
-        <div className={styles.header}>
-          <div className={styles.collapseContainer}>
-            {/* Menu Button for Mobile Screens */}
-            <button
-              className={styles.collapseButtonMobile}
-              onClick={toggleMobileSidebar}
-            >
-              <FaBars size={20} />
-            </button>
-
-            {/* Collapse Button for Desktop Screens */}
-            <button
-              className={styles.collapseButtonDesktop}
-              onClick={toggleSidebar}
-            >
-              {isCollapsed ? (
-                <FaArrowRight size={20} />
-              ) : (
-                <FaArrowLeft size={20} />
-              )}
-            </button>
-          </div>
+          {/* Dynamically switch between full sidebar and collapsed sidebar */}
+          {isCollapsed ? (
+            <CollapsedSidebar /> // Show CollapsedSidebar when collapsed
+          ) : (
+            <Sidebar /> // Show full Sidebar when not collapsed
+          )}
         </div>
-        <div className={styles.body}></div>
+
+        {/* Main Content */}
+        <div className={styles.main}>
+          {/* Import and use the Header component */}
+          <Header
+            isCollapsed={isCollapsed}
+            toggleSidebar={toggleSidebar}
+            toggleMobileSidebar={toggleMobileSidebar}
+          />
+          <div className={styles.body}></div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
