@@ -6,6 +6,7 @@ import Sidebar from "./components/SideBar"; // Full Sidebar
 import CollapsedSidebar from "./components/SidebarCollapsed"; // Collapsed Sidebar
 import Header from "./components/Header"; // Importing the header component
 import HamburgerMenu from "../components/CourseHamburger";
+import CourseBody from "./components/CourseBody"
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
@@ -53,7 +54,9 @@ const Course = () => {
             toggleSidebar={toggleSidebar}
             toggleMobileSidebar={toggleMobileSidebar}
           />
-          <div className={styles.body}></div>
+          <div className={styles.body}>
+            <CourseBody />
+          </div>
         </div>
       </div>
     </>
