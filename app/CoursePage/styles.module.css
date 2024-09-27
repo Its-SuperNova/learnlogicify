@@ -19,8 +19,12 @@
     border-radius: 20px;
     transition: width 0.3s ease, left 0.3s ease;
     position: relative;
+    overflow: auto;
 }
 
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
 /* Collapsed sidebar style */
 .collapsed {
     width: 74px;
@@ -79,4 +83,12 @@
     gap: 20px;
     border-radius: 20px;
     overflow: auto;
+}
+.sidebar::-webkit-sidebar{
+    display: none;
+}
+.sidebar {
+    overflow: auto;
+    position: relative;
+    /* This is needed to allow scrolling */
 }
