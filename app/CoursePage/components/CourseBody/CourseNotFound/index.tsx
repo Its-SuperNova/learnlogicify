@@ -1,6 +1,6 @@
 import React from "react";
 import Player from "react-lottie-player"; // Correct import from react-lottie-player
-import animationData from "../json/Page Not Found.json"; // Replace with the actual path to your Lottie JSON file
+import animationData from "../../json/Page Not Found.json"; // Replace with the actual path to your Lottie JSON file
 import styles from "./styles.module.css";
 
 const CourseNotFound = () => {
@@ -14,9 +14,7 @@ const CourseNotFound = () => {
           style={{ height: "500px", width: "500px" }} // Customize the height and width
         />
       </div>
-      <h2 className={styles.notFoundText}>
-        Oops! No courses available.
-      </h2>
+      <h2 className={styles.notFoundText}>Oops! No courses available.</h2>
     </div>
   );
 };

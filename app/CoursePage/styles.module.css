@@ -9,7 +9,8 @@
 
 /* Sidebar styles */
 .sidebar {
-    min-width: 360px;
+    width: 360px;
+    /* Default expanded width */
     background-color: #000000;
     color: white;
     padding: 10px;
@@ -17,7 +18,8 @@
     flex-direction: column;
     justify-content: start;
     border-radius: 20px;
-    transition: width 0.3s ease, left 0.3s ease;
+    transition: width 0.3s ease;
+    /* Smooth transition for width */
     position: relative;
     overflow: auto;
 }
@@ -25,9 +27,11 @@
 .sidebar::-webkit-scrollbar {
     display: none;
 }
+
 /* Collapsed sidebar style */
 .collapsed {
-    min-width: 74px;
+    width: 74px;
+    /* Collapsed width */
 }
 
 /* Mobile sidebar hidden by default */
@@ -39,6 +43,8 @@
         height: 100vh;
         width: 330px;
         z-index: 1000;
+        transition: left 0.3s ease;
+        /* Smooth transition for mobile sidebar */
     }
 
     .mobileSidebarVisible {
@@ -53,6 +59,8 @@
     flex-direction: column;
     padding-left: 20px;
     padding-right: 10px;
+    transition: padding-left 0.3s ease;
+    /* Smooth transition for padding adjustment when sidebar collapses/expands */
 }
 
 /* Close button inside mobile sidebar */
@@ -85,14 +93,12 @@
     overflow: auto;
     scrollbar-width: 0;
 }
-.sidebar::-webkit-sidebar{
+
+/* Hide scrollbar */
+.body::-webkit-scrollbar {
     display: none;
 }
-.sidebar {
-    overflow: auto;
-    position: relative;
-    /* This is needed to allow scrolling */
-}
-.body::-webkit-scrollbar{
+
+.sidebar::-webkit-scrollbar {
     display: none;
 }

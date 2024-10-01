@@ -1,89 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { IoIosSearch } from "react-icons/io";
-import Card from "../CourseCard"; // Import the Card component
-import SkeletonCourseCard from "../skeletonCourseCard"; // Import the skeleton component
-import coursesData, { Course } from "../data/courseData"; // Import the courses data and Course type
-import CourseNotFound from "../CourseNotFound"; // Import the CourseNotFound component
+import AllCourses from "./AllCourses"; // Import the AllCourses component
+import AllBootCamps from "./AllBootcamps"; // Placeholder for bootcamps
+import CompanySpecific from "./CompanySpesific"; // Placeholder for company-specific courses
 
 interface CourseMainProps {
-  selectedLanguage: string; // Props for selected language
-  selectedTopic: string; // Props for selected topic
-  selectedLevel: string; // Props for selected level
-  isAvailableOnly: boolean; // Props for availability toggle
+  selectedLanguage: string;
+  selectedTopic: string;
+  selectedLevel: string;
+  isAvailableOnly: boolean;
 }
 
 const CourseMain: React.FC<CourseMainProps> = ({
   selectedLanguage,
   selectedTopic,
   selectedLevel,
-  isAvailableOnly, // New prop to filter only available courses
+  isAvailableOnly,
 }) => {
   const [activeTab, setActiveTab] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState(""); // State to store the search term
-  const [filteredCourses, setFilteredCourses] = useState<Course[]>([]); // State for filtered courses
-  const [loading, setLoading] = useState<boolean>(true); // State for loading, for filters only
-
-  // Apply filters when active tab or filter criteria change
-  useEffect(() => {
-    setLoading(true); // Set loading to true when filters are applied or when the page is first loaded
-    const timer = setTimeout(() => {
-      applyFilters();
-      setLoading(false); // Disable loading after filtering is complete
-    }, 1000); // Simulate a short delay for loading effect
-
-    return () => clearTimeout(timer);
-  }, [
-    activeTab,
-    selectedLanguage,
-    selectedTopic,
-    selectedLevel,
-    searchTerm,
-    isAvailableOnly,
-  ]);
-
-  const applyFilters = () => {
-    let filtered = coursesData;
-
-    // Apply language filter
-    if (selectedLanguage && selectedLanguage !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.languageId === selectedLanguage
-      );
-    }
-
-    // Apply topic filter
-    if (selectedTopic && selectedTopic !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.topicId === selectedTopic
-      );
-    }
-
-    // Apply level filter
-    if (selectedLevel && selectedLevel !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.Level === selectedLevel
-      );
-    }
-
-    // Apply search term filter if the user is searching
-    if (searchTerm) {
-      const search = searchTerm.toLowerCase();
-      filtered = filtered.filter(
-        (course: Course) =>
-          course.title.toLowerCase().includes(search) ||
-          course.desc.toLowerCase().includes(search) ||
-          course.Level.toLowerCase().includes(search)
-      );
-    }
-
-    // Apply availability filter if the toggle is enabled
-    if (isAvailableOnly) {
-      filtered = filtered.filter((course: Course) => course.available);
-    }
-
-    setFilteredCourses(filtered);
-  };
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
@@ -94,41 +30,27 @@ const CourseMain: React.FC<CourseMainProps> = ({
   };
 
   const renderGridContent = () => {
-    if (loading) {
+    if (activeTab === "All Courses") {
       return (
-        <div className={styles.grid}>
-          {Array(8)
-            .fill(0)
-            .map((_, index) => (
-              <SkeletonCourseCard key={index} /> // Show loading skeleton
-            ))}
-        </div>
+        <AllCourses
+          selectedLanguage={selectedLanguage}
+          selectedTopic={selectedTopic}
+          selectedLevel={selectedLevel}
+          isAvailableOnly={isAvailableOnly}
+          searchTerm={searchTerm} // Pass search term to AllCourses
+        />
       );
-    } else if (filteredCourses.length > 0) {
-      return (
-        <div className={styles.grid}>
-          {filteredCourses.map((course: Course) => (
-            <Card
-              key={course.url}
-              url={course.url}
-              Level={course.Level}
-              icon={course.icon}
-              title={course.title}
-              topics={course.topics}
-              videos={course.videos}
-              desc={course.desc}
-              offer={course.offer}
-              price={course.price}
-              originalPrice={course.originalPrice}
-              bannerColor={course.bannerColor}
-              available={course.available}
-            />
-          ))}
-        </div>
-      );
-    } else {
-      return <CourseNotFound />; // Display CourseNotFound component if no courses match
     }
+
+    if (activeTab === "All BootCamps") {
+      return <AllBootCamps />;
+    }
+
+    if (activeTab === "Company Specific") {
+      return <CompanySpecific />;
+    }
+
+    return null;
   };
 
   return (
