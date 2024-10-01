@@ -15,8 +15,8 @@ const CourseNotFound = () => {
         />
       </div>
       <h2 className={styles.notFoundText}>
-        We're cooking up the courses you need! <br />They'll be served hot and fresh
-        soon.
+        We&apos;re cooking up the courses you need! &lt;br /&gt;They&apos;ll be
+        served hot and fresh soon.
       </h2>
     </div>
   );
