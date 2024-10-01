@@ -23,10 +23,8 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 60px;
-    /* Adjust the padding to fit the layout */
     position: relative;
     z-index: 1;
-    /* Ensure the toggle button is not overlapped */
 }
 
 /* Toggle Switch */

@@ -54,18 +54,36 @@
     padding: 5px;
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .lang:hover {
-    background-color: #0004ff;
-    cursor: pointer;
+    background-color: #2a2a2a;
 }
+
+/* Highlight selected language with blue background */
 
 .langName {
     font-size: 18px;
 }
 
 .lang:hover .icon {
-    background-color: white;
-    color: #0004ff;
+    background-color: #2a2a2a;
+}
+
+.selected {
+    background-color: #0004ff;
+    color: white;
+}
+
+.selected .icon {
+    background-color: #0004ff;
+}
+
+.selected:hover {
+    background-color: #0004ff;
+}
+
+.selected:hover .icon {
+    background-color: #0004ff;
 }

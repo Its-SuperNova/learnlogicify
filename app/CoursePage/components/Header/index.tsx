@@ -3,14 +3,20 @@ import React from "react";
 import styles from "./styles.module.css";
 import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
 
-const Header = ({
-  isCollapsed,
-  toggleSidebar,
-  toggleMobileSidebar,
-}: {
+interface HeaderProps {
   isCollapsed: boolean;
   toggleSidebar: () => void;
   toggleMobileSidebar: () => void;
+  toggleAvailability: () => void; // Function to handle availability toggle
+  isAvailableOnly: boolean; // Boolean state for available courses toggle
+}
+
+const Header: React.FC<HeaderProps> = ({
+  isCollapsed,
+  toggleSidebar,
+  toggleMobileSidebar,
+  toggleAvailability, // Prop for handling availability toggle
+  isAvailableOnly, // Current availability state
 }) => {
   return (
     <div className={styles.header}>
@@ -43,10 +49,15 @@ const Header = ({
           </h1>
         </div>
       </div>
+
       <div className={styles.right}>
-        <p>Available Course</p>
+        <p>Available Courses</p>
         <label className={styles.switch}>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={isAvailableOnly} // Reflect the current state
+            onChange={toggleAvailability} // Handle availability toggle
+          />
           <span className={styles.slider}></span>
         </label>
       </div>

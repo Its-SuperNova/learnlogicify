@@ -1,7 +1,82 @@
-.box{
-    margin: 10px;
-    height: 1000px;
-    width: 200px;
-    background-color: lightgreen;
-    border-radius: 10px;
+.container {
+    padding: 25px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+}
+
+.tabContainer {
+    display: flex;
+    gap: 10px;
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.tab {
+    padding: 6px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.activeTab {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: #4c65d7;
+}
+
+.searchInput {
+    padding: 6px 40px 6px 15px;
+    border-radius: 30px;
+    background-color: rgb(219, 240, 255);
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.searchInput:focus {
+    outline: none;
+    border: 1px solid #748cf6;
+}
+
+.searchInput::placeholder {
+    color: #4c65d7;
+    opacity: 1;
+}
+
+/* Grid for cards */
+.grid {
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 270px));
+    gap:30px;
+    justify-items: center;
+}
+/* Hide grid when no courses found */
+/* Hide grid when no courses found */
+.hideGrid {
+    display: flex;
 }

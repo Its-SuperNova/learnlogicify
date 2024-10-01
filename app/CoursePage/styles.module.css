@@ -83,6 +83,7 @@
     gap: 20px;
     border-radius: 20px;
     overflow: auto;
+    scrollbar-width: 0;
 }
 .sidebar::-webkit-sidebar{
     display: none;
@@ -91,4 +92,7 @@
     overflow: auto;
     position: relative;
     /* This is needed to allow scrolling */
+}
+.body::-webkit-scrollbar{
+    display: none;
 }
