@@ -9,7 +9,7 @@
 
 /* Sidebar styles */
 .sidebar {
-    width: 360px;
+    min-width: 360px;
     background-color: #000000;
     color: white;
     padding: 10px;
@@ -27,7 +27,7 @@
 }
 /* Collapsed sidebar style */
 .collapsed {
-    width: 74px;
+    min-width: 74px;
 }
 
 /* Mobile sidebar hidden by default */

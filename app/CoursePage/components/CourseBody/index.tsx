@@ -94,59 +94,41 @@ const CourseMain: React.FC<CourseMainProps> = ({
   };
 
   const renderGridContent = () => {
-    if (activeTab === "All Courses") {
-      if (loading) {
-        return (
-          <div className={styles.grid}>
-            {Array(6)
-              .fill(0)
-              .map((_, index) => (
-                <SkeletonCourseCard key={index} /> // Show loading skeleton
-              ))}
-          </div>
-        );
-      } else {
-        return (
-          <div
-            className={`${styles.grid} ${
-              filteredCourses.length === 0 ? styles.hideGrid : ""
-            }`}
-          >
-            {filteredCourses.length > 0 ? (
-              filteredCourses.map((course: Course) => (
-                <Card
-                  key={course.url}
-                  url={course.url}
-                  Level={course.Level}
-                  icon={course.icon}
-                  title={course.title}
-                  topics={course.topics}
-                  videos={course.videos}
-                  desc={course.desc}
-                  offer={course.offer}
-                  price={course.price}
-                  originalPrice={course.originalPrice}
-                  bannerColor={course.bannerColor}
-                  available={course.available}
-                />
-              ))
-            ) : (
-              <CourseNotFound /> // Display CourseNotFound component
-            )}
-          </div>
-        );
-      }
+    if (loading) {
+      return (
+        <div className={styles.grid}>
+          {Array(8)
+            .fill(0)
+            .map((_, index) => (
+              <SkeletonCourseCard key={index} /> // Show loading skeleton
+            ))}
+        </div>
+      );
+    } else if (filteredCourses.length > 0) {
+      return (
+        <div className={styles.grid}>
+          {filteredCourses.map((course: Course) => (
+            <Card
+              key={course.url}
+              url={course.url}
+              Level={course.Level}
+              icon={course.icon}
+              title={course.title}
+              topics={course.topics}
+              videos={course.videos}
+              desc={course.desc}
+              offer={course.offer}
+              price={course.price}
+              originalPrice={course.originalPrice}
+              bannerColor={course.bannerColor}
+              available={course.available}
+            />
+          ))}
+        </div>
+      );
+    } else {
+      return <CourseNotFound />; // Display CourseNotFound component if no courses match
     }
-
-    if (activeTab === "All BootCamps") {
-      return <div className={styles.grid}>All BootCamps Content</div>;
-    }
-
-    if (activeTab === "Company Specific") {
-      return <div className={styles.grid}>Company Specific Content</div>;
-    }
-
-    return null;
   };
 
   return (

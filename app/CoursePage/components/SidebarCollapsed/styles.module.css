@@ -45,33 +45,14 @@
 .icon:hover {
     background-color: #3c00ff;
 }
-/* Sidebar overflow styling */
 
-
-/* Tooltip styling using ::after */
-.icon::after {
-    content: attr(data-name);
-    position: fixed;
-    /* Change from absolute to fixed */
-    left: 74px;
-    /* Adjusted this to ensure the tooltip appears outside the sidebar */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #d8d8ff;
-    color: #0004e2;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 8px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-    font-size: 14px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    /* Ensure the tooltip is always on top */
+.selected {
+    background-color: #3c00ff;
+    /* Change background to blue */
+    color: white;
 }
 
-.icon:hover::after {
-    opacity: 1;
+.selected:hover {
+    background-color: #3c00ff;
+    color: white;
 }

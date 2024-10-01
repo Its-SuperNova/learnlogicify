@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { RxCross1 } from "react-icons/rx";
@@ -11,7 +11,6 @@ import CourseBody from "./components/CourseBody"; // Component displaying course
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
-  const [isAvailableOnly, setIsAvailableOnly] = useState(false); // State for availability toggle
 
   // State to store the selected filters (language, topic, level)
   const [filters, setFilters] = useState({
@@ -19,6 +18,9 @@ const Course = () => {
     topic: "All",
     level: "All",
   });
+
+  // State to manage availability toggle
+  const [isAvailableOnly, setIsAvailableOnly] = useState(false);
 
   // Function to handle the collapse toggle
   const toggleSidebar = () => {
@@ -30,6 +32,11 @@ const Course = () => {
     setIsMobileSidebarVisible(!isMobileSidebarVisible);
   };
 
+  // Function to handle availability toggle
+  const toggleAvailability = () => {
+    setIsAvailableOnly(!isAvailableOnly); // Toggle the availability state
+  };
+
   // Function to handle filter changes from the Sidebar
   const handleFilterChange = (newFilters: {
     language: string;
@@ -37,11 +44,6 @@ const Course = () => {
     level: string;
   }) => {
     setFilters(newFilters); // Update filters state when Sidebar changes
-  };
-
-  // Function to toggle the available-only state from Header
-  const toggleAvailability = () => {
-    setIsAvailableOnly((prev) => !prev);
   };
 
   return (
@@ -63,7 +65,7 @@ const Course = () => {
 
           {/* Dynamically switch between full sidebar and collapsed sidebar */}
           {isCollapsed ? (
-            <CollapsedSidebar /> // Show CollapsedSidebar when collapsed
+            <CollapsedSidebar onFilterChange={handleFilterChange} /> // Pass handleFilterChange to CollapsedSidebar
           ) : (
             <Sidebar onFilterChange={handleFilterChange} /> // Pass handleFilterChange to Sidebar
           )}
@@ -76,16 +78,16 @@ const Course = () => {
             isCollapsed={isCollapsed}
             toggleSidebar={toggleSidebar}
             toggleMobileSidebar={toggleMobileSidebar}
-            toggleAvailability={toggleAvailability} // Pass the toggleAvailability function to Header
-            isAvailableOnly={isAvailableOnly} // Pass the availability state to Header
+            toggleAvailability={toggleAvailability} // Pass toggleAvailability
+            isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
           />
           <div className={styles.body}>
-            {/* Pass the filters and availability toggle to CourseBody to display the filtered courses */}
+            {/* Pass the filters and availability toggle to CourseBody */}
             <CourseBody
               selectedLanguage={filters.language}
               selectedTopic={filters.topic}
               selectedLevel={filters.level}
-              isAvailableOnly={isAvailableOnly} // Pass availability to CourseBody
+              isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
             />
           </div>
         </div>
