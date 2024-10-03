@@ -2,6 +2,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./styles.module.css";
+import shape1 from "SVG/banner-shapes/file.svg"
+import shape2 from "SVG/banner-shapes/like.svg"
+import shape3 from "SVG/banner-shapes/man in space.svg";
+import shape4 from "SVG/banner-shapes/spiral.svg";
+import shape5 from "SVG/banner-shapes/star.svg";
+import shape6 from "SVG/banner-shapes/vision.svg";
 
 const HeroHome = () => {
   const containerVariants = {
@@ -41,7 +47,7 @@ const HeroHome = () => {
 
         <motion.div className={styles.title} variants={childVariants}>
           <h3 className={styles.animatedGradient}>
-            &quot;Accelerate the Tech Career and build your Future Faster&quot;
+            &quot;Accelerate the Tech Career <br />and build your Future Faster&quot;
           </h3>
         </motion.div>
 

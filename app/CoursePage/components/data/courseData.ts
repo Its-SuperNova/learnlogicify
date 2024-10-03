@@ -21,7 +21,7 @@ export interface Course {
 
 const coursesData: Course[] = [
   {
-    url: "basic-python",
+    url: "Pages/basic-python",
     Level: "Beginner",
     languageId: "python",
     topicId: "problem-solving",

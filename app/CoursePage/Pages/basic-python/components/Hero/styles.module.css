@@ -1,0 +1,187 @@
+.container{
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.Hstats{
+    display: flex;
+    flex-direction: row;
+}
+.star{
+    margin-left: 10px;
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.rate{
+    font-weight: 500;
+}
+.rates{
+    font-weight: 400;
+    color: grey;
+}
+.title{
+    font-size: 36px;
+    font-weight: 600; 
+}
+.tutor{
+    color: #7A47FF;
+    font-weight: 800;
+    font-family: "Roboto-Slab";
+}
+.content{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.AbtTitle{
+    font-weight: 600;
+    font-size: 26px;
+}
+.Abtdesc{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.overview{
+    height: 100%;
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.con{
+    opacity: 0;
+    visibility: none;
+    height: 0;
+    width: 0;   
+}
+.con1 {
+    opacity: 1;
+}
+.link{
+    font-weight: 600;
+    color: blue;
+}
+.video{
+    width: 100%;
+    max-width: 808px;
+    height: 100%;
+    padding: 18px;
+}
+
+@media screen and (max-width: 1300px) {
+    .content{
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }   
+    .content {
+        margin-bottom: 30px;
+    }
+    .video{
+        max-width: 1200px;
+        height: 100%;
+        padding: 0;
+    }
+    .con{
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .con1 {
+        opacity: 0;
+        visibility: none;
+        height: 0;
+        width:0;
+    }
+    .overview{
+        width:100%;
+    }
+    .about{
+        margin-bottom: 0px;
+    }
+}
+@media screen and (max-width: 1170px) {
+    .con2{
+        opacity: 0;
+        visibility: none;
+        height: 0;
+        width: 0;
+    }
+    .con3,.con1 {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .con4{
+        opacity: 0;
+        visibility: none;
+        height: 0;
+        width: 0;
+    }
+    .about{
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 920px) {
+    .title{
+        font-size: 30px;
+        font-weight: 600; 
+    }
+    .con{
+        opacity: 0;
+        visibility: none;
+        height: 0;
+        width: 0;
+    }
+
+    .con3,.con4{
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .about {
+        margin-bottom: 30px;
+    }
+    .overview{
+        width:100%;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 525px) {
+    .title {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .AbtTitle{
+        font-size: 24px;
+    }
+    .Abtdesc{
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
