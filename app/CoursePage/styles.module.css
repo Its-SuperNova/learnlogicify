@@ -35,7 +35,7 @@
 }
 
 /* Mobile sidebar hidden by default */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .sidebar {
         position: fixed;
         left: -330px;
@@ -75,7 +75,7 @@
 }
 
 /* Show close button only on mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .closeMobileSidebar {
         display: block;
     }

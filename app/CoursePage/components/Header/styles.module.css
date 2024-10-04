@@ -19,12 +19,16 @@
 
 .right {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 60px;
+    margin-right: 55px;
     position: relative;
     z-index: 1;
+    border: 1px solid lightgray;
+    height: 100%;
+    padding: 0 15px;
+    border-radius: 10px;
 }
 
 /* Toggle Switch */
@@ -110,13 +114,24 @@ input:checked+.slider:before {
     font-size: 30px;
 }
 
-/* Show menu button on mobile and hide desktop collapse button */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
+    .expandedHeader .title {
+        display: none;
+
+    }
+}
+@media (max-width: 840px) {
     .collapseButtonMobile {
         display: flex;
     }
 
     .collapseButtonDesktop {
         display: none;
+    }
+}
+@media (max-width: 720px) {
+    .collapsedHeader .title {
+        display: none;
+
     }
 }

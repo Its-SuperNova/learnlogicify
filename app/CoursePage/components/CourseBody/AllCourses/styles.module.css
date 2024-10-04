@@ -20,3 +20,12 @@
     height: 100%;
     padding: 20px;
 }
+
+@media (max-width: 670px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

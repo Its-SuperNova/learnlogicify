@@ -82,12 +82,13 @@ const Course = () => {
             isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
           />
           <div className={styles.body}>
-            {/* Pass the filters and availability toggle to CourseBody */}
+            {/* Pass the filters, availability toggle, and collapsed state to CourseBody */}
             <CourseBody
               selectedLanguage={filters.language}
               selectedTopic={filters.topic}
               selectedLevel={filters.level}
               isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
+              isCollapsed={isCollapsed} // Pass isCollapsed state
             />
           </div>
         </div>

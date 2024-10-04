@@ -10,6 +10,7 @@ interface CourseMainProps {
   selectedTopic: string;
   selectedLevel: string;
   isAvailableOnly: boolean;
+  isCollapsed: boolean; // New prop to determine the sidebar state
 }
 
 const CourseMain: React.FC<CourseMainProps> = ({
@@ -17,6 +18,7 @@ const CourseMain: React.FC<CourseMainProps> = ({
   selectedTopic,
   selectedLevel,
   isAvailableOnly,
+  isCollapsed, // Receive isCollapsed prop
 }) => {
   const [activeTab, setActiveTab] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState(""); // State to store the search term
@@ -54,10 +56,14 @@ const CourseMain: React.FC<CourseMainProps> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${
+        isCollapsed ? styles.collapsedContent : styles.expandedContent
+      }`}
+    >
       <div className={styles.header}>
         {/* Tab Section */}
-        <div className={styles.tabContainer}>
+        <div className={`${styles.tabContainer}`}>
           <div
             className={`${styles.tab} ${
               activeTab === "All Courses" ? styles.activeTab : ""

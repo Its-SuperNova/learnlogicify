@@ -19,7 +19,11 @@ const Header: React.FC<HeaderProps> = ({
   isAvailableOnly, // Current availability state
 }) => {
   return (
-    <div className={styles.header}>
+    <div
+      className={`${styles.header} ${
+        isCollapsed ? styles.collapsedHeader : styles.expandedHeader
+      }`}
+    >
       <div className={styles.left}>
         <div className={styles.collapseContainer}>
           {/* Menu Button for Mobile Screens */}
