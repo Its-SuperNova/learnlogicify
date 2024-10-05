@@ -10,7 +10,6 @@
 /* Sidebar styles */
 .sidebar {
     width: 360px;
-    /* Default expanded width */
     background-color: #000000;
     color: white;
     padding: 10px;
@@ -19,7 +18,6 @@
     justify-content: start;
     border-radius: 20px;
     transition: width 0.3s ease;
-    /* Smooth transition for width */
     position: relative;
     overflow: auto;
 }
@@ -38,7 +36,7 @@
 @media (max-width: 840px) {
     .sidebar {
         position: fixed;
-        left: -330px;
+        left: -360px;
         top: 0;
         height: 100vh;
         width: 330px;
@@ -101,4 +99,25 @@
 
 .sidebar::-webkit-scrollbar {
     display: none;
+}
+@media (max-width: 840px) {
+    .collapsed{
+        display: none;
+    }
+    .sidebar{
+        border-radius: 0;
+        width: 360px;
+    }
+    .container {
+        background-color: white;
+    }
+    .main {
+        padding-left: 0;
+        padding-right: 0;
+        gap: 0;
+    }
+    .body{
+        border-radius: 0;
+    }
+    
 }

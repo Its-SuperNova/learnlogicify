@@ -123,6 +123,12 @@ input:checked+.slider:before {
     }
 }
 @media (max-width: 840px) {
+    .header{
+        margin-bottom: 0;
+    }
+    .right{
+        margin-right: 65px;
+    }
     .collapseButtonMobile {
         display: flex;
     }

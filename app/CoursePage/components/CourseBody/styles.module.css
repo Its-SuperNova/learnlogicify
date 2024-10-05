@@ -83,6 +83,7 @@
         border: none;
         padding: 0;
         margin-bottom: 10px;
+        border-radius: 0;
     }
 
     .expandedContent .tab {
@@ -104,6 +105,7 @@
         border: none;
         padding: 0;
         margin-bottom: 10px;
+        border-radius: 0;
     }
 
     .collapsedContent .tab {
@@ -140,8 +142,17 @@
         right: 55px;
     }
 }
-
-/* Mobile-specific layout for collapsed content */
+@media (max-width: 960px) {
+        .expandedContent .tabContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        border: none;
+        padding: 0;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+}
 @media (max-width: 900px) {
     .collapsedContent .header {
         flex-direction: column-reverse;
@@ -180,12 +191,10 @@
 @media (max-width: 470px) {
     .expandedContent .tabContainer {
             grid-template-columns: 1fr;
-            /* One-column layout for smaller screens with expanded sidebar */
         }
     
         .collapsedContent .tabContainer {
             flex-direction: column;
-            /* Stack tabs vertically when collapsed */
         }
     
         .tab {
