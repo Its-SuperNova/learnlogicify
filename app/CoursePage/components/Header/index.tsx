@@ -53,17 +53,22 @@ const Header: React.FC<HeaderProps> = ({
           </h1>
         </div>
       </div>
+      <div className={styles.middle}>
+        <img src="SVG/logo/logo-icon.svg" alt="" />
+      </div>
 
-      <div className={styles.right}>
-        <p>Available Courses</p>
-        <label className={styles.switch}>
-          <input
-            type="checkbox"
-            checked={isAvailableOnly} // Reflect the current state
-            onChange={toggleAvailability} // Handle availability toggle
-          />
-          <span className={styles.slider}></span>
-        </label>
+      <div className={styles.rightContainer}>
+        <div className={styles.right}>
+          <p>Available Courses</p>
+          <label className={styles.switch}>
+            <input
+              type="checkbox"
+              checked={isAvailableOnly} // Reflect the current state
+              onChange={toggleAvailability} // Handle availability toggle
+            />
+            <span className={styles.slider}></span>
+          </label>
+        </div>
       </div>
     </div>
   );

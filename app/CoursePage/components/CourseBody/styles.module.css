@@ -2,7 +2,6 @@
     padding: 25px;
     width: 100%;
     transition: margin-left 0.3s ease;
-    /* Smooth transition when sidebar toggles */
 }
 
 .header {
@@ -167,45 +166,29 @@
     }
 }
 
-/* Ensure horizontal scrolling for tabs on screens below 600px */
 @media (max-width: 600px) {
-    .tabContainer {
-        display: flex;
-        overflow-x: auto;
-        /* Enable horizontal scrolling */
-        white-space: nowrap;
-        /* Prevent wrapping */
-        padding: 0 10px;
-        scrollbar-width: none;
-        /* Hide scrollbar in Firefox */
+    .collapsedContent .tabContainer,.expandedContent .tabContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        border: none;
+        padding: 0;
+        margin-bottom: 10px;
+        border-radius: 0;
     }
-
-    .tab {
-        flex: 0 0 150px;
-        /* Ensure each tab has a fixed width */
-        border: 1px solid lightgray;
-    }
-
-    /* Hide scrollbar in WebKit browsers (Chrome, Safari, etc.) */
-    .tabContainer::-webkit-scrollbar {
-        display: none;
-    }
-
-    .collapsedContent .header {
-        flex-direction: column-reverse;
-        gap: 12px;
-    }
-
-    .searchBox {
-        width: 100%;
-        padding-right: 40px;
-    }
-
-    .searchInput {
-        width: 100%;
-    }
-
-    .searchIcon {
-        right: 55px;
-    }
+}
+@media (max-width: 470px) {
+    .expandedContent .tabContainer {
+            grid-template-columns: 1fr;
+            /* One-column layout for smaller screens with expanded sidebar */
+        }
+    
+        .collapsedContent .tabContainer {
+            flex-direction: column;
+            /* Stack tabs vertically when collapsed */
+        }
+    
+        .tab {
+            width: 100%;
+        }
 }
