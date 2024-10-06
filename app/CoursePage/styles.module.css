@@ -6,7 +6,10 @@
     padding: 10px;
     overflow: hidden;
 }
-
+.mobile{
+    display: none;
+    opacity: 0;
+}
 /* Sidebar styles */
 .sidebar {
     width: 360px;
@@ -101,23 +104,11 @@
     display: none;
 }
 @media (max-width: 840px) {
-    .collapsed{
+    .container{
         display: none;
     }
-    .sidebar{
-        border-radius: 0;
-        width: 360px;
+    .mobile{
+        display: flex;
+        opacity: 1;
     }
-    .container {
-        background-color: white;
-    }
-    .main {
-        padding-left: 0;
-        padding-right: 0;
-        gap: 0;
-    }
-    .body{
-        border-radius: 0;
-    }
-    
 }

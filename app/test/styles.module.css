@@ -1,0 +1,19 @@
+.tabsContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding: 10px;
+}
+
+.tabs {
+    border: 1px solid lightgray;
+    padding: 8px;
+    min-width: 180px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}

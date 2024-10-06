@@ -7,7 +7,7 @@ import CollapsedSidebar from "./components/SidebarCollapsed"; // Collapsed Sideb
 import Header from "./components/Header"; // Importing the header component
 import HamburgerMenu from "../components/CourseHamburger";
 import CourseBody from "./components/CourseBody"; // Component displaying courses
-
+import Mobile from "./Mobile";
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
@@ -92,6 +92,10 @@ const Course = () => {
             />
           </div>
         </div>
+        
+      </div>
+      <div className={styles.mobile}>
+        <Mobile /> 
       </div>
     </>
   );
