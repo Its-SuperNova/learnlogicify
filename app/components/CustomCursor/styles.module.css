@@ -13,6 +13,6 @@
     /* Ensure it's above everything */
     mix-blend-mode: difference;
     /* For a cool blend effect */
-    transition: transform 0.1s ease-out;
-    /* Smooth transition */
+    transition: transform 0.1s ease-out, scale 0.3s ease;
+    /* Smooth transition for both position and scaling */
 }

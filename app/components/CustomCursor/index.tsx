@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import styles from "./styles.module.css";
 
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(true); // To handle cursor visibility
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -16,7 +17,7 @@ const CustomCursor: React.FC = () => {
       gsap.to(cursor, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.3, // Adjust for smooth trailing effect
+        duration: 0.3, // Smooth trailing effect
         ease: "power2.out",
       });
     };
@@ -37,7 +38,6 @@ const CustomCursor: React.FC = () => {
       });
     };
 
-    // Select all p and heading tags
     const textElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
 
     textElements.forEach((el) => {
@@ -45,17 +45,33 @@ const CustomCursor: React.FC = () => {
       el.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    window.addEventListener("mousemove", moveCursor);
+    // Function to handle screen resizing
+    const handleResize = () => {
+      if (window.innerWidth < 840) {
+        setIsVisible(false); // Hide cursor if screen width is less than 840px
+      } else {
+        setIsVisible(true); // Show cursor if screen width is greater than 840px
+      }
+    };
 
-    // Cleanup event listeners
+    // Check screen size on initial load
+    handleResize();
+
+    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       textElements.forEach((el) => {
         el.removeEventListener("mouseenter", handleMouseEnter);
         el.removeEventListener("mouseleave", handleMouseLeave);
       });
       window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Return null if the custom cursor should not be visible (when screen width is below 840px)
+  if (!isVisible) return null;
 
   return <div className={styles.cursor} ref={cursorRef}></div>;
 };
