@@ -1,4 +1,3 @@
-/* styles.module.css */
 .notFoundContainer {
     display: flex;
     flex-direction: column;
@@ -6,15 +5,49 @@
     justify-content: start;
     width: 100%;
     margin-top: -30px;
+    height: 50vh;
 }
 
 .lottieWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-.notFoundText {
-    font-size: 24px;
-    color: #acacac;
-    margin-right: 70px;
-    margin-top: -80px;
+.lottiePlayer {
+    max-width: 500px;
+    /* Maximum width */
+    max-height: 500px;
+    /* Maximum height */
+    width: 100%;
+    /* Responsive width */
+    height: auto;
+    /* Maintain aspect ratio */
 }
+
+.notFoundText {
+    font-size: 4vw;
+    /* Responsive text size */
+    color: #acacac;
+    margin-top: -80px;
+    text-align: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .notFoundContainer {
+        justify-content: center;
+    }
+    .notFoundText {
+        font-size: 5vw;
+        margin-top: -40px;
+    }
+
+    .lottiePlayer {
+        max-width: 300px;
+        max-height: 300px;
+        margin-left: 20px;
+    }
+}
+

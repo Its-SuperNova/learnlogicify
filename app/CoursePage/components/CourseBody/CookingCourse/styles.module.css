@@ -1,4 +1,3 @@
-/* styles.module.css */
 .notFoundContainer {
     display: flex;
     flex-direction: column;
@@ -9,13 +8,48 @@
 }
 
 .lottieWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
+.lottiePlayer {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+}
+
 .notFoundText {
-    font-size: 24px;
+    font-size: 4vw;
     color: #acacac;
-    margin-right: 100px;
-    margin-top: -80px;
+    margin-top: -50px;
     text-align: center;
+    padding: 0 20px;
+}
+
+@media (max-width: 840px) {
+    .notFoundText {
+        font-size: 5vw;
+        margin-top: -30px;
+    }
+
+    .lottiePlayer {
+        max-width: 350px;
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notFoundText {
+        font-size: 4vw;
+        margin-top: -20px;
+    }
+
+    .lottiePlayer {
+        margin-top: 100px;
+        max-width: 250px;
+        max-height: 250px;
+    }
 }

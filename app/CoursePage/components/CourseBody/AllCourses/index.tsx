@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../CourseCard"; // Adjust the import path accordingly
-import SkeletonCourseCard from "../../skeletonCourseCard"; // Adjust the import path accordingly
-import coursesData, { Course } from "../../data/courseData"; // Adjust the import path accordingly
-import CourseNotFound from "../CourseNotFound"; // Adjust the import path accordingly
-import styles from "./styles.module.css"; // Import the styles for AllCourses
+import Card from "../../CourseCard";
+import coursesData, { Course } from "../../data/courseData";
+import CourseNotFound from "../CourseNotFound";
+import styles from "./styles.module.css";
+import SkeletonCourseCard from "../../skeletonCourseCard"; // Already created SkeletonCourseCard
 
 interface AllCoursesProps {
   selectedLanguage: string;
   selectedTopic: string;
   selectedLevel: string;
   isAvailableOnly: boolean;
-  searchTerm: string; // Add searchTerm as a prop
+  searchTerm: string;
 }
 
 const AllCourses: React.FC<AllCoursesProps> = ({
@@ -18,66 +18,50 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   selectedTopic,
   selectedLevel,
   isAvailableOnly,
-  searchTerm, // Accept searchTerm as a prop
+  searchTerm,
 }) => {
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true); // Add loading state
 
-  // Helper to determine if filtering is happening (not search)
-  const isFiltering = (
-    selectedLanguage: string,
-    selectedTopic: string,
-    selectedLevel: string
-  ) => {
-    return (
-      selectedLanguage !== "All" ||
-      selectedTopic !== "All" ||
-      selectedLevel !== "All" ||
-      isAvailableOnly
-    );
-  };
-
-  // Trigger loading skeleton on toggle availability or filtering
   useEffect(() => {
-    setLoading(true); // Show loading skeleton for both enabling and disabling toggle
+    // Simulate loading delay (1.5s) for skeleton
+    setLoading(true);
     const timer = setTimeout(() => {
       applyFilters();
-      setLoading(false); // Stop loading after applying filters
-    }, 1000); // Simulate loading delay
+      setLoading(false); // After data is filtered, stop the loading
+    }, 1500);
 
+    // Cleanup the timer when component is unmounted or filters change
     return () => clearTimeout(timer);
-  }, [selectedLanguage, selectedTopic, selectedLevel, isAvailableOnly]);
-
-  // Apply filters based on the provided search term and other criteria
-  useEffect(() => {
-    applyFilters(); // Re-apply filters without loading for search term changes
-  }, [searchTerm]);
+  }, [
+    searchTerm,
+    selectedLanguage,
+    selectedTopic,
+    selectedLevel,
+    isAvailableOnly,
+  ]);
 
   const applyFilters = () => {
     let filtered = coursesData;
 
-    // Apply language filter
     if (selectedLanguage && selectedLanguage !== "All") {
       filtered = filtered.filter(
         (course: Course) => course.languageId === selectedLanguage
       );
     }
 
-    // Apply topic filter
     if (selectedTopic && selectedTopic !== "All") {
       filtered = filtered.filter(
         (course: Course) => course.topicId === selectedTopic
       );
     }
 
-    // Apply level filter
     if (selectedLevel && selectedLevel !== "All") {
       filtered = filtered.filter(
         (course: Course) => course.Level === selectedLevel
       );
     }
 
-    // Apply search term filter if the user is searching
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
       filtered = filtered.filter(
@@ -88,7 +72,6 @@ const AllCourses: React.FC<AllCoursesProps> = ({
       );
     }
 
-    // Apply availability filter if the toggle is enabled
     if (isAvailableOnly) {
       filtered = filtered.filter((course: Course) => course.available);
     }
@@ -99,15 +82,16 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   return (
     <div
       className={`${styles.container} ${
-        filteredCourses.length === 0 ? styles.flex : styles.grid
+        filteredCourses.length === 0 && !loading
+          ? styles.noCoursesGrid
+          : styles.grid
       }`}
     >
       {loading ? (
-        Array(8)
+        // Show skeleton while loading
+        Array(6)
           .fill(0)
-          .map((_, index) => (
-            <SkeletonCourseCard key={index} /> // Show loading skeleton for filtering
-          ))
+          .map((_, index) => <SkeletonCourseCard key={index} />)
       ) : filteredCourses.length > 0 ? (
         filteredCourses.map((course: Course) => (
           <Card

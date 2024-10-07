@@ -48,7 +48,6 @@ const Course = () => {
 
   return (
     <>
-      <HamburgerMenu />
       <div className={styles.container}>
         {/* Sidebar */}
         <div

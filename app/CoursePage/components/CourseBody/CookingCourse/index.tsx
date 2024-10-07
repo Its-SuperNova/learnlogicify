@@ -1,6 +1,6 @@
 import React from "react";
-import Player from "react-lottie-player"; // Correct import from react-lottie-player
-import animationData from "../../json/Fried Egg.json"; // Replace with the actual path to your Lottie JSON file
+import Player from "react-lottie-player";
+import animationData from "../../json/Fried Egg.json"; // Adjust the path accordingly
 import styles from "./styles.module.css";
 
 const CourseNotFound = () => {
@@ -10,13 +10,13 @@ const CourseNotFound = () => {
         <Player
           play
           loop
-          animationData={animationData} // Use animationData instead of src
-          style={{ height: "500px", width: "500px" }} // Customize the height and width
+          animationData={animationData}
+          className={styles.lottiePlayer} // Use CSS class for responsive sizing
         />
       </div>
       <h2 className={styles.notFoundText}>
-        We&apos;re cooking up the courses you need! <br />They&apos;ll be
-        served hot and fresh soon.
+        We&apos;re cooking up the courses you need! <br />
+        They&apos;ll be served hot and fresh soon.
       </h2>
     </div>
   );

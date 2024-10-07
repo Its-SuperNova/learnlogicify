@@ -1,7 +1,38 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-const Filter = () => {
+interface FilterProps {
+  selectedLanguage: string[];
+  setSelectedLanguage: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedTopic: string[];
+  setSelectedTopic: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedLevel: string[];
+  setSelectedLevel: React.Dispatch<React.SetStateAction<string[]>>;
+  setIsAvailableOnly: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Filter: React.FC<FilterProps> = ({
+  selectedLanguage,
+  setSelectedLanguage,
+  selectedTopic,
+  setSelectedTopic,
+  selectedLevel,
+  setSelectedLevel,
+  setIsAvailableOnly,
+}) => {
+  const handleCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    selectedItems: string[],
+    setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>
+  ) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setSelectedItems([...selectedItems, value]);
+    } else {
+      setSelectedItems(selectedItems.filter((item) => item !== value));
+    }
+  };
+
   return (
     <div className={styles.filterContainer}>
       <h3 className={styles.title}>Filter Courses</h3>
@@ -10,30 +41,21 @@ const Filter = () => {
       <div className={styles.filterGroup}>
         <h4 className={styles.subtitle}>Languages</h4>
         <div className={styles.content}>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="JavaScript"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>JavaScript</p>
-          </label>
-          <label className={styles.label}>
-            <input type="checkbox" className={styles.checkbox} value="Python" />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Python</p>
-          </label>
-          <label className={styles.label}>
-            <input type="checkbox" className={styles.checkbox} value="Java" />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Java</p>
-          </label>
-          <label className={styles.label}>
-            <input type="checkbox" className={styles.checkbox} value="C++" />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>C++</p>
-          </label>
+          {["JavaScript", "Python", "Java", "C++"].map((language) => (
+            <label className={styles.label} key={language}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                value={language}
+                checked={selectedLanguage.includes(language)}
+                onChange={(e) =>
+                  handleCheckboxChange(e, selectedLanguage, setSelectedLanguage)
+                }
+              />
+              <span className={styles.checkboxCustom}></span>
+              <p className={styles.p}>{language}</p>
+            </label>
+          ))}
         </div>
       </div>
 
@@ -41,42 +63,26 @@ const Filter = () => {
       <div className={styles.filterGroup}>
         <h4 className={styles.subtitle}>Topics</h4>
         <div className={styles.content}>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Web Development"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Web Development</p>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Data Structures"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Data Structures</p>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Algorithms"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Algorithms</p>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Machine Learning"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Machine Learning</p>
-          </label>
+          {[
+            "Web Development",
+            "Data Structures",
+            "Algorithms",
+            "Machine Learning",
+          ].map((topic) => (
+            <label className={styles.label} key={topic}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                value={topic}
+                checked={selectedTopic.includes(topic)}
+                onChange={(e) =>
+                  handleCheckboxChange(e, selectedTopic, setSelectedTopic)
+                }
+              />
+              <span className={styles.checkboxCustom}></span>
+              <p className={styles.p}>{topic}</p>
+            </label>
+          ))}
         </div>
       </div>
 
@@ -84,33 +90,21 @@ const Filter = () => {
       <div className={styles.filterGroup}>
         <h4 className={styles.subtitle}>Level</h4>
         <div className={styles.content}>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Beginner"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Beginner</p>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Intermediate"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Intermediate</p>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              value="Advanced"
-            />
-            <span className={styles.checkboxCustom}></span>
-            <p className={styles.p}>Advanced</p>
-          </label>
+          {["Beginner", "Intermediate", "Advanced"].map((level) => (
+            <label className={styles.label} key={level}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                value={level}
+                checked={selectedLevel.includes(level)}
+                onChange={(e) =>
+                  handleCheckboxChange(e, selectedLevel, setSelectedLevel)
+                }
+              />
+              <span className={styles.checkboxCustom}></span>
+              <p className={styles.p}>{level}</p>
+            </label>
+          ))}
         </div>
       </div>
 

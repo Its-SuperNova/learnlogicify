@@ -1,8 +1,9 @@
 .card {
     height: 100%;
-    width: 270px;
+    width: 100%;
     min-height: 270px;
     padding: 8px;
+    max-width: 400px;
     border: 1px solid #D6D6D6;
     border-radius: 17px;
     display: flex;

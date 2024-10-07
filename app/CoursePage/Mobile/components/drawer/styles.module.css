@@ -3,11 +3,10 @@
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #000;
+    background-color: #000000;
     color: #fff;
     border-radius: 10px;
-    padding: 7px 15px;
-    font-size: 16px;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,15 +20,12 @@
 }
 
 .filterIcon {
-    font-size: 18px;
-    /* Icon size */
+    font-size: 16px;
 }
 
 .filterText {
     font-weight: bold;
-    /* Bold text */
-    font-size: 16px;
-    /* Text size */
+    font-size: 14px;
 }
 
 .backdrop {
