@@ -46,8 +46,8 @@ const Filter: React.FC<FilterProps> = ({
               <input
                 type="checkbox"
                 className={styles.checkbox}
-                value={language}
-                checked={selectedLanguage.includes(language)}
+                value={language.toLowerCase()} // Lowercase value to match with languageId
+                checked={selectedLanguage.includes(language.toLowerCase())}
                 onChange={(e) =>
                   handleCheckboxChange(e, selectedLanguage, setSelectedLanguage)
                 }
@@ -73,8 +73,8 @@ const Filter: React.FC<FilterProps> = ({
               <input
                 type="checkbox"
                 className={styles.checkbox}
-                value={topic}
-                checked={selectedTopic.includes(topic)}
+                value={topic.toLowerCase()} // Lowercase value to match with topicId
+                checked={selectedTopic.includes(topic.toLowerCase())}
                 onChange={(e) =>
                   handleCheckboxChange(e, selectedTopic, setSelectedTopic)
                 }
@@ -95,8 +95,8 @@ const Filter: React.FC<FilterProps> = ({
               <input
                 type="checkbox"
                 className={styles.checkbox}
-                value={level}
-                checked={selectedLevel.includes(level)}
+                value={level.toLowerCase()} // Lowercase value to match with Level
+                checked={selectedLevel.includes(level.toLowerCase())}
                 onChange={(e) =>
                   handleCheckboxChange(e, selectedLevel, setSelectedLevel)
                 }
@@ -105,6 +105,22 @@ const Filter: React.FC<FilterProps> = ({
               <p className={styles.p}>{level}</p>
             </label>
           ))}
+        </div>
+      </div>
+
+      {/* Availability Filter */}
+      <div className={styles.filterGroup}>
+        <h4 className={styles.subtitle}>Availability</h4>
+        <div className={styles.content}>
+          <label className={styles.label}>
+            <input
+              type="checkbox"
+              className={styles.checkbox}
+              onChange={(e) => setIsAvailableOnly(e.target.checked)} // Update state
+            />
+            <span className={styles.checkboxCustom}></span>
+            <p className={styles.p}>Show Available Courses Only</p>
+          </label>
         </div>
       </div>
 

@@ -90,7 +90,7 @@ const Card = (props: Props) => {
         )}
       </div>
       {available && (
-        <Link href={`/CoursePage/${url}`}>
+        <Link href={`${url}`}>
           <div className={styles.overlayLink}></div>
         </Link>
       )}

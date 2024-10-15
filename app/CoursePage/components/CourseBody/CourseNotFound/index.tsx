@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 const CourseNotFound = () => {
   return (
     <div className={styles.notFoundContainer}>
+      <h2 className={styles.notFoundText}>Oops! No courses available.</h2>
       <div className={styles.lottieWrapper}>
         <Player
           play
@@ -14,7 +15,6 @@ const CourseNotFound = () => {
           className={styles.lottiePlayer} // Add a CSS class for responsive sizing
         />
       </div>
-      <h2 className={styles.notFoundText}>Oops! No courses available.</h2>
     </div>
   );
 };

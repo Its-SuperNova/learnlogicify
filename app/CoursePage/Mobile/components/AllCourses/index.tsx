@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../CourseCard";
-import coursesData, { Course } from "../../data/courseData";
-import CourseNotFound from "../CourseNotFound";
+import Card from "../../../components/CourseCard";
+import coursesData, { Course } from "../../components/data/courseData";
+import CourseNotFound from "../../../components/CourseBody/CourseNotFound";
 import styles from "./styles.module.css";
-import SkeletonCourseCard from "../../skeletonCourseCard"; // Already created SkeletonCourseCard
+import SkeletonCourseCard from "../../../components/skeletonCourseCard";
 
 interface AllCoursesProps {
-  selectedLanguage: string;
-  selectedTopic: string;
-  selectedLevel: string;
+  selectedLanguage: string[];
+  selectedTopic: string[];
+  selectedLevel: string[];
   isAvailableOnly: boolean;
   searchTerm: string;
 }
@@ -21,7 +21,7 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   searchTerm,
 }) => {
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // Add loading state
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate loading delay (1.5s) for skeleton
@@ -33,35 +33,52 @@ const AllCourses: React.FC<AllCoursesProps> = ({
 
     // Cleanup the timer when component is unmounted or filters change
     return () => clearTimeout(timer);
-  }, [searchTerm, selectedLanguage, selectedTopic, selectedLevel, isAvailableOnly]);
+  }, [
+    searchTerm,
+    selectedLanguage,
+    selectedTopic,
+    selectedLevel,
+    isAvailableOnly,
+  ]);
 
   const applyFilters = () => {
     let filtered = coursesData;
 
-    if (selectedLanguage && selectedLanguage !== "All") {
-      filtered = filtered.filter((course: Course) => course.languageId === selectedLanguage);
+    // Filter by selected languages
+    if (selectedLanguage.length > 0) {
+      filtered = filtered.filter((course) =>
+        selectedLanguage.includes(course.languageId)
+      );
     }
 
-    if (selectedTopic && selectedTopic !== "All") {
-      filtered = filtered.filter((course: Course) => course.topicId === selectedTopic);
+    // Filter by selected topics
+    if (selectedTopic.length > 0) {
+      filtered = filtered.filter((course) =>
+        selectedTopic.includes(course.topicId)
+      );
     }
 
-    if (selectedLevel && selectedLevel !== "All") {
-      filtered = filtered.filter((course: Course) => course.Level === selectedLevel);
+    // Filter by selected levels
+    if (selectedLevel.length > 0) {
+      filtered = filtered.filter((course) =>
+        selectedLevel.includes(course.Level.toLowerCase())
+      );
     }
 
+    // Filter by search term
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
       filtered = filtered.filter(
-        (course: Course) =>
+        (course) =>
           course.title.toLowerCase().includes(search) ||
           course.desc.toLowerCase().includes(search) ||
           course.Level.toLowerCase().includes(search)
       );
     }
 
+    // Filter by availability
     if (isAvailableOnly) {
-      filtered = filtered.filter((course: Course) => course.available);
+      filtered = filtered.filter((course) => course.available);
     }
 
     setFilteredCourses(filtered);
@@ -70,11 +87,12 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   return (
     <div
       className={`${styles.container} ${
-        filteredCourses.length === 0 && !loading ? styles.noCoursesGrid : styles.grid
+        filteredCourses.length === 0 && !loading
+          ? styles.noCoursesGrid
+          : styles.grid
       }`}
     >
       {loading ? (
-        // Show skeleton while loading
         Array(6)
           .fill(0)
           .map((_, index) => <SkeletonCourseCard key={index} />)

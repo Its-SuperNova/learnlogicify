@@ -1,0 +1,27 @@
+.grid {
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+.grid::-webkit-scrollbar {
+    display: none;
+}
+
+.noCoursesGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+@media (max-width: 670px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

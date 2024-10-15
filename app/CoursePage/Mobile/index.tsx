@@ -3,12 +3,13 @@ import Drawer from "./components/drawer";
 import styles from "./styles.module.css";
 import Filter from "./components/filter";
 import { IoIosSearch } from "react-icons/io";
-import AllCourse from "../components/CourseBody/AllCourses"; // Import AllCourses component
+import AllCourse from "./components/AllCourses";
 import CookingCourse from "../components/CourseBody/CookingCourse";
+
 const Mobile = () => {
   const [activeTab, setActiveTab] = useState("All Courses");
-  const [selectedLanguage, setSelectedLanguage] = useState<string[]>([]); // Updated to array for multiple selection
-  const [selectedTopic, setSelectedTopic] = useState<string[]>([]); // Same here for multiple topics
+  const [selectedLanguage, setSelectedLanguage] = useState<string[]>([]);
+  const [selectedTopic, setSelectedTopic] = useState<string[]>([]);
   const [selectedLevel, setSelectedLevel] = useState<string[]>([]);
   const [isAvailableOnly, setIsAvailableOnly] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,18 +36,15 @@ const Mobile = () => {
         return (
           <div className={styles.content}>
             <AllCourse
-              selectedLanguage={selectedLanguage.join(",")}
-              selectedTopic={selectedTopic.join(",")}
-              selectedLevel={selectedLevel.join(",")}
+              selectedLanguage={selectedLanguage} // Pass the array directly
+              selectedTopic={selectedTopic} // Pass the array directly
+              selectedLevel={selectedLevel} // Pass the array directly
               isAvailableOnly={isAvailableOnly}
               searchTerm={searchTerm}
             />
           </div>
         );
       case "All Bootcamps":
-        return (
-          <div className={styles.content}><CookingCourse/></div>
-        );
       case "Company Specific":
         return (
           <div className={styles.content}>

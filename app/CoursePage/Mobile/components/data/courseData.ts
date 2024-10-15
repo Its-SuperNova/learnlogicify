@@ -1,4 +1,3 @@
-// allcourses/data/courseData.ts
 import { IconType } from "react-icons";
 import { FaPython, FaJs, FaJava, FaCode, FaDatabase, FaHtml5 } from "react-icons/fa";
 
@@ -21,10 +20,10 @@ export interface Course {
 
 const coursesData: Course[] = [
   {
-    url: "CoursePage/Pages/basic-python",
+    url: "Pages/basic-python",
     Level: "Beginner",
     languageId: "python",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaPython,
     title: "Basic Python",
     topics: 10,
@@ -34,13 +33,13 @@ const coursesData: Course[] = [
     price: "₹999",
     originalPrice: "₹1499",
     bannerColor: "#E2D8FC",
-    available: true,  // Only Basic Python is available
+    available: true,
   },
   {
     url: "basic-c",
     Level: "Beginner",
     languageId: "c",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaCode,
     title: "Basic C",
     topics: 15,
@@ -50,13 +49,13 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#FCE2D8",
-    available: true,  // Only Basic C is available
+    available: true,
   },
   {
     url: "basic-cpp",
     Level: "Beginner",
     languageId: "cpp",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaCode,
     title: "Basic C++",
     topics: 10,
@@ -66,13 +65,13 @@ const coursesData: Course[] = [
     price: "₹999",
     originalPrice: "₹1499",
     bannerColor: "#D7FBED",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "basic-java",
     Level: "Beginner",
     languageId: "java",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaJava,
     title: "Basic Java",
     topics: 15,
@@ -82,13 +81,13 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#EBEBEB",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "data-structures-python",
     Level: "Intermediate",
     languageId: "python",
-    topicId: "data-structure",
+    topicId: "Data Structure",  // Updated topicId
     icon: FaPython,
     title: "Data Structures using Python",
     topics: 12,
@@ -98,13 +97,13 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1999",
     bannerColor: "#E1F4FE",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "data-structures-c",
     Level: "Intermediate",
     languageId: "c",
-    topicId: "data-structure",
+    topicId: "Data Structure",  // Updated topicId
     icon: FaCode,
     title: "Data Structures using C",
     topics: 12,
@@ -114,13 +113,13 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1899",
     bannerColor: "#FFC6C6",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "data-structures-cpp",
     Level: "Intermediate",
     languageId: "cpp",
-    topicId: "data-structure",
+    topicId: "Data Structure",  // Updated topicId
     icon: FaCode,
     title: "Data Structures using C++",
     topics: 12,
@@ -130,13 +129,13 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1999",
     bannerColor: "#FEFFC6",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "data-structures-java",
     Level: "Intermediate",
     languageId: "java",
-    topicId: "data-structure",
+    topicId: "Data Structure",  // Updated topicId
     icon: FaJava,
     title: "Data Structures using Java",
     topics: 12,
@@ -146,13 +145,13 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1899",
     bannerColor: "#FFC6F2",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "basic-html-css",
     Level: "Beginner",
     languageId: "html-css",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaHtml5,
     title: "Basic HTML/CSS",
     topics: 10,
@@ -162,13 +161,13 @@ const coursesData: Course[] = [
     price: "₹899",
     originalPrice: "₹1299",
     bannerColor: "#F5E6CC",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "javascript-essentials",
     Level: "Intermediate",
     languageId: "js",
-    topicId: "problem-solving",
+    topicId: "Problem Solving",  // Updated topicId
     icon: FaJs,
     title: "JavaScript Essentials",
     topics: 12,
@@ -178,13 +177,13 @@ const coursesData: Course[] = [
     price: "₹1099",
     originalPrice: "₹1699",
     bannerColor: "#FFF3CC",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "algorithms-java",
     Level: "Advanced",
     languageId: "java",
-    topicId: "algorithms",
+    topicId: "Algorithms",  // Updated topicId
     icon: FaJava,
     title: "Algorithms using Java",
     topics: 18,
@@ -194,13 +193,13 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "algorithms-python",
     Level: "Intermediate",
     languageId: "python",
-    topicId: "algorithms",
+    topicId: "Algorithms",  // Updated topicId
     icon: FaPython,
     title: "Algorithms using Python",
     topics: 18,
@@ -210,13 +209,13 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "algorithms-c",
     Level: "Intermediate",
     languageId: "c",
-    topicId: "algorithms",
+    topicId: "Algorithms",  // Updated topicId
     icon: FaCode,
     title: "Algorithms using C",
     topics: 18,
@@ -226,13 +225,13 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "algorithms-cpp",
     Level: "Intermediate",
     languageId: "cpp",
-    topicId: "algorithms",
+    topicId: "Algorithms",  // Updated topicId
     icon: FaCode,
     title: "Algorithms using C++",
     topics: 18,
@@ -242,13 +241,13 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "advanced-tree-algorithms-java",
     Level: "Advanced",
     languageId: "java",
-    topicId: "graph-theory",
+    topicId: "Graph Theory",  // Updated topicId
     icon: FaJava,
     title: "Advanced Tree Algorithms",
     topics: 20,
@@ -258,13 +257,13 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "graph-theory-cpp",
     Level: "Intermediate",
     languageId: "cpp",
-    topicId: "graph-theory",
+    topicId: "Graph Theory",  // Updated topicId
     icon: FaCode,
     title: "Graph Theory",
     topics: 20,
@@ -274,13 +273,13 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "graph-tree-data-structures-java",
     Level: "Intermediate",
     languageId: "java",
-    topicId: "data-structure",
+    topicId: "Data Structure",  // Updated topicId
     icon: FaJava,
     title: "Graph and Tree Data Structures",
     topics: 20,
@@ -290,13 +289,13 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "advanced-dbms",
     Level: "Advanced",
     languageId: "database",
-    topicId: "dbms",
+    topicId: "DBMS",  // Updated topicId
     icon: FaDatabase,
     title: "Advanced DBMS",
     topics: 20,
@@ -306,13 +305,13 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#E6E6FA",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "basic-dbms",
     Level: "Beginner",
     languageId: "database",
-    topicId: "dbms",
+    topicId: "DBMS",  // Updated topicId
     icon: FaDatabase,
     title: "Basic DBMS",
     topics: 15,
@@ -322,13 +321,13 @@ const coursesData: Course[] = [
     price: "₹1199",
     originalPrice: "₹1499",
     bannerColor: "#FCE2D8",
-    available: false,  // Set to false
+    available: false,
   },
   {
     url: "intermediate-dbms",
     Level: "Intermediate",
     languageId: "database",
-    topicId: "dbms",
+    topicId: "DBMS",  // Updated topicId
     icon: FaDatabase,
     title: "Intermediate DBMS",
     topics: 18,
@@ -338,7 +337,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#FFCCCB",
-    available: false,  // Set to false
+    available: false,
   },
 ];
 
