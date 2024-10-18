@@ -1,0 +1,23 @@
+.main{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+}
+.right{
+    width: 50%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left{
+    width: 50%;
+    height: 85vh;
+}
+.banner{
+    width: 600px;
+    border-radius: 40px;
+}

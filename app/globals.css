@@ -15,8 +15,15 @@
   --body-font: "Montserrat", sans-serif;
   --normal-font-size: 1rem;
 }
-
-
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/aeonik/AeonikTRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+p{
+  font-family: "Aeonik",sans-serif;
+}
 body {
   color:black;
   background: white;
