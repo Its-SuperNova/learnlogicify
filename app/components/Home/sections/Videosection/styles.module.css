@@ -6,6 +6,7 @@
     justify-content: center; /* Center the video */
     flex-direction: column;
     background-color: white;
+    z-index: 2;
 }
 
 .videoPlayer {
@@ -13,4 +14,5 @@
     width: 100%; /* Make the video take up the full width */
     border-radius: 40px;
     object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
+    z-index: 2;
 }

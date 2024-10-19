@@ -25,11 +25,13 @@
     line-height: 65px;
     margin-bottom: 20px;
     text-align: left;
+    z-index: 2;
 }
 
 .title div {
     margin-bottom: 10px;
     /* Space between title lines */
+    z-index: 2;
 }
 
 .title span {
@@ -49,6 +51,7 @@
     font-weight: 400;
     padding-right: 180px;
     font-family: "Wix Madefor Text";
+    z-index: 2;
 }
 
 /* Button styling */

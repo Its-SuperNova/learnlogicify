@@ -19,10 +19,12 @@
     mix-blend-mode: difference;
     transition: transform 0.1s ease-out;
 }
-.stroke{
+.stroke {
     position: absolute;
-    top: 800px;
+    top: 600px;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    pointer-events: none;
     z-index: 1;
 }
+
