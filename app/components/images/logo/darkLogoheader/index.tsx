@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/SVG/logo/Dark-logo.svg";
+import logo from "@/public/SVG/logo/Light-logo.svg";
 import styles from "./styles.module.css";
 const LightLogo = () => {
   return (

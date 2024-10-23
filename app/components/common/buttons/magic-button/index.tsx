@@ -1,13 +1,32 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-const MagicButton = () => {
+interface MagicButtonProps {
+  buttonText: string;
+  width?: string;
+  height?: string;
+  fontSize?: string;
+}
+
+const MagicButton: React.FC<MagicButtonProps> = ({
+  buttonText,
+  width,
+  height,
+  fontSize,
+}) => {
   return (
     <div className={styles.container}>
-      <a href="#" className={styles.button}>
+      <a
+        href="#"
+        className={styles.button}
+        style={{
+          width: width || "auto", // Default to 'auto' if no width is provided
+          height: height || "auto", // Default to 'auto' if no height is provided
+          fontSize: fontSize || "16px", // Default font size
+        }}
+      >
         <div className={styles.buttonContent}>
-          <span className={styles.buttonText}>Join Us</span>
-          {/* Fixed the className */}
+          <span className={styles.buttonText}>{buttonText}</span>
           <div className={styles.buttonReflection1}></div>
           <div className={styles.buttonReflection2}></div>
         </div>

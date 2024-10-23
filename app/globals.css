@@ -8,8 +8,8 @@
 }
 
 :root {
-  --gradient-color: linear-gradient(90deg, hsl(48, 100%, 50%) 0%, hsl(28, 100%, 54%, 100%));
-  --black-color: hsl(225, 15%, 6%);
+  --gradient-color: linear-gradient(90deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 100%);
+  --black-color: hsl(0, 0%, 100%);
   --reflection-color: hsla(48, 30%, 95%, .3);
   --body-color: hsl(48, 100%, 98%);
   --body-font: "Montserrat", sans-serif;

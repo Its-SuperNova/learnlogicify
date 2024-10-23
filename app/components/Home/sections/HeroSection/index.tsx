@@ -1,65 +1,39 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
 import styles from "./styles.module.css";
-import shape1 from "SVG/banner-shapes/file.svg"
-import shape2 from "SVG/banner-shapes/like.svg"
-import shape3 from "SVG/banner-shapes/man in space.svg";
-import shape4 from "SVG/banner-shapes/spiral.svg";
-import shape5 from "SVG/banner-shapes/star.svg";
-import shape6 from "SVG/banner-shapes/vision.svg";
+import MagicButton from "../../../common/buttons/magic-button";
 
 const HeroHome = () => {
-  const containerVariants = {
-    visible: {
-      transition: {
-        delayChildren: 0.3, // Slightly increased delay for smoother entrance
-        staggerChildren: 0.15, // Staggered children for a more gradual effect
-      },
-    },
-  };
-
-  const childVariants = {
-    hidden: { opacity: 0, y: 15 }, // Minimal vertical movement (reduced from 30 to 15)
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1, // Slower transition duration for smoothness
-        ease: "easeInOut", // Keeps the animation smooth with ease in-out
-      },
-    },
-  };
-
   return (
-    <div className={styles.container}>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className={styles.contentWrapper} // Wrapper for the animated elements
-      >
-        <motion.div className={styles.subtitle} variants={childVariants}>
-          <h1 className={styles.animatedGradient2}>
-            Welcome to LearnLogicify Technologies
+    <div className={styles.main}>
+      <div className={styles.container}>
+        <div className={styles.textContent}>
+          <div className={styles.logo}>LearnLogicify Technologies</div>
+          <h1 className={styles.title}>
+            Accelerate the <span className={styles.highlight}>Tech Career</span>
+            <br />
+            and build your Future Faster
           </h1>
-        </motion.div>
-
-        <motion.div className={styles.title} variants={childVariants}>
-          <h3 className={styles.animatedGradient}>
-            &quot;Accelerate the Tech Career <br />and build your Future Faster&quot;
-          </h3>
-        </motion.div>
-
-        <motion.p className={styles.desc} variants={childVariants}>
-          Discover a wide range of Programming courses Tailored to enhance your
-          skills.
-        </motion.p>
-
-        <motion.div className={styles.btnContainer} variants={childVariants}>
-          <div className={styles.btn}>View Courses</div>
-        </motion.div>
-      </motion.div>
+          <p className={styles.subtitle}>
+            Discover a wide range of Programming courses tailored to enhance
+            your skills.
+          </p>
+          <div className={styles.btn}>
+            <MagicButton
+              buttonText="View Courses"
+              width="180px"
+              height="50px"
+              fontSize="14px"
+            />
+          </div>
+        </div>
+        <div className={styles.imageContainer}>
+          <img
+            className={styles.heroImage}
+            src="/images/banner/portal.png"
+            alt="Course preview"
+          />
+        </div>
+      </div>
     </div>
   );
 };
