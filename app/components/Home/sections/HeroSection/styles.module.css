@@ -32,7 +32,7 @@
     color: #505050;
     display: inline-block;
     margin-bottom: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(223, 223, 223);
     padding: 5px 20px;
     border-radius: 20px;
     font-weight: 500;
@@ -80,6 +80,16 @@
 
 .imageContainer {
     margin-top: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding-bottom: 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom: none;
+    background: linear-gradient(135deg, rgba(222, 222, 222, 0.5), rgba(135, 135, 135, 0.3));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(149, 149, 149, 0.1);
 }
 
 .heroImage {

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import MagicButton from "../../../common/buttons/magic-button";
-
+import Link from "next/link";
 const HeroHome = () => {
   return (
     <div className={styles.main}>
@@ -18,12 +18,14 @@ const HeroHome = () => {
             your skills.
           </p>
           <div className={styles.btn}>
-            <MagicButton
-              buttonText="View Courses"
-              width="180px"
-              height="50px"
-              fontSize="14px"
-            />
+            <Link href={"/courses"}>
+              <MagicButton
+                buttonText="View Courses"
+                width="180px"
+                height="50px"
+                fontSize="14px"
+              />
+            </Link>
           </div>
         </div>
         <div className={styles.imageContainer}>

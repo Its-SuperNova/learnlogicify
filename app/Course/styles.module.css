@@ -1,0 +1,206 @@
+/* allcourses/styles.module.css */
+
+.container {
+    overflow: hidden;
+    position: relative;
+    padding: 25px;
+    padding-right: 10px;
+    min-height: 1000px;
+}
+
+.mainContent {
+    transition: margin-left 0.5s;
+    padding: 45px;
+    flex: 1;
+    margin-left: 250px;
+}
+.header{
+    padding-left: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 270px));
+    gap: 30px;
+    justify-content: start;
+    max-width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.bootcampGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+}
+
+.companyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 20px;
+}
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    color: #6c757d;
+}
+
+.searchBox {
+    border: none;
+    outline: none;
+    height: 38px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 5px 5px 5px 40px;
+    background-color: #d9e6ff;
+}
+.headcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.tabContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tabButton {
+    text-align: center;
+    border: 1px solid lightgray;
+    outline: none;
+    background-color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.activeTab {
+    background-color: blue;
+    color: white;
+}
+
+.bootcampContent,
+.companyContent {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+.toggleButton {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    margin-top: 5px;
+}
+.toggleContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.toggleButton input[type="checkbox"] {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+input:checked+.switch {
+    background-color: #96d7ff;
+}
+
+input:checked+.switch::before {
+    transform: translateX(30px);
+}
+
+/* Ensure the rest of your CSS follows as usual... */
+@media screen and (max-width: 700px) {
+    .container {
+        padding-right: 25px;
+    }
+
+    .mainContent {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .grid,
+    .bootcampGrid,
+    .companyGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .searchContainer {
+        width: 90%;
+        max-width: none;
+    }
+
+    .searchBox {
+        padding: 5px 5px 5px 30px;
+    }
+
+    .tabButton {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+
+

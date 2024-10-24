@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { buttonReveal } from "../../../common/Animations/animation";
 import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css";
-
+import Link from "next/link";
 const AboutPortal = () => {
   const { ref: titleRef, inView: isTitleInView } = useInView({
     triggerOnce: false,
@@ -51,9 +51,11 @@ const AboutPortal = () => {
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
           >
-            <Rounded className={styles.btn} width="200px">
-              <p>About Portal</p>
-            </Rounded>
+            <Link href={"/company/portal"}>
+              <Rounded className={styles.btn} width="200px">
+                <p>About Portal</p>
+              </Rounded>
+            </Link>
           </motion.div>
         </div>
       </div>

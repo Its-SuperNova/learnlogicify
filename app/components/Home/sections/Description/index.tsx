@@ -6,7 +6,7 @@ import SlideUpWord from "../../../common/Animations/slideUpWord";
 import FadeTransition from "../../../common/Animations/textFade";
 import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css";
-
+import Link from "next/link";
 export default function Index() {
   const { ref: descriptionRef, inView: isInView } = useInView({
     triggerOnce: false,
@@ -53,9 +53,11 @@ export default function Index() {
           isInView={isInView}
           className={styles.descriptionText}
         />
-        <Rounded className={styles.btn}>
-          <p>Get Started</p>
-        </Rounded>
+        <Link href={"https://learnlogicify.com/login/index.php"}>
+          <Rounded className={styles.btn}>
+            <p>Get Started</p>
+          </Rounded>
+        </Link>
       </div>
 
       <motion.div
@@ -66,9 +68,11 @@ export default function Index() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div ref={buttonParallaxRef}>
-          <Rounded className={styles.button}>
-            <p>About Us</p>
-          </Rounded>
+          <Link href={"/company/about"}>
+            <Rounded className={styles.button}>
+              <p>About Us</p>
+            </Rounded>
+          </Link>
         </div>
       </motion.div>
     </div>

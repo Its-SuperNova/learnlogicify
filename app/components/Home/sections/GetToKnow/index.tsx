@@ -11,6 +11,7 @@ import {
 import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css"; // CSS Modules
 
+import Link from "next/link";
 export default function GetToKnow() {
   const { ref: descriptionRef, inView: isInView } = useInView({
     triggerOnce: false,
@@ -125,9 +126,11 @@ export default function GetToKnow() {
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
           >
-            <Rounded className={styles.btn} width="300px">
-              <p>View Courses</p>
-            </Rounded>
+            <Link href={"/courses"}>
+              <Rounded className={styles.btn} width="300px">
+                <p>View Courses</p>
+              </Rounded>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -135,7 +138,9 @@ export default function GetToKnow() {
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
           >
-            <motion.button className={styles.btn1}>Contact Us</motion.button>
+            <Link href={"/contact"}>
+              <motion.button className={styles.btn1}>Contact Us</motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
