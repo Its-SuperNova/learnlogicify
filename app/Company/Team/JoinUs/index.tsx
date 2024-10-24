@@ -18,7 +18,12 @@ const JoinUs = () => {
           Be part of a team that values knowledge, innovation, and positive
           change. Let’s shape the future together!
         </p>
-        <Button />
+        <Button
+          buttonText="Join Us"
+          width="180px"
+          height="50px"
+          fontSize="14px"
+        />
       </div>
       <img
         src="/images/banner/Frame 11.png"
