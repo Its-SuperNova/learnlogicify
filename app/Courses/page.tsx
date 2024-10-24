@@ -282,23 +282,6 @@ const AllCourseContent: React.FC = () => {
                   ))}
                 </div>
               )}
-              {selectedTab === "CompanySpecific" && (
-                <div className={styles.companyGrid}>
-                  {filteredCompanies.map((company, index) => (
-                    <CompanyCard
-                      key={index}
-                      title={company.title}
-                      desc={company.desc}
-                      offer={company.offer}
-                      price={company.price}
-                      originalPrice={company.originalPrice}
-                      bannerColor={company.bannerColor}
-                      desktopImage={company.desktopImage}
-                      mobileImage={company.mobileImage}
-                    />
-                  ))}
-                </div>
-              )}
             </>
           )}
         </div>
