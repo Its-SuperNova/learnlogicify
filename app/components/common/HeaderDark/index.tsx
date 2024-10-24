@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 import NavMenu from "./NavMenu";
 import sideNav from "../../hamburger/nav";
 import Logo from "../../images/logo/darkLogoheader";
-import LoginButton from "../buttons/login";
+import AnimatedButton from "../buttons/login";
 import Link from "next/link";
 import MenuIcon from "../SVG/icons/hamburger";
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
         </div>
         <div className={styles.right}>
           <div className={styles.login}>
-            <LoginButton />
+            <AnimatedButton />
           </div>
       </div>
     </div>

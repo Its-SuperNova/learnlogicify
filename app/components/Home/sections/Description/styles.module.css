@@ -30,7 +30,6 @@
 
 .title div {
     margin-bottom: 10px;
-    /* Space between title lines */
     z-index: 2;
 }
 
@@ -71,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 9;
 }
 
 /* Floating button (removed motion animations) */

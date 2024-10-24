@@ -78,91 +78,91 @@ export default function ExplorePopularCourses() {
   const secondColumnFAQs = faqs.slice(5);
 
   return (
-    <div ref={descriptionRef} className={styles.exploreCourses}>
-      <div className={styles.body}>
-        <SlideUpWord
-          title={title}
-          isInView={isInView}
-          className={styles.title}
-        />
-        <SlideUpWord
-          title={subTitle}
-          isInView={isInView}
-          className={styles.subTitle}
-        />
-        <div className={styles.faqSection}>
-          <div className={styles.column}>
-            {firstColumnFAQs.map((faq, index) => (
-              <div
-                key={index}
-                className={`${styles.faqCard} ${
-                  activeIndex === index ? styles.active : ""
-                }`}
-                onClick={() => toggleFAQ(index)}
-              >
-                <div className={styles.question}>
-                  {faq.question}
-                  <span
-                    className={`${styles.icon} ${
-                      activeIndex === index ? styles.clicked : ""
-                    }`}
-                  >
-                    +
-                  </span>
-                </div>
-                <AnimatePresence>
-                  {activeIndex === index && (
-                    <motion.div
-                      className={styles.answer}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
+      <div ref={descriptionRef} className={styles.exploreCourses}>
+        <div className={styles.body}>
+          <SlideUpWord
+            title={title}
+            isInView={isInView}
+            className={styles.title}
+          />
+          <SlideUpWord
+            title={subTitle}
+            isInView={isInView}
+            className={styles.subTitle}
+          />
+          <div className={styles.faqSection}>
+            <div className={styles.column}>
+              {firstColumnFAQs.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`${styles.faqCard} ${
+                    activeIndex === index ? styles.active : ""
+                  }`}
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <div className={styles.question}>
+                    {faq.question}
+                    <span
+                      className={`${styles.icon} ${
+                        activeIndex === index ? styles.clicked : ""
+                      }`}
                     >
-                      {faq.answer}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-          <div className={styles.column}>
-            {secondColumnFAQs.map((faq, index) => (
-              <div
-                key={index + 5} // Offset the index for the second column
-                className={`${styles.faqCard} ${
-                  activeIndex === index + 5 ? styles.active : ""
-                }`}
-                onClick={() => toggleFAQ(index + 5)}
-              >
-                <div className={styles.question}>
-                  {faq.question}
-                  <span
-                    className={`${styles.icon} ${
-                      activeIndex === index + 5 ? styles.clicked : ""
-                    }`}
-                  >
-                    +
-                  </span>
+                      +
+                    </span>
+                  </div>
+                  <AnimatePresence>
+                    {activeIndex === index && (
+                      <motion.div
+                        className={styles.answer}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                      >
+                        {faq.answer}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <AnimatePresence>
-                  {activeIndex === index + 5 && (
-                    <motion.div
-                      className={styles.answer}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
+              ))}
+            </div>
+            <div className={styles.column}>
+              {secondColumnFAQs.map((faq, index) => (
+                <div
+                  key={index + 5} // Offset the index for the second column
+                  className={`${styles.faqCard} ${
+                    activeIndex === index + 5 ? styles.active : ""
+                  }`}
+                  onClick={() => toggleFAQ(index + 5)}
+                >
+                  <div className={styles.question}>
+                    {faq.question}
+                    <span
+                      className={`${styles.icon} ${
+                        activeIndex === index + 5 ? styles.clicked : ""
+                      }`}
                     >
-                      {faq.answer}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+                      +
+                    </span>
+                  </div>
+                  <AnimatePresence>
+                    {activeIndex === index + 5 && (
+                      <motion.div
+                        className={styles.answer}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                      >
+                        {faq.answer}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }
