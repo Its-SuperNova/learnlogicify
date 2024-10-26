@@ -1,23 +1,18 @@
-"use client";
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import gsap from "gsap";
 
 type RoundButtonProps = {
   children: React.ReactNode;
-  className?: string; // Accept className prop to style externally
+  className?: string;
   backgroundColor?: string;
-  width?: string;
-  height?: string;
   type?: "button" | "submit" | "reset";
 };
 
 const RoundButton: React.FC<RoundButtonProps> = ({
   children,
-  className = "", // Default className is an empty string
+  className = "",
   backgroundColor = "#455CE9",
-  width = "150px",
-  height = "50px",
   type = "button",
   ...attributes
 }) => {
@@ -25,7 +20,6 @@ const RoundButton: React.FC<RoundButtonProps> = ({
   const timeline = useRef<gsap.core.Timeline | null>(null);
   let timeoutId = useRef<NodeJS.Timeout | null>(null);
 
-  // GSAP Animation Setup
   useEffect(() => {
     timeline.current = gsap.timeline({ paused: true });
     timeline.current
@@ -40,19 +34,16 @@ const RoundButton: React.FC<RoundButtonProps> = ({
         "exit"
       );
 
-    // Cleanup on component unmount
     return () => {
       if (timeoutId.current) clearTimeout(timeoutId.current);
     };
   }, []);
 
-  // Mouse enter handler to trigger animation
   const manageMouseEnter = () => {
     if (timeoutId.current) clearTimeout(timeoutId.current);
     timeline.current?.tweenFromTo("enter", "exit");
   };
 
-  // Mouse leave handler to reset animation
   const manageMouseLeave = () => {
     timeoutId.current = setTimeout(() => {
       timeline.current?.play();
@@ -61,8 +52,14 @@ const RoundButton: React.FC<RoundButtonProps> = ({
 
   return (
     <button
-      className={`${styles.roundedButton} ${className}`} // Combine internal styles with external className
-      style={{ width, height, overflow: "hidden" }}
+      className={`${styles.roundedButton} ${className}`}
+      style={
+        {
+          "--button-width": "150px",
+          "--button-height": "50px",
+          overflow: "hidden",
+        } as React.CSSProperties
+      } // Casting to allow CSS variables
       onMouseEnter={manageMouseEnter}
       onMouseLeave={manageMouseLeave}
       type={type}

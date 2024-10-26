@@ -57,6 +57,8 @@
 .btn {
     font-family: "Wix Madefor Text";
     z-index: 9999;
+    width: 200px;
+    height: 50px;
 }
 
 @media (max-width: 750px) {

@@ -12,17 +12,10 @@
   --black-color: hsl(0, 0%, 100%);
   --reflection-color: hsla(48, 30%, 95%, .3);
   --body-color: hsl(48, 100%, 98%);
-  --body-font: "Montserrat", sans-serif;
   --normal-font-size: 1rem;
 }
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/fonts/aeonik/AeonikTRIAL-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
 p{
-  font-family: "Aeonik",sans-serif;
+  font-family: "Wix Madefor Text",sans-serif;
 }
 body {
   color:black;

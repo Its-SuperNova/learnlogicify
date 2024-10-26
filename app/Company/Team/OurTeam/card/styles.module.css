@@ -6,7 +6,7 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-    /* Smooth hover effect for the card */
+    cursor: pointer;
 }
 
 .profileImage {
