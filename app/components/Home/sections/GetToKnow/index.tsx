@@ -127,7 +127,7 @@ export default function GetToKnow() {
             animate={isButtonInView ? "open" : "initial"}
           >
             <Link href={"/courses"}>
-              <Rounded className={styles.btn} width="300px">
+              <Rounded className={styles.btn} >
                 <p>View Courses</p>
               </Rounded>
             </Link>
