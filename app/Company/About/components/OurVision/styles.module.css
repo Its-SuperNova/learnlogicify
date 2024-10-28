@@ -109,7 +109,7 @@
     opacity: 1;
 }
 @media (max-width: 1024px){
-    .main{
+    .container{
         flex-direction: column;
         padding: 50px 70px;
         gap: 30px;
@@ -124,7 +124,7 @@
     .imageContainer,.responsiveImage {
         border-radius: 15px;
     }
-        .main{
+    .container{
         padding: 30px;
     }
     .right{
