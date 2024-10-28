@@ -2,6 +2,7 @@
     height: auto;
     width: 100%;
     padding: 100px;
+    margin-bottom: 50px;
 }
 .headerContainer{
     display: flex;
