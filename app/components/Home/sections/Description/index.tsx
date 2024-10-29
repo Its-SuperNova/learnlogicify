@@ -7,13 +7,9 @@ import FadeTransition from "../../../common/Animations/textFade";
 import Rounded from "../../../common/buttons/roundButton";
 import styles from "./styles.module.css";
 import Link from "next/link";
+
 export default function Index() {
   const { ref: descriptionRef, inView: isInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  const { ref: buttonInViewRef, inView: isButtonInView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
@@ -60,13 +56,7 @@ export default function Index() {
         </Link>
       </div>
 
-      <motion.div
-        ref={buttonInViewRef}
-        className={styles.buttonContainer}
-        initial="initial"
-        animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <div className={styles.buttonContainer}>
         <div ref={buttonParallaxRef}>
           <Link href={"/company/about"}>
             <Rounded className={styles.button}>
@@ -74,7 +64,7 @@ export default function Index() {
             </Rounded>
           </Link>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -79,7 +79,8 @@
 }
 
 .imageContainer {
-    margin-top: 30px;
+    margin: 30px;
+    margin-bottom: 0;
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding-bottom: 0;
@@ -96,4 +97,31 @@
     width: 100%;
     max-width: 800px;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .container{
+        justify-content: center;
+    }
+    .imageContainer {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .logo {
+        font-size: 12px;
+        border: 1px solid rgb(214, 214, 214);
+    }
+    .viewCourses {
+        padding: 8px 16px;
+    }
 }
