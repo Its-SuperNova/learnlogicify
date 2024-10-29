@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"; // Correctly import motion from framer-motion
 import { useInView } from "react-intersection-observer";
 import SlideUpWord from "../../../common/Animations/slideUpWord";
@@ -15,13 +15,34 @@ export default function Index() {
   });
 
   const buttonParallaxRef = useRef<HTMLDivElement>(null);
+  const [offsetMultiplier, setOffsetMultiplier] = useState(0.2); // Default for larger screens
+
+  useEffect(() => {
+    // Update the offsetMultiplier based on window size
+    const updateOffsetMultiplier = () => {
+      if (window.innerWidth < 730) {
+        setOffsetMultiplier(0.1); // Mild parallax effect on mobile
+      } else {
+        setOffsetMultiplier(0.2); // Original effect for larger screens
+      }
+    };
+
+    // Initial check
+    updateOffsetMultiplier();
+
+    // Event listener for window resize
+    window.addEventListener("resize", updateOffsetMultiplier);
+    return () => {
+      window.removeEventListener("resize", updateOffsetMultiplier);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const buttonElement = buttonParallaxRef.current;
       if (buttonElement) {
         const scrollPosition = window.scrollY;
-        const offset = scrollPosition * 0.2;
+        const offset = scrollPosition * offsetMultiplier;
         buttonElement.style.transform = `translateY(${offset}px)`;
       }
     };
@@ -30,7 +51,7 @@ export default function Index() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [offsetMultiplier]); // Include offsetMultiplier as a dependency
 
   const title = ["One Platform,", "endless opportunities."];
   const description =
