@@ -53,8 +53,8 @@ const Hero = () => {
                   ideal for beginners with no programming experience. However,
                   if you know some C programming, you ll find it easier to
                   understand how Python works behind the scenes. Don t worry if
-                  you re new we ll guide you through Pythons features and
-                  syntax from scratch.
+                  you re new we ll guide you through Pythons features and syntax
+                  from scratch.
                 </p>
                 <p className={styles.Abtdesc}>
                   If you re interested in gaining some C programming knowledge

@@ -16,3 +16,27 @@
     object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
     z-index: 2;
 }
+@media screen and (max-width: 1024px) {
+    .container{
+        padding: 80px 100px;
+    }
+}
+@media screen and (max-width: 880px) {
+    .container {
+        padding: 70px;
+    }
+    
+}
+@media screen and (max-width: 680px) {
+    .container {
+        padding: 50px;
+    }
+    .videoPlayer {
+        border-radius: 24px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+}

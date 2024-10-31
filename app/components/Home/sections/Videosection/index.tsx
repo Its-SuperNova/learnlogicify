@@ -4,11 +4,13 @@ import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Video from "../../VideoSection"; // Adjust path as necessary
 
 gsap.registerPlugin(ScrollTrigger);
 
 const VideoSection: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null); // Ref for the container
+  const videoElementRef = useRef<HTMLVideoElement>(null); // Ref for the video element
 
   useEffect(() => {
     if (videoRef.current) {
@@ -27,9 +29,13 @@ const VideoSection: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <video controls className={styles.videoPlayer} ref={videoRef}>
-        <source src="website-intro (1).mp4" type="video/mp4" />
-      </video>
+      <div className={styles.videoPlayer} ref={videoRef}>
+        <Video
+          ref={videoElementRef} // Pass the videoElementRef to the Video component
+          src="/website-intro (1).mp4"
+          poster="/images/thumbnail/image.png"
+        />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,92 @@
+.videoWrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+}
+
+.thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.playButton {
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Hover effect for larger screens */
+.playButton:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* Mobile view: Override the hover effect */
+@media screen and (max-width: 768px) {
+    .playButton:hover {
+        background: rgba(255, 255, 255);
+        /* Reset background color on hover */
+        color: rgb(0, 0, 0);
+        /* Reset text color on hover */
+    }
+}
+
+.videoElement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Media Queries for Responsive Play Button */
+@media screen and (max-width: 1024px) {
+    .playButton {
+        font-size: 40px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .playButton {
+        font-size: 36px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .videoWrapper {
+        border-radius: 24px;
+        /* Smaller border radius for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .playButton {
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+    }
+}
