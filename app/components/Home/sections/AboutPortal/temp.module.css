@@ -1,0 +1,33 @@
+
+.container {
+    display: flex;
+    height: auto;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.left {
+    background-color: #E2D8FF;
+    max-width: 620px;
+    width: 40%;
+    height: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.right {
+    background-color: #b89cff;
+    height: auto;
+    width: 60%;
+}
+
+.right video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+}

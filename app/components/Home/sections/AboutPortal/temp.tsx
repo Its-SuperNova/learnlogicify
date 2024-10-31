@@ -66,7 +66,6 @@ const AboutPortal = () => {
           autoPlay
           loop
           muted
-          playsInline
         />
       </div>
     </div>
