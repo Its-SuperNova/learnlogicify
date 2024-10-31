@@ -13,7 +13,9 @@ const VideoSection: React.FC = () => {
   const videoElementRef = useRef<HTMLVideoElement>(null); // Ref for the video element
 
   useEffect(() => {
-    if (videoRef.current) {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 768 && videoRef.current) {
+      // Apply animation only on screens wider than 768px
       gsap.to(videoRef.current, {
         width: "70%", // Target size when scrolled to the end
         ease: "none", // Remove easing for smooth animation during scrolling

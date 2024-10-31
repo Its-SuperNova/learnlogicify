@@ -32,7 +32,7 @@
         padding: 50px;
     }
     .videoPlayer {
-        border-radius: 24px;
+        border-radius: 15px;
     }
 }
 @media screen and (max-width: 480px) {
