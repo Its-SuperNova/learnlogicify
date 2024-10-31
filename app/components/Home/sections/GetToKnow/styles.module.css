@@ -36,22 +36,27 @@
 .btnContainer {
   display: flex;
   gap: 20px;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
 }
-
-.btn {
+.motionbtn1,.motionbtn{
+  width: 100%;
+}
+.btn{
   font-family: "Wix Madefor Text";
-  z-index: 9999;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 50px;
+  z-index: 9999;
 }
-
 .btn1 {
   font-family: "Wix Madefor Text";
   z-index: 9999;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 50px;
   font-weight: 500;
   border-radius: 25px;
@@ -91,12 +96,86 @@
 
 .gridItem p {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
+    .getToKnow {
+        padding: 0px 130px;
+      }
+}
+@media (max-width: 1024px) {
+  .getToKnow {
+    padding: 0px 100px;
+  }
   .gridSection {
     grid-template-columns: 1fr;
+    margin-top: 0;
+    gap: 0px;
+  }
+  .title {
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 0px;
+  }
+  .gridItem {
+    border: none;
+  }
+  .btnContainer {
+    margin-top:  10px;
+  }
+}
+@media (max-width: 730px) {
+  .getToKnow{
+    padding: 0px 80px;
+  }
+  .title {
+    font-size: 40px;
+    line-height: 45px;
+  }
+  .descriptionText {
+    font-size: 20px;
+  }
+  .getToKnow {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .getToKnow{
+    padding: 0px 50px;
+  }
+  .gridItem {
+    padding: 10px 0px;
+    z-index: 2;
+  }
+  .gridItem p {
+    color: gray;
+  }
+}
+@media (max-width: 520px) {
+  .getToKnow{
+    padding: 0px 30px;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .body{
+    gap: 10px;
+  }
+  .btnContainer{
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .btn,.btn1{
+    max-width: none;
+    border-radius: 10px;
   }
 }

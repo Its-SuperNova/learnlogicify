@@ -125,9 +125,10 @@ export default function GetToKnow() {
             variants={buttonReveal} // Button reveal animation for "View Courses"
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
+            className={styles.motionbtn}
           >
             <Link href={"/courses"}>
-              <Rounded className={styles.btn} >
+              <Rounded className={styles.btn}>
                 <p>View Courses</p>
               </Rounded>
             </Link>
@@ -137,6 +138,7 @@ export default function GetToKnow() {
             variants={buttonReveal} // Button reveal animation for "Contact Us"
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
+            className={styles.motionbtn1}
           >
             <Link href={"/contact"}>
               <motion.button className={styles.btn1}>Contact Us</motion.button>
