@@ -45,7 +45,7 @@ export default function Index() {
           <AnimatePresence>
             {companySubMenuOpen && (
               <motion.div className={styles.subMenu} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }}>
-                <Link href="/Company/AboutUs">About Us</Link>
+                <Link href="/Company/About">About Us</Link>
                 <Link href="/Company/Team">Team</Link>
                 <Link href="/Company/Portal">Portal</Link>
               </motion.div>
