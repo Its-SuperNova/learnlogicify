@@ -9,13 +9,13 @@ const Header = () => {
         <li className={styles.gradientText}>Company</li>
         <div className={styles.dropdownContent}>
           <li>
-            <Link href="/company/About">About Us</Link>
+            <Link href="/Company/About">About Us</Link>
           </li>
           <li>
-            <Link href="/company/Team">Team</Link>
+            <Link href="/Company/Team">Team</Link>
           </li>
           <li>
-            <Link href="/company/Portal">LMS Portal</Link>
+            <Link href="/Company/Portal">LMS Portal</Link>
           </li>
         </div>
       </div>
